@@ -1,0 +1,139 @@
+
+
+
+/* Wrapper styling */
+/* Slider container */
+.slider {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Slides container */
+.slides {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 200%; 
+}
+
+/* Individual slide */
+.slide {
+
+    width: 100%;
+    height: 220px;
+    display: flex;
+    
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    font-size: 2em;
+}
+
+/* Navigation buttons */
+.prev,.next {
+    position: absolute;
+    top: 66%;
+    transform: translateY(-50%);
+    background: rgba(253, 253, 253, 0.1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: -8px;
+}
+
+.next {
+    right: -10px;
+}
+
+.carousel-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns */
+    /* Space between the cards */
+    transition: transform 0.5s ease;
+    height: 200px;
+    width:100%; margin-left: 12%; margin-right: 12%;
+}
+
+/* Agency card styling */
+/* Agency card styling */
+/* Agency card styling */
+.titanium-agency{
+    padding: 2px;
+    margin-left: 5%;  
+}
+.agency {
+    display: flex;
+    flex-direction: row;
+    /* Align items horizontally (left and right) */
+    justify-content: flex-start;
+    /* Ensure items are aligned to the left */
+    align-items: center;
+    /* Vertically center items */
+    padding: 2px;
+    margin: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    text-align: left;
+    /* Align text to the left */
+    overflow: hidden; width: 300px; 
+}
+
+/* Agency logo styling */
+.agency-logo {
+    width: 70px;
+    /* Adjust size to fit */
+    height: 70px;
+    /* Adjust size to fit */
+    border-radius: 1%;
+    
+    
+    /* Adjust the space between logo and details */
+}
+
+/* Agency details styling */
+.agency-details {
+    display: flex;
+    flex-direction: column;
+    /* Stack the name and location vertically */
+    justify-content: center;
+    flex-grow: 1; margin-left: 10px;
+    /* Allow the details section to take up the remaining space */
+}
+
+/* Agency name styling */
+.agency-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px; 
+}
+.loc-to-visit{
+    color: aqua;
+    display: none;
+    align-items: center;
+    font-size: 12px;
+}
+/* Agency location styling */
+.agency-location {
+    font-size: 12px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align location text to the left */
+}
+
+/* Location icon styling */
+.location-icon {
+    margin-right: 4px;
+    font-size: 14px;
+    color: #999;
+}

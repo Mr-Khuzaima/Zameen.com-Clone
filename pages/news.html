@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zameen News - Dummy Clone</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+    .logo a {
+      text-decoration: none;
+      font-size: 24px;
+      color: #25a10c;
+      font-weight: bold;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+    }
+    .search input {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    @media (max-width:768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    
+    /* Featured News Section */
+    .featured-news {
+      margin-top: 80px; /* space for fixed header */
+      background: #fff;
+      padding: 20px 0;
+    }
+    .featured-news .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .featured-image img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+    }
+    .featured-text {
+      flex: 1;
+    }
+    .featured-text h1 {
+      font-size: 32px;
+      color: #25a10c;
+      margin-bottom: 10px;
+    }
+    .featured-text .date {
+      color: #777;
+      margin-bottom: 15px;
+    }
+    .featured-text p {
+      font-size: 18px;
+      color: #555;
+    }
+    
+    /* News Grid Section */
+    .news-grid {
+      padding: 40px 0;
+    }
+    .news-grid .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .news-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-content h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #25a10c;
+    }
+    .card-content .date {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .card-content p {
+      font-size: 16px;
+      color: #555;
+    }
+    
+    /* Footer Styles */
+    footer {
+      background:#25a10c;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    .footer-links li a {
+      text-decoration: none;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <a href="#">Zameen News</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Real Estate</a></li>
+          <li><a href="#">Market Trends</a></li>
+          <li><a href="#">Interiors</a></li>
+          <li><a href="#">Finance</a></li>
+        </ul>
+        <div class="search">
+          <input type="text" placeholder="Search news...">
+        </div>
+        <div class="menu-toggle">☰</div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Featured News -->
+    <section class="featured-news">
+      <div class="container">
+        <div class="featured-image">
+          <img src="https://source.unsplash.com/random/1200x600?real-estate" alt="Featured News">
+        </div>
+        <div class="featured-text">
+          <h1>Latest Real Estate Market Updates</h1>
+          <p class="date">Published: July 25, 2023</p>
+          <p>Stay updated with the latest trends and news in the real estate market. Get insights, analysis, and expert opinions on the evolving property landscape.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="news-grid">
+      <div class="container">
+        <div class="grid">
+          <article class="news-card">
+            <img src="https://source.unsplash.com/random/400x300?house" alt="News">
+            <div class="card-content">
+              <h2>Housing Prices on the Rise</h2>
+              <p class="date">July 24, 2023</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://source.unsplash.com/random/400x300?cityscape" alt="News">
+            <div class="card-content">
+              <h2>Urban Development Projects Announced</h2>
+              <p class="date">July 23, 2023</p>
+              <p>Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://source.unsplash.com/random/400x300?construction" alt="News">
+            <div class="card-content">
+              <h2>New Construction Regulations</h2>
+              <p class="date">July 22, 2023</p>
+              <p>Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://source.unsplash.com/random/400x300?apartment" alt="News">
+            <div class="card-content">
+              <h2>Apartment Living Trends</h2>
+              <p class="date">July 21, 2023</p>
+              <p>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://source.unsplash.com/random/400x300?office" alt="News">
+            <div class="card-content">
+              <h2>Commercial Real Estate Insights</h2>
+              <p class="date">July 20, 2023</p>
+              <p>Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <img src="https://source.unsplash.com/random/400x300?villa" alt="News">
+            <div class="card-content">
+              <h2>Luxury Villas in Focus</h2>
+              <p class="date">July 19, 2023</p>
+              <p>Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2023 Zameen News. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

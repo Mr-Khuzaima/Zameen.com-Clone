@@ -1,0 +1,244 @@
+<!-- ✅ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Unit Converter</title>
+  <!-- boxicons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <!-- tailwind -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <div class="bg-gradient-to-r from-green-100 to-orange-100 pb-28 px-6 text-center relative z-0">
+    <div class="text-sm text-gray-500 flex mb-2 text-left">
+      <span class="mr-1">Zameen</span> &gt; <span class="ml-1">Area Unit Converter</span>
+    </div>
+    <h1 class="text-2xl font-bold text-gray-800 pt-8">Area Unit Converter</h1>
+    <p class="text-gray-600 mt-2">Easy and convenient way to convert and compare various units of measurements of
+      area sizes
+    </p>
+  </div>
+
+  <div
+    class="w-[95%] md:max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg mt-[-3rem] border border-gray-300 relative z-05 text-sm md:text-md">
+    <h2 class="text-lg font-semibold mb-2 flex items-center">&#8644; MARLA SIZE</h2>
+    <div class="flex gap-2 mb-4">
+      <button class="px-4 py-2 border border-gray-300 rounded-full bg-green-100 text-green-600">225 /Sq. ft.</button>
+      <button class="px-4 py-2 border border-gray-300 rounded-full">250 /Sq. ft.</button>
+      <button class="px-4 py-2 border border-gray-300 rounded-full">272 /Sq. ft.</button>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <input type="text" value="1" class="w-full px-3 py-2 border border-gray-300 rounded-lg" />
+        <select class="w-full mt-2 p-2 border border-gray-300 rounded-lg">
+          <option>Marla</option>
+        </select>
+      </div>
+      <div>
+        <input type="text" value="225" class="w-full px-3 py-2 border border-gray-300 rounded-lg" />
+        <select class="w-full mt-2 p-2 border border-gray-300 rounded-lg">
+          <option>Square Feet</option>
+        </select>
+      </div>
+    </div>
+
+    <h2 class="text-lg font-semibold mb-2 flex items-center">&#8644; USEFUL CONVERTER</h2>
+    <div class="flex flex-wrap gap-2">
+      <button class="px-4 py-2 border border-gray-300 rounded-full">&#8644; Marla → Sq. yd.</button>
+      <button class="px-4 py-2 border border-gray-300 rounded-full">&#8644; Sq. m. → Sq. yd.</button>
+      <button class="px-4 py-2 border border-gray-300 rounded-full">&#8644; Kanal → Marla</button>
+      <button class="px-4 py-2 border border-gray-300 rounded-full">&#8644; Sq. ft. → Sq. m.</button>
+    </div>
+  </div>
+
+
+  <div class="px-4 py-8 md:px-20 text-sm">
+    <div class="max-w-4xl mx-auto mt-8">
+      <h2 class="text-lg font-semibold mb-4">Popular Conversions</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <ul class="space-y-2 text-gray-600 cursor-pointer">
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> 1 Kanal to Marla
+          </li>
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> 1 Square Yard to Sqr Ft
+          </li>
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Murabba to Kanal
+          </li>
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Square Meter to Sqr Ft
+          </li>
+        </ul>
+        <ul class="space-y-2 text-gray-600 cursor-pointer">
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Marla to Kanal
+          </li>
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Square Yards to Sqr Ft
+          </li>
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Murabba to Acre
+          </li>
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Hectare to Kanal
+          </li>
+        </ul>
+        <ul class="space-y-2 text-gray-600 cursor-pointer">
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Square Feet to Sqr yrd
+          </li>
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Acre to Kanal
+          </li>
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Kanal to Acre
+          </li>
+          <li class="hover:text-green-600">
+            <i class='bx bx-right-arrow-alt text-green-600 text-sm'></i> Square Feet to Acre
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="px-4 py-8 md:px-20 overflow-x-auto text-sm">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-4">Area Unit Conversion in Pakistan</h2>
+      <div class="">
+        <table class="table-auto w-full border-collapse border border-gray-200">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border border-gray-300 px-4 py-2">Marla</th>
+              <th class="border border-gray-300 px-4 py-2">Kanal</th>
+              <th class="border border-gray-300 px-4 py-2">Square Feet</th>
+              <th class="border border-gray-300 px-4 py-2">Square Meter </th>
+              <th class="border border-gray-300 px-4 py-2">Square Yard </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">1 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.05 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">225 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">21 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">25 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">2 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.1 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">450 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">42 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">50 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">3 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.15 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">675 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">63 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">75 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">4 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.2 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">900 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">84 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">100 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">5 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.25 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">1125 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">105 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">125 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">10 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.5 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">2250 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">210 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">250 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">12 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.6 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">2700 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">252 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">300 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">5 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.25 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">1125 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">105 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">125 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">10 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.5 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">2250 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">210 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">250 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">12 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.6 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">2700 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">252 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">300 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">5 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.25 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">1125 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">105 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">125 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">10 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.5 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">2250 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">210 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">250 Sq. yd.</td>
+            </tr>
+            <tr class="text-center">
+              <td class="border border-gray-300 px-4 py-2 font-bold">12 Marla</td>
+              <td class="border border-gray-300 px-4 py-2">0.6 Kanal</td>
+              <td class="border border-gray-300 px-4 py-2">2700 Sq. ft.</td>
+              <td class="border border-gray-300 px-4 py-2">252 Sq. m.</td>
+              <td class="border border-gray-300 px-4 py-2">300 Sq. yd.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    // fetch('Navbar.html')
+    //   .then(response => response.text())
+    //   .then(data => document.getElementById('navbar').innerHTML = data);
+
+
+    // fetch('Footer.html')
+    //   .then(response => response.text())
+    //   .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+
+</body>
+
+</html>

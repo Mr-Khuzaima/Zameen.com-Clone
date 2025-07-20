@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/mainpage.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="frontm">
+            <div aria-label="Profile and settings navigation bar" class="navbar">
+                <div class="navbar-left">
+                    <a href="/" title="Home" class="navbar-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                            <path fill="#FFF"
+                                d="M29.3 10.4V5h-7.5L16 .8.1 12.3v8.2l2.2-2.2v12.9H12v-7.8h8v7.8h9.7V18.3l2.2 2.2v-8.3l-2.6-1.8z">
+                            </path>
+                        </svg>
+                    </a>
+                    <div class="navbar-links">
+                        <a href="" class="nav-link" title="Properties">Properties</a>
+                        <a href="map.html" title="Plot Finder" class="nav-link">Plot Finder</a>
+                        <a href="" title="Area Guides" class="nav-link">Area Guides</a>
+                        <div class="dropdownf">
+                            <a class="dropdown-triggerf">
+                                <span>Tools</span>
+                            </a>
+                            <div aria-haspopup="true" class="dropdown-contentf">
+                                <ul class="dropdown-listf">
+                                    <li class="dropdown-list-itemf"><a href="HomeLoanCalculatorPage.html">Home Loan Calculator</a>
+                                    </li>
+                                    <li class="dropdown-list-itemf"><a href="areaUnitConverterPage.html">Area Unit Converter</a>
+                                    </li>
+                                    <li class="dropdown-list-itemf"><a href="linkpages.html">Land Record Pages</a></li>
+                                    <li class="dropdown-list-itemf"><a href="ConstructionCostCalculatorPage.html">Construction
+                                            Cost Calculator</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dropdownf">
+                            <a class="dropdown-triggerf">
+                                <span>More  </span>
+                            </a>
+                            <div aria-haspopup="true" class="dropdown-contentf">
+                                <ul class="dropdown-listf">
+                                    <li class="dropdown-list-itemf"><a href="blog.html">Blog</a></li>
+                                    <li class="dropdown-list-itemf"><a href="map.html">Maps</a></li>
+                                    <li class="dropdown-list-itemf"><a href="forum.html">Forum</a></li>
+                                    <li class="dropdown-list-itemf"><a href="propertyIndexPage.html">Index</a></li>
+                                    <li class="dropdown-list-itemf"><a href="propertyTrendsPage.html">Trends</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <form>
+                        <div class="search-bar search-bar-input-wrap">
+                            <input value="" class="search-input" placeholder="Property ID">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                class="search-icon">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0a4.5 4.5 0 1 1-.01-8.99A4.5 4.5 0 0 1 9.5 14z">
+                                </path>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                            </svg>
+                        </div>
+                    </form>
+                    <a href="addproperty.html" class="add-property-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="add-property-icon" viewBox="0 0 32 32">
+                            <path
+                                d="M16-.1a2.8 2.8 0 0 0-2.8 2.8v10.4H2.8c-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8h10.4v10.4c0 1.6 1.3 2.8 2.8 2.8s2.8-1.3 2.8-2.8V18.8h10.4c1.6 0 2.8-1.3 2.8-2.8s-1.3-2.8-2.8-2.8H18.8V2.8c0-1.6-1.2-2.9-2.8-2.9z">
+                            </path>
+                        </svg>
+                        <span class="add-property-text">Add Property</span>
+                    </a>
+                    
+                    <span class="urdu-text">اردو</span>
+                    <img src="../images/pakistaniflag.svg" alt="Pakistan Flag" class="flag-icon" />
+                    <i class="fas fa-cog settings-icon"></i>
+                    <div class="sign" onclick="showLoginl()">  <a href="javascript:void(0);">  <img src="../images/login_icon.svg" alt="logo" width="20" height="25"></a>
+                    </div>
+      
+                </div>
+            </div>
+            <div class="container3">
+                <!-- Logo Div -->
+                <div class="logoz">
+                    <a><img src="../images/logo.png" alt="logo" width="60" height="25"></a>
+                </div>
+      
+                <!-- Dropdown Container Div -->
+                <div class="dropdown-container3">
+                    <div class="dropdown3">
+                        <!-- Button -->
+                        <div id="dropdownButton3" class="dropdown-button3">BUY <img src="../images/Gratersign.jpg" alt=" sign"
+                                width="12" height="12"></a> </div>
+                        <!-- Dropdown Content -->
+                        <div id="dropdownContent3" class="dropdown-content3">
+                            <a href="HomePage.html">HOME </a>
+                            <a href="NewProjectsPage.html">PLOTS</a>
+                            <a href="NewProjectsPage.html">COMMERCIAL</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="link3"> <a href="HomePage.html">| RENT </a>
+                    <a href="agents.html">| AGENTS</a>
+                    <a href="NewProjectsPage.html">| NEW PROJECTS</a>
+                </div>
+            </div>
+        </div>
+      </header>
+      
+    <section class="p-8">
+        <h2 class="font-bold mb-4 text-sm md:text-md lg:text-xl">Browse Properties</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div class="border rounded-xl p-8 shadow-md">
+                <div class="flex items-center mb-2 space-x-4">
+                    <i class='bx bxs-home text-3xl text-green-600'></i>
+                    <h3 class="ml-2 font-bold text-sm md:text-md lg:text-xl">Homes</h3>
+                </div>
+                <div class="flex space-x-6 border-b mt-6 mb-6">
+                    <span
+                        class="text-green-600 border-b-2 pb-4 border-green-600 font-bold opacity-55 text-sm md:text-md lg:text-xl">Popular</span>
+                    <span class="font-semibold opacity-55 text-sm md:text-md lg:text-xl">Type</span>
+                    <span class="font-semibold opacity-55 text-sm md:text-md lg:text-xl">Area Size</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 cursor-pointer">
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">5 Marla
+                        <span class="text-xs font-normal"> Houses</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">10 Marla
+                        <span class="text-xs font-normal"> Houses</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">3 Marla
+                        <span class="text-xs font-normal"> Houses</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">New <span
+                            class="text-xs font-normal"> Houses</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">Low Price
+                        <span class="text-xs font-normal"> Houses</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">Small
+                        <span class="text-xs font-normal"> Houses</span></span>
+                </div>
+            </div>
+
+            <div class="border rounded-xl p-8 shadow-md">
+                <div class="flex items-center mb-2 space-x-4">
+                    <i class='bx bxs-map text-3xl text-green-600'></i>
+                    <h3 class="ml-2 font-bold text-sm md:text-md lg:text-xl">Plots</h3>
+                </div>
+                <div class="flex space-x-6 border-b mt-6 mb-6">
+                    <span
+                        class="text-green-600 border-b-2 pb-4 border-green-600 font-bold opacity-55 text-sm md:text-md lg:text-xl">Popular</span>
+                    <span class="font-semibold opacity-55 text-sm md:text-md lg:text-xl">Type</span>
+                    <span class="font-semibold opacity-55 text-sm md:text-md lg:text-xl">Area Size</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 cursor-pointer">
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">5 Marla
+                        <span class="text-xs font-normal"> Residential</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">10 Marla
+                        <span class="text-xs font-normal"> Residential</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">3 Marla
+                        <span class="text-xs font-normal"> Residential</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">On <span
+                            class="text-xs font-normal"> Installments</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">With
+                        <span class="text-xs font-normal"> Possession</span></span>
+                </div>
+            </div>
+
+            <div class="border rounded-xl p-8 shadow-md">
+                <div class="flex items-center mb-2 space-x-4">
+                    <i class='bx bx-buildings text-3xl text-green-600'></i>
+                    <h3 class="ml-2 font-bold text-sm md:text-md lg:text-xl">Commercial</h3>
+                </div>
+                <div class="flex space-x-6 border-b mt-6 mb-6">
+                    <span
+                        class="text-green-600 border-b-2 pb-4 border-green-600 font-bold opacity-55 text-sm md:text-md lg:text-xl">Popular</span>
+                    <span class="font-semibold opacity-55 text-sm md:text-md lg:text-xl">Type</span>
+                    <span class="font-semibold opacity-55 text-sm md:text-md lg:text-xl">Area Size</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 cursor-pointer">
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">Small
+                        <span class="text-xs font-normal"> Offices</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">New <span
+                            class="text-xs font-normal"> Offices</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">On <span
+                            class="text-xs font-normal"> Installments</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">Small
+                        <span class="text-xs font-normal"> Shops</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">New <span
+                            class="text-xs font-normal"> Shops</span></span>
+                    <span class="border p-2 rounded flex flex-col text-xs md:text-sm lg:text-md font-semibold">Running
+                        <span class="text-xs font-normal"> Shops</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="py-10 mx-8">
+        <h2 class="text-2xl font-bold mb-6">Explore more on Zameen</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- 1 -->
+            <a href="NewProjectsPage.html" class="flex items-center space-x-4 p-2 cursor-pointer group">
+                <div
+                    class="bg-yellow-50 rounded-lg p-6 flex items-center justify-center border-white group-hover:border-yellow-400 border-2 transition-all duration-500 ease-in-out">
+                    <i class='bx bxs-business text-yellow-400 text-4xl'></i>
+                </div>
+                <div class="flex flex-col justify-center text-left py-4">
+                    <h3 class="font-bold group-hover:text-yellow-400 transition-all duration-500 ease-in-out">New
+                        Projects</h3>
+                    <p class="text-xs  text-gray-600">The best investment opportunities</p>
+                </div>
+            </a>
+
+            <!-- 2 -->
+            <a href="ConstructionCostCalculatorPage.html" class="flex items-center space-x-4 p-2 cursor-pointer group">
+                <div
+                    class="bg-blue-50 rounded-lg p-6 flex items-center justify-center border-white group-hover:border-blue-400 border-2 transition-all duration-500 ease-in-out">
+                    <i class='bx bx-home-smile text-blue-400 text-4xl'></i>
+                </div>
+                <div class="flex flex-col justify-center text-left py-4">
+                    <h3 class="font-bold group-hover:text-blue-400 transition-all duration-500 ease-in-out">Construction
+                        Cost Calculator</h3>
+                    <p class="text-sm text-gray-600">Get construction cost estimate</p>
+                </div>
+            </a>
+
+            <!-- 3 -->
+            <a href="HomeLoanCalculatorPage.html" class="flex items-center space-x-4 p-2 cursor-pointer group">
+                <div
+                    class="bg-green-50 rounded-lg p-6 flex items-center justify-center border-white group-hover:border-green-400 border-2 transition-all duration-500 ease-in-out">
+                    <i class='bx bxs-calculator text-green-400 text-4xl'></i>
+                </div>
+                <div class="flex flex-col justify-center text-left py-4">
+                    <h3 class="font-bold group-hover:text-green-400 transition-all duration-500 ease-in-out">Home loan
+                        calculator</h3>
+                    <p class="text-sm text-gray-600">Find affordable loan packages</p>
+                </div>
+            </a>
+
+            <!-- 4 -->
+            <a href="areaGiudesPage.html" class="flex items-center space-x-4 p-2 cursor-pointer group">
+                <div
+                    class="bg-pink-50 rounded-lg p-6 flex items-center justify-center border-white group-hover:border-pink-400 border-2 transition-all duration-500 ease-in-out">
+                    <i class='bx bx-search-alt text-pink-400 text-4xl'></i>
+                </div>
+                <div class="flex flex-col justify-center text-left py-4">
+                    <h3 class="font-bold group-hover:text-pink-400 transition-all duration-500 ease-in-out">Area giudes
+                    </h3>
+                    <p class="text-sm text-gray-600">Explore housing societies in Pakistan</p>
+                </div>
+            </a>
+
+            <!-- 5 -->
+            <a href="plotsFinderPage.html" class="flex items-center space-x-4 p-2 cursor-pointer group">
+                <div
+                    class="bg-green-50 rounded-lg p-6 flex items-center justify-center border-white group-hover:border-green-400 border-2 transition-all duration-500 ease-in-out">
+                    <i class='bx bx-map-alt text-green-400 text-4xl'></i>
+                </div>
+                <div class="flex flex-col justify-center text-left py-4">
+                    <h3 class="font-bold group-hover:text-green-400 transition-all duration-500 ease-in-out">
+                        Plot Finder
+                    </h3>
+                    <p class="text-sm text-gray-600">Find plots in any housing society</p>
+                </div>
+            </a>
+
+            <!-- 6 -->
+            <a href="propertyIndexPage.html" class="flex items-center space-x-4 p-2 cursor-pointer group">
+                <div
+                    class="bg-purple-50 rounded-lg p-6 flex items-center justify-center border-white group-hover:border-purple-400 border-2 transition-all duration-500 ease-in-out">
+                    <i class='bx bx-bar-chart-alt text-purple-400 text-4xl'></i>
+                </div>
+                <div class="flex flex-col justify-center text-left py-4">
+                    <h3 class="font-bold group-hover:text-purple-400 transition-all duration-500 ease-in-out">
+                        Property Index
+                    </h3>
+                    <p class="text-sm text-gray-600">Track changes in real estate prices</p>
+                </div>
+            </a>
+
+            <!-- 7 -->
+            <a href="areaUnitConverterPage.html" class="flex items-center space-x-4 p-2 cursor-pointer group">
+                <div
+                    class="bg-green-50 rounded-lg p-6 flex items-center justify-center border-white group-hover:border-green-400 border-2 transition-all duration-500 ease-in-out">
+                    <i class='bx bx-calculator text-green-400 text-4xl'></i>
+                </div>
+                <div class="flex flex-col justify-center text-left py-4">
+                    <h3 class="font-bold group-hover:text-green-400 transition-all duration-500 ease-in-out">
+                        Area Unit converter
+                    </h3>
+                    <p class="text-sm text-gray-600">convert any area unit instantly</p>
+                </div>
+            </a>
+
+            <!-- 8 -->
+            <a href="propertyTrendsPage.html" class="flex items-center space-x-4 p-2 cursor-pointer group">
+                <div
+                    class="bg-purple-50 rounded-lg p-6 flex items-center justify-center border-white group-hover:border-purple-400 border-2 transition-all duration-500 ease-in-out">
+                    <i class='bx bx-line-chart text-purple-400 text-4xl'></i>
+                </div>
+                <div class="flex flex-col justify-center text-left py-4">
+                    <h3 class="font-bold group-hover:text-purple-400 transition-all duration-500 ease-in-out">
+                        property Trends
+                    </h3>
+                    <p class="text-sm text-gray-600">Find popular areas to buy property</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+     
+        <div class="section-container">
+          <div class="full-width">
+            <div class="container-fluid" style="padding-left: 70px;" >
+              <div class="footer-column">
+                <div class="column-title">Company</div>
+                <a href="about1.html" class="footer-link" aria-label="About us">About us</a>
+                <a href="contact.html" class="footer-link" aria-label="Contact us">Contact us</a>
+                <a href="job.html" class="footer-link" aria-label="Jobs">Jobs</a>
+                <a href="help.html" class="footer-link" aria-label="Help and support">Help &amp; Support</a>
+                <a href="advertise.html" class="footer-link" aria-label="Advertise on zameen">Advertise on Zameen</a>
+                <a href="terms.html" class="footer-link" aria-label="Terms">Terms of Use</a>
+              </div>
+              <div class="footer-column">
+                <div class="column-title">Connect</div>
+                <a href="blog.html" class="footer-link" aria-label="Blog">Blog</a>
+                <a href="news.html" class="footer-link" aria-label="News">News</a>
+                <a href="forum.html" class="footer-link" aria-label="Forum">Forum</a>
+                <a href="expo.html" class="footer-link" aria-label="Expo">Expo</a>
+                <a href="agents.html" class="footer-link" aria-label="Real estate agents">Real Estate Agents</a>
+                <a href="addproperty.html" class="footer-link" aria-label="Add property">Add Property</a>
+              </div>
+              <div class="footer-column">
+                <div class="column-title">Head Office</div>
+                <div class="footer-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icon-default">
+                    <path d="M25.6 4.8A12.1 12.1 0 0 0 6.4 19.5L16 32l9.6-12.6a12 12 0 0 0 0-14.6zm-9.6.7c3.5 0 6.3 2.8 6.3 6.3s-2.8 6.3-6.3 6.3-6.3-2.8-6.3-6.3 2.8-6.3 6.3-6.3z"/>
+                  </svg>
+                  <div>
+                    <div class="address-line">Pearl One, 94-B/I, MM Alam Road,</div>
+                    <div class="address-line">Gulberg III, Lahore, Pakistan</div>
+                  </div>
+                </div>
+                <div class="footer-link">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    class="icon-default"
+                  >
+                    <path d="M13.3 10.3A7.6 7.6 0 0 1 11 10a.7.7 0 0 0-.7.1l-1 1.4a10.1 10.1 0 0 1-4.6-4.6L6 5.7A.7.7 0 0 0 6 5a7.4 7.4 0 0 1-.3-2.3A.7.7 0 0 0 5 2H2.8c-.4 0-.8.2-.8.7A11.4 11.4 0 0 0 13.3 14a.7.7 0 0 0 .7-.8V11a.7.7 0 0 0-.7-.6z"/>
+                  </svg>
+                  <div>
+                    <div class="address-line small-text text-bold">0800-ZAMEEN (92633)</div>
+                    <div class="address-line">Monday To Sunday 9AM To 6PM</div>
+                  </div>
+                </div>
+                <a href="#" class="footer-link" aria-label="Email us">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icon-default">
+                    <path d="M2.3 5.5C1.1 5.5 0 6.5 0 7.8v16.4c0 1.3 1 2.3 2.3 2.3h27.4c1.3 0 2.3-1 2.3-2.3V7.8c0-1.3-1-2.3-2.3-2.3H2.3zM4 9.4c.2 0 .5.1.6.2l10.3 9.5c.6.6 1.6.6 2.2 0l10.3-9.5c.3-.3.8-.2 1.1.1.2.3.2.7 0 1l-5.8 5.4 5.8 5.2c.3.3.4.8.1 1.1-.3.3-.8.4-1.1.1l-.1-.1-5.9-5.3-3.3 3.1a3.21 3.21 0 0 1-4.3 0l-3.3-3.1-5.9 5.3c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l.1-.1L9.5 16l-5.8-5.4c-.3-.3-.4-.8-.1-1.1 0 0 .2-.1.4-.1z"/>
+                  </svg>
+                  <div class="address-line">Email Us</div>
+                </a>
+              </div>
+              <div class="footer-column">
+                <div class="social-wrapper">
+                  <div class="column-title">Roshan Digital Account</div>
+                  <a href="#" class="digital-account">
+                    <img
+                      src="../images/roshandigitalact.svg"
+                      class="digital-account-icon"
+                      alt="roshan"
+                    />
+                    <p class="digital-account-text">
+                      ROSHAN<br /><b>DIGITAL</b><br />ACCOUNT
+                    </p>
+                  </a>
+                  <div class="column-title">Get Connected</div>
+                  <div class="social-icons">
+                    <div class="social-group">
+                      <div>
+                        <a href="fb.svg" title="Follow us on Facebook" aria-label="Follow us on facebook">
+                          <div class="social-icon facebook"></div>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="insta.svg" title="Follow us on Instagram" aria-label="Follow us on instagram">
+                          <div class="social-icon instagram"></div>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="yout.svg" title="Follow us on YouTube" aria-label="Follow us on youtube">
+                          <div class="social-icon youtube"></div>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="twitter.svg" title="Follow us on Twitter" aria-label="Follow us on twitter">
+                          <div class="social-icon twitter"></div>
+                        </a>
+                      </div>
+                      <div>
+                        <a href="linkdin.svg" title="Follow us on LinkedIn" aria-label="Follow us on linkedin">
+                          <div class="social-icon linkedin"></div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <div class="copyright-text">
+                <div class="small-text" style="padding-left: 40px;">
+                  © Copyright 2007 - 2025 Zameen.com. All Rights Reserved
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        fetch('Navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="../css/mainpage.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zameen Contact & More</title>
+  <style>
+    /****************************************************
+     *                   GLOBAL STYLES                  *
+     ****************************************************/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.5;
+    }
+    h1, h2, h3 {
+      color: #2f2f2f;
+    }
+
+    /****************************************************
+     *                 CONTACT SECTION                  *
+     ****************************************************/
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px 5%;
+      background: linear-gradient(to right, #8ae180, #19b904);
+    }
+    /* Left side (heading & office info) */
+    .contact-left {
+      flex: 1 1 45%;
+      margin-right: 20px;
+      max-width: 600px;
+    }
+    .contact-left h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+    .contact-left p {
+      margin-bottom: 15px;
+    }
+    .office-info h2 {
+      margin: 20px 0 10px;
+      font-size: 1.4rem;
+    }
+    .office-info p {
+      margin-bottom: 8px;
+    }
+    /* Right side (form) */
+    .contact-right {
+      flex: 1 1 45%;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .contact-form label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    /* Phone input container */
+    .phone-input {
+      display: flex;
+      align-items: center;
+    }
+    .country-code {
+      padding: 10px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      margin-right: -1px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .phone-input input[type="tel"] {
+      border-radius: 0 4px 4px 0;
+    }
+    /* Textarea */
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    /* Submit button */
+    .contact-form button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #25a10c;;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #009166;
+    }
+
+    /****************************************************
+     *             RESPONSIVE FOR CONTACT               *
+     ****************************************************/
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+        padding: 20px 5%;
+      }
+      .contact-left, .contact-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    /****************************************************
+     *                OFFICES SECTION                   *
+     ****************************************************/
+    .offices-section {
+      padding: 40px 5%;
+      background: #fff url('YOUR-DOTTED-MAP-IMAGE.png') no-repeat center;
+      background-size: contain; /* Adjust or remove as needed */
+    }
+    .offices-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .offices-section p {
+      margin-bottom: 30px;
+    }
+    .offices-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .office-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      flex: 1 1 calc(25% - 20px);
+      min-width: 250px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .office-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color:#25a10c;
+    }
+    .office-card p {
+      margin-bottom: 8px;
+    }
+    .office-card-actions {
+      margin-top: 10px;
+    }
+    .office-card-actions button {
+      margin-right: 10px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #25a10c;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .office-card-actions button:hover {
+      background-color: #25a10c;
+    }
+
+    /* Responsive for office cards */
+    @media (max-width: 768px) {
+      .offices-container {
+        flex-direction: column;
+      }
+      .office-card {
+        flex: 1 1 100%;
+      }
+    }
+
+    /****************************************************
+     *           AGENTS & DEVELOPERS SECTION            *
+     ****************************************************/
+    .agents-developers-section {
+      padding: 40px 5%;
+      background-color: #f9f9f9;
+    }
+    .agents-developers-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .ad-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .ad-card {
+      flex: 1 1 45%;
+      min-width: 300px;
+      padding: 20px;
+      border-radius: 8px;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .developer {
+      background: linear-gradient(to right, #8ae180, #19b904);
+    }
+    .agent {
+      background: linear-gradient(to right, #8ae180, #19b904);
+    }
+    .ad-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+    .ad-card p {
+      margin-bottom: 15px;
+    }
+    .ad-card button {
+      background-color: #fff;
+      color: #333;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .ad-card button:hover {
+      opacity: 0.9;
+    }
+
+    /* Responsive for Agents & Developers cards */
+    @media (max-width: 768px) {
+      .ad-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .ad-card {
+        flex: 1 1 100%;
+        max-width: 500px;
+      }
+    }
+
+    /****************************************************
+     *          EXPLORE MORE ON ZAMEEN SECTION          *
+     ****************************************************/
+    .explore-section {
+      padding: 40px 5%;
+    }
+    .explore-section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    .explore-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .explore-card {
+      flex: 1 1 200px;
+      min-width: 200px;
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .explore-card img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+    .explore-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #00b17c;
+    }
+    .explore-card p {
+      font-size: 0.9rem;
+    }
+
+    /* Responsive for Explore cards */
+    @media (max-width: 768px) {
+      .explore-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .explore-card {
+        flex: 1 1 100%;
+        max-width: 500px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header style="margin-bottom: 1%;">
+    <div class="frontm">
+        <div aria-label="Profile and settings navigation bar" class="navbar">
+            <div class="navbar-left">
+                <a href="/" title="Home" class="navbar-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path fill="#FFF"
+                            d="M29.3 10.4V5h-7.5L16 .8.1 12.3v8.2l2.2-2.2v12.9H12v-7.8h8v7.8h9.7V18.3l2.2 2.2v-8.3l-2.6-1.8z">
+                        </path>
+                    </svg>
+                </a>
+                <div class="navbar-links">
+                    <a href="" class="nav-link" title="Properties">Properties</a>
+                    <a href="map.html" title="Plot Finder" class="nav-link">Plot Finder</a>
+                    <a href="" title="Area Guides" class="nav-link">Area Guides</a>
+                    <div class="dropdownf">
+                        <a class="dropdown-triggerf">
+                            <span>Tools</span>
+                        </a>
+                        <div aria-haspopup="true" class="dropdown-contentf">
+                            <ul class="dropdown-listf">
+                                <li class="dropdown-list-itemf"><a href="HomeLoanCalculatorPage.html">Home Loan Calculator</a>
+                                </li>
+                                <li class="dropdown-list-itemf"><a href="areaUnitConverterPage.html">Area Unit Converter</a>
+                                </li>
+                                <li class="dropdown-list-itemf"><a href="linkpages.html">Land Record Pages</a></li>
+                                <li class="dropdown-list-itemf"><a href="ConstructionCostCalculatorPage.html">Construction
+                                        Cost Calculator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdownf">
+                        <a class="dropdown-triggerf">
+                            <span>More  </span>
+                        </a>
+                        <div aria-haspopup="true" class="dropdown-contentf">
+                            <ul class="dropdown-listf">
+                                <li class="dropdown-list-itemf"><a href="blog.html">Blog</a></li>
+                                <li class="dropdown-list-itemf"><a href="map.html">Maps</a></li>
+                                <li class="dropdown-list-itemf"><a href="forum.html">Forum</a></li>
+                                <li class="dropdown-list-itemf"><a href="propertyIndexPage.html">Index</a></li>
+                                <li class="dropdown-list-itemf"><a href="propertyTrendsPage.html">Trends</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <form>
+                    <div class="search-bar search-bar-input-wrap">
+                        <input value="" class="search-input" placeholder="Property ID">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="search-icon">
+                            <path
+                                d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0a4.5 4.5 0 1 1-.01-8.99A4.5 4.5 0 0 1 9.5 14z">
+                            </path>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                        </svg>
+                    </div>
+                </form>
+                <a href="addproperty.html" class="add-property-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="add-property-icon" viewBox="0 0 32 32">
+                        <path
+                            d="M16-.1a2.8 2.8 0 0 0-2.8 2.8v10.4H2.8c-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8h10.4v10.4c0 1.6 1.3 2.8 2.8 2.8s2.8-1.3 2.8-2.8V18.8h10.4c1.6 0 2.8-1.3 2.8-2.8s-1.3-2.8-2.8-2.8H18.8V2.8c0-1.6-1.2-2.9-2.8-2.9z">
+                        </path>
+                    </svg>
+                    <span class="add-property-text">Add Property</span>
+                </a>
+                
+                <span class="urdu-text">اردو</span>
+                <img src="../images/pakistaniflag.svg" alt="Pakistan Flag" class="flag-icon" />
+                <i class="fas fa-cog settings-icon"></i>
+                <div class="sign" onclick="showLoginl()">  <a href="javascript:void(0);">  <img src="../images/login_icon.svg" alt="logo" width="20" height="25"></a>
+                </div>
+  
+            </div>
+        </div>
+        <div class="container3">
+            <!-- Logo Div -->
+            <div class="logoz">
+                <a><img src="../images/logo.png" alt="logo" width="100" height="25"></a>
+            </div>
+  
+            <!-- Dropdown Container Div -->
+            <div class="dropdown-container3">
+                <div class="dropdown3">
+                    <!-- Button -->
+                    <div id="dropdownButton3" class="dropdown-button3">BUY <img src="../images/Gratersign.jpg" alt=" sign"
+                            width="12" height="12"></a> </div>
+                    <!-- Dropdown Content -->
+                    <div id="dropdownContent3" class="dropdown-content3">
+                        <a href="HomePage.html">HOME </a>
+                        <a href="NewProjectsPage.html">PLOTS</a>
+                        <a href="NewProjectsPage.html">COMMERCIAL</a>
+                    </div>
+                </div>
+            </div>
+            <div class="link3"> <a href="HomePage.html">| RENT </a>
+                <a href="agents.html">| AGENTS</a>
+                <a href="NewProjectsPage.html">| NEW PROJECTS</a>
+            </div>
+        </div>
+    </div>
+  </header>
+  
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <!-- Left Content (Intro + Office Info) -->
+    <div class="contact-left">
+      <h1>Let's Talk About Everything!</h1>
+      <p>
+        Hello there! If you'd like to ask us something, you can get in touch with us here!
+        We'd love to address any and all concerns you may have.
+      </p>
+      <div class="office-info">
+        <h2>Head Office</h2>
+        <p><strong>Address:</strong> Pearl One, 94-B/I, MM Alam Road, Gulberg III, Lahore, Pakistan</p>
+        <p><strong>Phone:</strong> 0800 Zameen (92633)</p>
+        <p><strong>Hours:</strong> Monday to Friday (9AM - 6PM)</p>
+      </div>
+    </div>
+
+    <!-- Right Content (Form) -->
+    <div class="contact-right">
+      <form class="contact-form">
+        <label for="name">Your Name*</label>
+        <input type="text" id="name" placeholder="How should we address you?" required />
+
+        <label for="phone">Phone Number*</label>
+        <div class="phone-input">
+          <span class="country-code">+92</span>
+          <input type="tel" id="phone" placeholder="Your phone number" required />
+        </div>
+
+        <label for="email">Email Address*</label>
+        <input type="email" id="email" placeholder="Your best email address?" required />
+
+        <label for="subject">Subject*</label>
+        <select id="subject" required>
+          <option value="General Inquiry" selected>General Inquiry</option>
+          <option value="Support Request">Support Request</option>
+          <option value="Business Inquiry">Business Inquiry</option>
+        </select>
+
+        <label for="message">Your Message*</label>
+        <textarea id="message" placeholder="What would you like to say?" required></textarea>
+
+        <button type="submit">Send Your Question</button>
+      </form>
+    </div>
+  </section>
+  <!-- END CONTACT SECTION -->
+
+
+  <!-- ZAMEEN OFFICES SECTION -->
+  <section class="offices-section">
+    <h2>Zameen Offices</h2>
+    <p>If you need to mail any advertising literature then please use any of the following addresses:</p>
+
+    <div class="offices-container">
+
+      <!-- OFFICE CARD 1 -->
+      <div class="office-card">
+        <h3>Lahore - Head Office</h3>
+        <p>Pearl One, 94-B/I, MM Alam Road, Gulberg III, Lahore, Pakistan</p>
+        <p>0800 Zameen (92633)</p>
+        <div class="office-card-actions">
+          <button>Get Directions</button>
+          <button>Call</button>
+        </div>
+      </div>
+
+      <!-- OFFICE CARD 2 -->
+      <div class="office-card">
+        <h3>Lahore - Operational Team</h3>
+        <p>3rd Floor, New Auriga Shopping Mall, Main Blvd, Block G Gulberg 2, Lahore, Pakistan</p>
+        <p>0800 Zameen (92633)</p>
+        <div class="office-card-actions">
+          <button>Get Directions</button>
+          <button>Call</button>
+        </div>
+      </div>
+
+      <!-- OFFICE CARD 3 -->
+      <div class="office-card">
+        <h3>Karachi - NTD Building</h3>
+        <p>4th Floor, NIC Trade Dist (NTD) Building, Near Bahria Icon, PkCFR, Shahrah-e-Faisal</p>
+        <p>+92 21 38735050</p>
+        <div class="office-card-actions">
+          <button>Get Directions</button>
+          <button>Call</button>
+        </div>
+      </div>
+
+      <!-- OFFICE CARD 4 -->
+      <div class="office-card">
+        <h3>Islamabad - Head Office</h3>
+        <p>IBC Building, Islamabad</p>
+        <p>+92 51 570xxxx</p>
+        <div class="office-card-actions">
+          <button>Get Directions</button>
+          <button>Call</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- END ZAMEEN OFFICES SECTION -->
+
+
+  <!-- AGENTS & DEVELOPERS SECTION -->
+  <section class="agents-developers-section">
+    <h2>Agents &amp; Developers</h2>
+    <div class="ad-container">
+      <!-- Developer Card -->
+      <div class="ad-card developer">
+        <h3>Are you a Developer?</h3>
+        <p>
+          If you're a developer, Zameen.com offers you the best packages to get started on your journey.
+        </p>
+        <button>Inquire Now</button>
+      </div>
+
+      <!-- Agent Card -->
+      <div class="ad-card agent">
+        <h3>Are you an Agent?</h3>
+        <p>
+          If you are an agent, Zameen.com offers you the best packages to get started on your journey.
+        </p>
+        <button>Inquire Now</button>
+      </div>
+    </div>
+  </section>
+  <!-- END AGENTS & DEVELOPERS SECTION -->
+
+
+  <!-- EXPLORE MORE ON ZAMEEN SECTION -->
+  <section class="explore-section">
+    <h2>Explore More On Zameen</h2>
+    <div class="explore-container">
+
+      <!-- CARD 1 -->
+      <div class="explore-card">
+        <!-- Replace with your icon path -->
+        <img src="https://content-cdn.zameen.com/HBFC_Logo_0ffc54ca4b.svg" alt="Home Loan Calculator" />
+        <h3>Home Loan Calculator</h3>
+        <p>Find affordable loan plans</p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="explore-card">
+        <img src="https://content-cdn.zameen.com/HBFC_Logo_0ffc54ca4b.svg" alt="Construction Cost Calculator" />
+        <h3>Construction Cost Calculator</h3>
+        <p>Get construction cost estimates</p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="explore-card">
+        <img src="https://content-cdn.zameen.com/HBFC_Logo_0ffc54ca4b.svg" alt="Area Unit Converter" />
+        <h3>Area Unit Converter</h3>
+        <p>Convert square yards, marlas & more</p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="explore-card">
+        <img src="https://content-cdn.zameen.com/HBFC_Logo_0ffc54ca4b.svg" alt="Area Guides" />
+        <h3>Area Guides</h3>
+        <p>Explore specific locations in Pakistan</p>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="explore-card">
+        <img src="https://content-cdn.zameen.com/HBFC_Logo_0ffc54ca4b.svg" alt="New Projects" />
+        <h3>New Projects</h3>
+        <p>The best new developments</p>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="explore-card">
+        <img src="https://content-cdn.zameen.com/HBFC_Logo_0ffc54ca4b.svg" alt="Plot Finder" />
+        <h3>Plot Finder</h3>
+        <p>Find plots in prime locations</p>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="explore-card">
+        <img src="https://content-cdn.zameen.com/HBFC_Logo_0ffc54ca4b.svg" alt="Property Trends" />
+        <h3>Property Trends</h3>
+        <p>Stay informed about market shifts</p>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="explore-card">
+        <img src="https://content-cdn.zameen.com/HBFC_Logo_0ffc54ca4b.svg" alt="Property Index" />
+        <h3>Property Index</h3>
+        <p>Track the real estate index</p>
+      </div>
+
+    </div>
+  </section>
+  <!-- END EXPLORE MORE ON ZAMEEN SECTION -->
+
+  <footer>
+     
+    <div class="section-container">
+      <div class="full-width">
+        <div class="container-fluid" style="padding-left: 70px;" >
+          <div class="footer-column">
+            <div class="column-title">Company</div>
+            <a href="about1.html" class="footer-link" aria-label="About us">About us</a>
+            <a href="contact.html" class="footer-link" aria-label="Contact us">Contact us</a>
+            <a href="job.html" class="footer-link" aria-label="Jobs">Jobs</a>
+            <a href="help.html" class="footer-link" aria-label="Help and support">Help &amp; Support</a>
+            <a href="advertise.html" class="footer-link" aria-label="Advertise on zameen">Advertise on Zameen</a>
+            <a href="terms.html" class="footer-link" aria-label="Terms">Terms of Use</a>
+          </div>
+          <div class="footer-column">
+            <div class="column-title">Connect</div>
+            <a href="blog.html" class="footer-link" aria-label="Blog">Blog</a>
+            <a href="news.html" class="footer-link" aria-label="News">News</a>
+            <a href="forum.html" class="footer-link" aria-label="Forum">Forum</a>
+            <a href="expo.html" class="footer-link" aria-label="Expo">Expo</a>
+            <a href="agents.html" class="footer-link" aria-label="Real estate agents">Real Estate Agents</a>
+            <a href="addproperty.html" class="footer-link" aria-label="Add property">Add Property</a>
+          </div>
+          <div class="footer-column">
+            <div class="column-title">Head Office</div>
+            <div class="footer-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icon-default">
+                <path d="M25.6 4.8A12.1 12.1 0 0 0 6.4 19.5L16 32l9.6-12.6a12 12 0 0 0 0-14.6zm-9.6.7c3.5 0 6.3 2.8 6.3 6.3s-2.8 6.3-6.3 6.3-6.3-2.8-6.3-6.3 2.8-6.3 6.3-6.3z"/>
+              </svg>
+              <div>
+                <div class="address-line">Pearl One, 94-B/I, MM Alam Road,</div>
+                <div class="address-line">Gulberg III, Lahore, Pakistan</div>
+              </div>
+            </div>
+            <div class="footer-link">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                class="icon-default"
+              >
+                <path d="M13.3 10.3A7.6 7.6 0 0 1 11 10a.7.7 0 0 0-.7.1l-1 1.4a10.1 10.1 0 0 1-4.6-4.6L6 5.7A.7.7 0 0 0 6 5a7.4 7.4 0 0 1-.3-2.3A.7.7 0 0 0 5 2H2.8c-.4 0-.8.2-.8.7A11.4 11.4 0 0 0 13.3 14a.7.7 0 0 0 .7-.8V11a.7.7 0 0 0-.7-.6z"/>
+              </svg>
+              <div>
+                <div class="address-line small-text text-bold">0800-ZAMEEN (92633)</div>
+                <div class="address-line">Monday To Sunday 9AM To 6PM</div>
+              </div>
+            </div>
+            <a href="#" class="footer-link" aria-label="Email us">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icon-default">
+                <path d="M2.3 5.5C1.1 5.5 0 6.5 0 7.8v16.4c0 1.3 1 2.3 2.3 2.3h27.4c1.3 0 2.3-1 2.3-2.3V7.8c0-1.3-1-2.3-2.3-2.3H2.3zM4 9.4c.2 0 .5.1.6.2l10.3 9.5c.6.6 1.6.6 2.2 0l10.3-9.5c.3-.3.8-.2 1.1.1.2.3.2.7 0 1l-5.8 5.4 5.8 5.2c.3.3.4.8.1 1.1-.3.3-.8.4-1.1.1l-.1-.1-5.9-5.3-3.3 3.1a3.21 3.21 0 0 1-4.3 0l-3.3-3.1-5.9 5.3c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l.1-.1L9.5 16l-5.8-5.4c-.3-.3-.4-.8-.1-1.1 0 0 .2-.1.4-.1z"/>
+              </svg>
+              <div class="address-line">Email Us</div>
+            </a>
+          </div>
+          <div class="footer-column">
+            <div class="social-wrapper">
+              <div class="column-title">Roshan Digital Account</div>
+              <a href="#" class="digital-account">
+                <img
+                  src="../images/roshandigitalact.svg"
+                  class="digital-account-icon"
+                  alt="roshan"
+                />
+                <p class="digital-account-text">
+                  ROSHAN<br /><b>DIGITAL</b><br />ACCOUNT
+                </p>
+              </a>
+              <div class="column-title">Get Connected</div>
+              <div class="social-icons">
+                <div class="social-group">
+                  <div>
+                    <a href="fb.svg" title="Follow us on Facebook" aria-label="Follow us on facebook">
+                      <div class="social-icon facebook"></div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="insta.svg" title="Follow us on Instagram" aria-label="Follow us on instagram">
+                      <div class="social-icon instagram"></div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="yout.svg" title="Follow us on YouTube" aria-label="Follow us on youtube">
+                      <div class="social-icon youtube"></div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="twitter.svg" title="Follow us on Twitter" aria-label="Follow us on twitter">
+                      <div class="social-icon twitter"></div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="linkdin.svg" title="Follow us on LinkedIn" aria-label="Follow us on linkedin">
+                      <div class="social-icon linkedin"></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright-text">
+            <div class="small-text" style="padding-left: 40px;">
+              © Copyright 2007 - 2025 Zameen.com. All Rights Reserved
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>
+</body>
+</html>

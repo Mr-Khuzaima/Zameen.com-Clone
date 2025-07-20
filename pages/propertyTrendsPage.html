@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- boxicons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- tailwind -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <section>
+        <div class="bg-gradient-to-r from-green-100 to-gray-100 py-20 text-center">
+            <h1 class="text-2xl font-bold text-gray-800 px-8">Zameen Search Trends</h1>
+            <p class="text-gray-600 text-sm px-8">
+                Explore the latest real estate search trends and gain valuable market insights in Pakistan
+            </p>
+
+            <!-- Buy/Rent Toggle -->
+            <div class="flex bg-gray-200 rounded-full p-1 w-40 mx-auto mt-4">
+                <button
+                    class="flex-1 py-2 text-green-600 font-medium bg-white rounded-full border border-green-600 shadow-sm">Buy</button>
+                <button class="flex-1 py-2 text-gray-500 font-medium">Rent</button>
+            </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div
+            class="bg-white shadow-md  md:text-sm rounded-xl p-4 mx-auto w-[80%] mt-6  md:flex sm:grid sm:grid-cols-2 md:flex md:items-center md:justify-between mt-[-3rem]">
+            <div class="flex flex row space-x-8 justify-between pb-4 md:pb-0">
+                <div>
+                    <p class="text-gray-700 font-semibold">City</p>
+                    <p class="text-green-600">Lahore</p>
+                </div>
+                <div class="md:border-l border-gray-300 md:pl-4">
+                    <p class="text-gray-700 font-semibold">Locations</p>
+                    <p class="text-gray-400">Select Location</p>
+                </div>
+            </div>
+            <div class="flex items-left flex-col md:flex-row md:space-x-12">
+                <div class="md:border-l border-gray-300 md:pl-4">
+                    <p class="text-gray-700 font-semibold">Property Type</p>
+                    <p class="text-green-600">ALL</p>
+                </div>
+                <button
+                    class="bg-green-600 text-white md:px-6 py-2 mt-4 md:mt-0 rounded-md shadow-md hover:bg-green-700 transition-all duration-500 flex flex-row items-center justify-center gap-2">
+                    <i class='bx bx-trending-up text-sm'></i>
+                    View
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- browse properties by city -->
+    <section class="mt-12 px-4 md:px-12">
+        <h1 class="font-bold text-2xl mt-6 pl-2 md:pl-0">Browse properties by city</h1>
+        <div id="browse_projects_by_city"
+            class="mt-6 mb-2 flex flex-row gap-4 overflow-auto scrollbar-custom carousel w-full">
+        </div>
+    </section>
+
+    <section class="py-8 px-4 md:p-12">
+        <div class="max-w-6xl mx-auto mt-8">
+            <h2 class="text-xl font-semibold mb-4">Top Trending Locations</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-yellow-50 p-4 rounded-lg shadow-md">
+                    <div class="flex items-center space-x-2 ">
+                        <span class="bg-yellow-200 text-yellow-800 font-bold px-2 py-1 rounded-full">1</span>
+                        <div>
+                            <h3 class="font-semibold">DHA Defence</h3>
+                            <p class="text-sm text-gray-600">in Lahore</p>
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-2xl font-bold">7.85%</p>
+                            <p class="text-sm text-gray-600">of Total Searches</p>
+                        </div>
+                        <img src="https://static.vecteezy.com/system/resources/previews/021/999/210/non_2x/hand-drawn-curved-line-shape-curved-line-icon-free-png.png"
+                            alt="Trend" class="mt-2  w-18 h-8" />
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-gray-300 text-gray-800 font-bold px-2 py-1 rounded-full">2</span>
+                        <div>
+                            <h3 class="font-semibold">DHA Defence</h3>
+                            <p class="text-sm text-gray-600">in Karachi</p>
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-2xl font-bold">5.23%</p>
+                            <p class="text-sm text-gray-600">of Total Searches</p>
+                        </div>
+                        <img src="https://static.vecteezy.com/system/resources/previews/021/999/190/non_2x/hand-drawn-curved-line-shape-curved-line-icon-free-png.png"
+                            alt="Trend" class="mt-2  w-18 h-8" />
+                    </div>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-lg shadow-md">
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-orange-200 text-orange-800 font-bold px-2 py-1 rounded-full">3</span>
+                        <div>
+                            <h3 class="font-semibold">DHA Defence</h3>
+                            <p class="text-sm text-gray-600">in Islamabad</p>
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-2xl font-bold">4.19%</p>
+                            <p class="text-sm text-gray-600">of Total Searches</p>
+                        </div>
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/009/393/821/small/currency-exchange-graph-transparent-png.png"
+                            alt="Trend" class="mt-2  w-18 h-8" />
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-gray-200 text-gray-800 font-bold px-2 py-1 rounded-full">4</span>
+                        <div>
+                            <h3 class="font-semibold">Scheme 33</h3>
+                            <p class="text-sm text-gray-600">in Karachi</p>
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-2xl font-bold">3.33%</p>
+                            <p class="text-sm text-gray-600">of Total Searches</p>
+                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeqv1jtBXqxKBgoOrRZZI8Y_gDgkGQqVPs7w&s"
+                            alt="Trend" class="mt-2 w-18 h-8" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 px-4 md:p-12 md:text-md text-sm">
+        <div class=" mx-auto p-4">
+            <h2 class="text-xl font-semibold mb-4">Most Searched Locations for Houses</h2>
+            <div class="overflow-x-auto">
+                <table
+                    class="w-full border-collapse border border-2 rounded-b-lg border-gray-300 rounded-lg overflow-hidden">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="p-2 text-left">Rank</th>
+                            <th class="p-2 text-left">Location</th>
+                            <th class="p-2 text-left">Trend</th>
+                            <th class="p-2">Search Percentage (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td class="p-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 flex items-center justify-center bg-yellow-200 text-yellow-700 rounded-full">1</span>
+                            </td>
+                            <td class="p-2 font-semibold">DHA Defence<br><span class="text-gray-500">Lahore</span></td>
+                            <td class="p-2"><img
+                                    src="https://static.vecteezy.com/system/resources/previews/021/999/210/non_2x/hand-drawn-curved-line-shape-curved-line-icon-free-png.png"
+                                    alt="Trend" class="w-14 h-8"></td>
+                            <td class="p-2">7.16%
+                                <div class="w-full bg-gray-200 h-1 mt-1">
+                                    <div class="bg-green-500 h-1 w-7/12"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 flex items-center justify-center bg-gray-300 text-gray-700 rounded-full">2</span>
+                            </td>
+                            <td class="p-2 font-semibold">DHA Defence<br><span class="text-gray-500">Karachi</span></td>
+                            <td class="p-2"><img
+                                    src="https://static.vecteezy.com/system/resources/previews/021/999/248/non_2x/hand-drawn-curved-line-shape-curved-line-icon-free-png.png"
+                                    alt="Trend" class="w-14 h-8"></td>
+                            <td class="p-2">6.31%
+                                <div class="w-full bg-gray-200 h-1 mt-1">
+                                    <div class="bg-green-500 h-1 w-6/12"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="p-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 flex items-center justify-center bg-orange-200 text-orange-700 rounded-full">3</span>
+                            </td>
+                            <td class="p-2 font-semibold">Gulshan-e-Iqbal Town<br><span
+                                    class="text-gray-500">Karachi</span>
+                            </td>
+                            <td class="p-2"><img
+                                    src="https://static.vecteezy.com/system/resources/previews/021/999/210/non_2x/hand-drawn-curved-line-shape-curved-line-icon-free-png.png"
+                                    alt="Trend" class="w-14 h-8"></td>
+                            <td class="p-2">3.69%
+                                <div class="w-full bg-gray-200 h-1 mt-1">
+                                    <div class="bg-green-500 h-1 w-3/12"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="p-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 flex items-center justify-center bg-gray-300 text-gray-700 rounded-full">4</span>
+                            </td>
+                            <td class="p-2 font-semibold">Gulistan-e-Jauhar<br><span
+                                    class="text-gray-500">Karachi</span></td>
+                            <td class="p-2"><img
+                                    src="https://static.vecteezy.com/system/resources/previews/022/221/946/non_2x/hand-drawn-curved-line-shape-curved-line-icon-free-png.png"
+                                    alt="Trend" class="w-14 h-8"></td>
+                            <td class="p-2">3.59%
+                                <div class="w-full bg-gray-200 h-1 mt-1">
+                                    <div class="bg-green-500 h-1 w-3/12"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="p-2 flex items-center gap-2">
+                                <span
+                                    class="w-6 h-6 flex items-center justify-center bg-gray-300 text-gray-700 rounded-full">5</span>
+                            </td>
+                            <td class="p-2 font-semibold">DHA Defence<br><span class="text-gray-500">Islamabad</span>
+                            </td>
+                            <td class="p-2"><img
+                                    src="https://static.vecteezy.com/system/resources/previews/022/221/949/non_2x/hand-drawn-curved-line-shape-curved-line-icon-free-png.png"
+                                    alt="Trend" class="w-14 h-8"></td>
+                            <td class="p-2">3.45%
+                                <div class="w-full bg-gray-200 h-1 mt-1">
+                                    <div class="bg-green-500 h-1 w-3/12"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 px-8 md:px-20">
+        <h2 class="text-xl font-semibold mb-2">About Zameen Trends</h2>
+        <p class="text-gray-700">
+            Discover the latest real estate insights and trends in Pakistan's property market with Zameen Trends.
+            Our comprehensive platform offers in-depth analysis and data on the popularity of properties in different
+            cities and societies across the country, including rental and buying trends for houses, plots, flats, and
+            commercial properties. With Zameen Trends, you can stay up-to-date with user interest and search popularity
+            over time, making it an essential tool for anyone looking to invest in Pakistan's thriving real estate
+            market.
+        </p>
+    </section>
+
+    <section class="px-6 py-8 md:p-16 pb-20">
+        <div class=" mx-auto p-4">
+            <h2 class="text-xl font-semibold mb-4">Frequently Asked Questions (FAQs)</h2>
+            <div class="space-y-2">
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        What are real estate trends in Pakistan?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Real estate trends in Pakistan include increasing demand for housing, rising property values,
+                            and
+                            growth in commercial projects.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        How can Zameen Trends help me stay up-to-date on real estate trends?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Zameen Trends provides data-driven insights on property trends, helping users make informed
+                            investment decisions.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        What types of properties does Zameen Trends cover?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Zameen Trends covers houses, apartments, plots, commercial properties, and rental properties
+                            across
+                            Pakistan.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        Can I access Zameen Trends for free?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Yes, Zameen Trends is free to use and provides valuable real estate insights at no cost.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        How frequently is the data on Zameen Trends updated?
+                    </div>
+                    <div class="collapse-content">
+                        <p>The data on Zameen Trends is updated regularly to ensure users have access to the latest
+                            market
+                            insights.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        Which city is best for property investment in Pakistan?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Major cities like Lahore, Karachi, and Islamabad are among the best for property investments
+                            due to
+                            high demand.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        Which societies are best for real estate investment in Pakistan?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Popular societies include DHA, Bahria Town, and Gulberg, known for their infrastructure and
+                            investment potential.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="footer"></div>
+
+
+    <script>
+        // fetch('Navbar.html')
+        //     .then(response => response.text())
+        //     .then(data => document.getElementById('navbar').innerHTML = data);
+
+
+        // fetch('Footer.html')
+        //     .then(response => response.text())
+        //     .then(data => document.getElementById('footer').innerHTML = data);
+
+        const projectsData = [
+            {
+                city: "Islamabad",
+                projects: 284
+            },
+            {
+                city: "Lahore",
+                projects: 214
+            },
+            {
+                city: "Karachi",
+                projects: 183
+            },
+            {
+                city: "Rawalpindi",
+                projects: 76
+            },
+            {
+                city: "Karachi",
+                projects: 83
+            },
+            {
+                city: "Rawalpindi",
+                projects: 76
+            },
+            {
+                city: "Multan",
+                projects: 43
+            },
+            {
+                city: "Peshawar",
+                projects: 31
+            }
+        ];
+
+        // show browse_projects_by_city 'section'
+        const browse_projects_by_city_section = document.getElementById('browse_projects_by_city');
+        let browse_projects_by_city = ' ';
+        for (let i = 0; i < projectsData.length; i++) {
+            browse_projects_by_city += `
+                    <div  id="slide${i}" class="w-80 p-4  border border-gray-200 rounded-lg shadow-sm bg-gray-50 cursor-pointer carousel-item relative group overflow-hidden ">
+                        <div class="absolute inset-0 opacity-10 group-hover:opacity-90 bg-cover bg-center transition-all duration-500 ease-in-out" style="background-image: url('https://images.pexels.com/photos/2678301/pexels-photo-2678301.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+                            <div class="relative">
+                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-white">${projectsData[i].city}</h3>
+                                <p class="text-gray-600 text-xs group-hover:text-white">${projectsData[i].projects} Projects</p>
+                                <a href="#" class="mt-4 text-blue-500 text-sm font-medium flex items-center gap-1 mt-2">
+                                View Projects <span>➜</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        }
+        browse_projects_by_city_section.innerHTML = browse_projects_by_city;
+
+    </script>
+
+</body>
+
+</html>

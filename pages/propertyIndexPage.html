@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Document</title>
+    <!-- boxicons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- tailwind -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <section>
+        <div class="bg-gradient-to-r from-green-100 to-gray-100 p-20 text-center">
+            <h1 class="text-2xl font-bold text-gray-800">Property Price Trends and Index by Zameen</h1>
+            <p class="text-gray-600 text-sm">Explore the latest price trends and index across various cities and
+                localities in
+                Pakistan</p>
+
+            <!-- Buy/Rent Toggle -->
+            <div class="flex bg-gray-200 rounded-full p-1 w-40 mx-auto mt-4">
+                <button
+                    class="flex-1 py-2 text-green-600 font-medium bg-white rounded-full border border-green-600 shadow-sm">Buy</button>
+                <button class="flex-1 py-2 text-gray-500 font-medium">Rent</button>
+            </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div
+            class="bg-white shadow-md rounded-xl p-4 mx-auto w-11/12 mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 flex items-center justify-between mt-[-3rem]">
+            <div>
+                <p class="text-gray-700 font-semibold">City</p>
+                <p class="text-green-600">Lahore</p>
+            </div>
+            <div>
+                <p class="text-gray-700 font-semibold">Locations</p>
+                <p class="text-gray-400">Select Location</p>
+            </div>
+            <div>
+                <p class="text-gray-700 font-semibold">Property Type</p>
+                <p class="text-green-600">Houses</p>
+            </div>
+            <div>
+                <p class="text-gray-700 font-semibold">Area Size</p>
+                <p class="text-gray-400">Select Area Size</p>
+            </div>
+            <button
+                class="bg-green-600 text-white px-6 py-2 rounded-md shadow-md hover:bg-green-700 transition-all duration-500 flex flex-row items-center justify-center gap-2 col-span-2 md:col-span-1">
+                <i class='bx bx-trending-up text-sm'></i>
+                View
+            </button>
+        </div>
+    </section>
+
+    <section>
+        <div class="w-full py-8 px-4 md:p-20 ">
+            <h2 class="text-lg font-semibold">Average Property Prices in Most Popular Societies Across Pakistan</h2>
+            <div class="flex space-x-10 border-b border-gray-300 mt-8 overflow-x-auto">
+                <button
+                    class="flex items-center text-green-600 font-semibold gap-2 border-b-4 rounded-b-sm border-green-600 pb-2">
+                    <i class='bx bx-home w-4 h-4'></i> Houses
+                </button>
+                <button class="flex items-center text-gray-600 gap-2">
+                    <i class='bx bx-map w-4 h-4'></i> Plots
+                </button>
+                <button class="flex items-center text-gray-600 gap-2">
+                    <i class='bx bx-buildings w-4 h-4'></i> Commercial Plots
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-6">
+                <div class="border border-gray-300 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-700">DHA Defence Lahore</p>
+                    <img src="https://www.pngall.com/wp-content/uploads/8/Trading-Chart.png" alt="Trend"
+                        class="w-full h-12 mt-2">
+                    <p class="font-semibold mt-2">PKR 8.26 Crore</p>
+                    <p class="text-red-500 text-sm">▼ 3% since last year</p>
+                </div>
+                <div class="border border-gray-300 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-700">Bahria Town Karachi</p>
+                    <img src="https://static.vecteezy.com/system/resources/previews/022/659/641/large_2x/3d-growth-stock-diagram-financial-graph-isolated-on-transparent-background-business-candlestick-chart-investment-market-trade-exchange-analysis-and-economy-finance-report-png.png"
+                        alt="Trend" class="w-full h-12 mt-2">
+                    <p class="font-semibold mt-2">PKR 2.33 Crore</p>
+                    <p class="text-red-500 text-sm">▼ 2% since last year</p>
+                </div>
+                <div class="border border-gray-300 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-700">Bahria Town Lahore</p>
+                    <img src="https://static.vecteezy.com/system/resources/previews/012/177/434/non_2x/candlestick-graph-icon-png.png"
+                        alt="Trend" class="w-full h-12 mt-2">
+                    <p class="font-semibold mt-2">PKR 4.25 Crore</p>
+                    <p class="text-red-500 text-sm">▼ 4% since last year</p>
+                </div>
+                <div class="border border-gray-300 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-700">DHA Defence Karachi</p>
+                    <img src="https://static.vecteezy.com/system/resources/previews/022/659/642/non_2x/3d-growth-stock-diagram-financial-graph-isolated-on-transparent-background-business-candlestick-chart-investment-market-trade-exchange-analysis-and-economy-finance-report-png.png"
+                        alt="Trend" class="w-full h-12 mt-2">
+                    <p class="font-semibold mt-2">PKR 15.88 Crore</p>
+                    <p class="text-green-500 text-sm">▲ 3% since last year</p>
+                </div>
+                <div class="border border-gray-300 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-700">Bahria Town Rawalpindi</p>
+                    <img src="https://png.pngtree.com/png-clipart/20221011/original/pngtree-stock-candlestick-finance-png-image_8673603.png"
+                        alt="Trend" class="w-full h-12 mt-2">
+                    <p class="font-semibold mt-2">PKR 5.16 Crore</p>
+                    <p class="text-green-500 text-sm">▲ 10% since last year</p>
+                </div>
+                <div class="border border-gray-300 p-4 rounded-lg shadow-sm">
+                    <p class="text-sm text-gray-700">DHA 9 Town Lahore</p>
+                    <img src="https://png.pngtree.com/png-clipart/20230116/original/pngtree-trading-candle-stick-pattern-char-with-red-green-colors-png-image_8918768.png"
+                        alt="Trend" class="w-full h-12 mt-2">
+                    <p class="font-semibold mt-2">PKR 2.28 Crore</p>
+                    <p class="text-red-500 text-sm">▼ 13% since last year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="px-4 py-8 md:px-20">
+            <h2 class="text-xl font-semibold">Market Overview of Pakistan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
+                <!-- Top Gainers -->
+                <div class="bg-white rounded-lg shadow p-4 border border-gray-300">
+                    <div class="flex items-center mb-4">
+                        <i class='bx bx-trending-up text-green-500 text-2xl'></i>
+                        <h2 class="text-lg font-semibold ml-2">Top Gainers</h2>
+                        <span class="text-gray-500 text-sm ml-2">Feb 2025</span>
+                    </div>
+                    <div class="divide-y divide-gray-300">
+                        <div class="py-3 flex justify-between">
+                            <div>
+                                <p class="font-semibold">Mir Hussainabad - Phase 3, Hyderabad</p>
+                                <p class="text-gray-500 text-sm"><i class='bx bx-home'></i> Residential Plot</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-green-500 font-semibold">▲ 92%</p>
+                                <p class="text-gray-500 text-sm">since last year</p>
+                                <p class="font-semibold">PKR 3.75 Crore</p>
+                            </div>
+                        </div>
+                        <div class="py-3 flex justify-between">
+                            <div>
+                                <p class="font-semibold">Rehmat Ullah Town, Okara</p>
+                                <p class="text-gray-500 text-sm"><i class='bx bx-building-house'></i> Houses</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-green-500 font-semibold">▲ 90%</p>
+                                <p class="text-gray-500 text-sm">since last year</p>
+                                <p class="font-semibold">PKR 2.76 Crore</p>
+                            </div>
+                        </div>
+                        <div class="py-3 flex justify-between">
+                            <div>
+                                <p class="font-semibold">Scheme 33 - Sector 51-A, Karachi</p>
+                                <p class="text-gray-500 text-sm"><i class='bx bx-building'></i> Commercial Plots</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-green-500 font-semibold">▲ 86%</p>
+                                <p class="text-gray-500 text-sm">since last year</p>
+                                <p class="font-semibold">PKR 1.67 Arab</p>
+                            </div>
+                        </div>
+                        <div class="py-3 flex justify-between">
+                            <div>
+                                <p class="font-semibold">Grand City Sector A, Kharian</p>
+                                <p class="text-gray-500 text-sm"><i class='bx bx-home'></i> Residential Plot</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-green-500 font-semibold">▲ 86%</p>
+                                <p class="text-gray-500 text-sm">since last year</p>
+                                <p class="font-semibold">PKR 52.26 Lakh</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Top Losers -->
+                <div class="border border-gray-300 rounded-lg shadow-sm p-4 ">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class='bx bx-trending-down text-red-500 text-xl'></i>
+                        <h2 class="text-lg font-semibold text-red-600">Top Losers</h2>
+                    </div>
+                    <p class="text-gray-500 text-sm">Feb 2025</p>
+                    <div class="mt-2 divide-y divide-gray-200">
+                        <div class="py-2 flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold">Bahria Town Phase 8 Extension, Rawalpindi</p>
+                                <p class="text-gray-500 text-sm"><i class='bx bx-home'></i> Residential Plot</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-red-500 text-sm"><i class='bx bx-down-arrow-alt'></i> 41% since last year
+                                </p>
+                                <p class="font-semibold">PKR 21.89 Lakh</p>
+                            </div>
+                        </div>
+                        <div class="py-2 flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold">Etihad Town Phase 2, Lahore</p>
+                                <p class="text-gray-500 text-sm"><i class='bx bx-home'></i> Residential Plot</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-red-500 text-sm"><i class='bx bx-down-arrow-alt'></i> 37% since last year
+                                </p>
+                                <p class="font-semibold">PKR 61.35 Lakh</p>
+                            </div>
+                        </div>
+                        <div class="py-2 flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold">DHA Valley - Rose Sector, Islamabad</p>
+                                <p class="text-gray-500 text-sm"><i class='bx bx-building'></i> Commercial Plots</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-red-500 text-sm"><i class='bx bx-down-arrow-alt'></i> 36% since last year
+                                </p>
+                                <p class="font-semibold">PKR 84.28 Lakh</p>
+                            </div>
+                        </div>
+                        <div class="py-2 flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold">Soul City, Lahore</p>
+                                <p class="text-gray-500 text-sm"><i class='bx bx-home'></i> Residential Plot</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-red-500 text-sm"><i class='bx bx-down-arrow-alt'></i> 36% since last year
+                                </p>
+                                <p class="font-semibold">PKR 28.01 Lakh</p>
+                            </div>
+                        </div>
+                        <div class="py-2 flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold">DHA Defence - Sector A2, Quetta</p>
+                                <p class="text-gray-500 text-sm"><i class='bx bx-home'></i> Residential Plot</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-red-500 text-sm"><i class='bx bx-down-arrow-alt'></i> 35% since last year
+                                </p>
+                                <p class="font-semibold">PKR 96.3 Lakh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="px-2 py-8 md:p-16 pb-20">
+        <div class=" mx-auto p-4">
+            <h2 class="text-xl font-semibold mb-4">Frequently Asked Questions (FAQs)</h2>
+            <div class="space-y-2">
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        What are real estate trends in Pakistan?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Real estate trends in Pakistan include increasing demand for housing, rising property values,
+                            and
+                            growth in commercial projects.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        How can Zameen Trends help me stay up-to-date on real estate trends?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Zameen Trends provides data-driven insights on property trends, helping users make informed
+                            investment decisions.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        What types of properties does Zameen Trends cover?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Zameen Trends covers houses, apartments, plots, commercial properties, and rental properties
+                            across
+                            Pakistan.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        Can I access Zameen Trends for free?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Yes, Zameen Trends is free to use and provides valuable real estate insights at no cost.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        How frequently is the data on Zameen Trends updated?
+                    </div>
+                    <div class="collapse-content">
+                        <p>The data on Zameen Trends is updated regularly to ensure users have access to the latest
+                            market
+                            insights.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        Which city is best for property investment in Pakistan?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Major cities like Lahore, Karachi, and Islamabad are among the best for property investments
+                            due to
+                            high demand.</p>
+                    </div>
+                </div>
+
+                <div class="collapse collapse-arrow border border-gray-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-lg font-medium">
+                        Which societies are best for real estate investment in Pakistan?
+                    </div>
+                    <div class="collapse-content">
+                        <p>Popular societies include DHA, Bahria Town, and Gulberg, known for their infrastructure and
+                            investment potential.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="footer">
+
+    </div>
+
+    <script>
+        // fetch('Navbar.html')
+        //     .then(response => response.text())
+        //     .then(data => document.getElementById('navbar').innerHTML = data);
+
+
+        // fetch('Footer.html')
+        //     .then(response => response.text())
+        //     .then(data => document.getElementById('footer').innerHTML = data);
+
+
+    </script>
+
+</body>
+
+</html>

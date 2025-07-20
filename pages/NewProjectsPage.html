@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewProjectPage</title>
+    <!-- boxicons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- tailwind -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <section class="relative w-full h-[350px] bg-cover bg-center flex items-center justify-center"
+        style="background-image: url('https://th.bing.com/th/id/R.48aa02661fa26cce2e0cb60b16dddf15?rik=xzizvohaS1J%2fsQ&pid=ImgRaw&r=0');">
+        <div class="text-center text-white absolute top-[30%]">
+            <h2 class="text-3xl font-bold">Find New Projects in Pakistan</h2>
+            <p class="text-lg">Find exciting new real estate projects and investment opportunities</p>
+        </div>
+
+        <div
+            class="absolute bottom-[-390px] md:bottom-[-200px] lg:bottom-[-100px] w-[90%] md:w-[80%] bg-white shadow-lg rounded-lg p-6 px-16">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-sm">
+                <div class="border-b border-gray-300">
+                    <h4 class="font-semibold">City</h4>
+                    <p class="text-green-500 cursor-pointer">All</p>
+                </div>
+                <div class="border-b border-gray-300">
+                    <h4 class="font-semibold">Property Type</h4>
+                    <p class="text-green-500 cursor-pointer">All</p>
+                </div>
+                <div class="border-b border-gray-300">
+                    <h4 class="font-semibold">Budget Range</h4>
+                    <p class="text-gray-500">0 - Any</p>
+                </div>
+                <div class="border-b border-gray-300">
+                    <h4 class="font-semibold">Area Range</h4>
+                    <p class="text-gray-500">0 - Any</p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button class="bg-green-500 text-white px-6 py-2 rounded-lg flex items-center gap-2">
+                        <i class='bx bx-search text-xl'></i> Search
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 text-sm">
+                <div class="border-b mt-6 border-gray-300">
+                    <h4 class="font-semibold">Project Title</h4>
+                    <p class="text-gray-500">Select Projects</p>
+                </div>
+                <div class="border-b mt-6 border-gray-300">
+                    <h4 class="font-semibold">Developer Title</h4>
+                    <p class="text-gray-500">Select Developers</p>
+                </div>
+                <div class="flex items-center justify-between p-4 bg-green-100 rounded-lg w-full md:w-auto">
+                    <div class="flex flex-col gap-2">
+                        <p class="text-gray-600 text-xs">Marketed by</p>
+                        <p class="text-green-500 font-bold">zameen.com</p>
+                    </div>
+                    <!-- Toggle Switch -->
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer">
+                        <div
+                            class="w-11 h-6 bg-gray-300 peer-focus:ring-2 peer-focus:ring-green-300 rounded-full peer dark:bg-gray-400 peer-checked:after:translate-x-full peer-checked:after:border-white peer-checked:bg-green-500 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all">
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- browse projects by category -->
+    <section class="pt-[450px] md:pt-60 lg:pt-40 px-8">
+        <h1 class="font-bold text-2xl">Browse Projects by Category</h1>
+        <div id="browse_projects_by_category"
+            class="mt-6 flex flex-row gap-4 overflow-auto scrollbar-custom carousel w-full">
+        </div>
+    </section>
+
+    <!-- discover new projects section -->
+    <section class="mt-12 px-4 md:px-8 ">
+        <h1 class="font-bold text-2xl mt-6">Discover new projects</h1>
+        <div id="discover_new_projects"
+            class="mt-6 mb-2 flex flex-row gap-2 overflow-auto scrollbar-custom carousel w-full"> </div>
+    </section>
+
+
+    <!-- browse properties by city -->
+    <section class="mt-12 px-4 md:px-8 pb-20">
+        <h1 class="font-bold text-2xl mt-6">Browse properties by city</h1>
+
+        <div id="browse_projects_by_city"
+            class="mt-6 mb-2 flex flex-row gap-4 overflow-auto scrollbar-custom carousel w-full">
+        </div>
+    </section>
+
+    <!-- footer -->
+    <section id="footer">
+    </section>
+
+
+
+    <script>
+        // fetch('Navbar.html')
+        //     .then(response => response.text())
+        //     .then(data => document.getElementById('navbar').innerHTML = data);
+
+        // fetch('Footer.html')
+        //     .then(response => response.text())
+        //     .then(data => document.getElementById('footer').innerHTML = data);
+
+        const propertyCategories = [
+            { category: "Flats", projects: 506, icon: "bx-buildings", color: "pink" },
+            { category: "Plots", projects: 441, icon: "bx-map", color: "blue" },
+            { category: "Shops", projects: 337, icon: "bx-store", color: "green" },
+            { category: "Houses", projects: 168, icon: "bx-home", color: "purple" },
+            { category: "Commercial Plots", projects: 158, icon: "bx-buildings", color: "pink" },
+            { category: "Offices", projects: 106, icon: "bxs-home", color: "blue" },
+        ];
+
+        // show th brose projects by category sections
+        const browse_projects_by_category = document.getElementById('browse_projects_by_category');
+        let content = '';
+        for (let i = 0; i < propertyCategories.length; i++) {
+            content += `
+            <div id="slide${i}" class="border border-gray-300 rounded-lg p-4 flex items-center gap-4 w-64 shadow-sm hover:shadow-md transition carousel-item relative  group hover:cursor-pointer hover:border-${propertyCategories[i].color}-400 transition-all duration-500 ease-in-out">
+                <div class="bg-${propertyCategories[i].color}-50 p-3 rounded-lg border border-${propertyCategories[i].color}-100 group-hover:border-${propertyCategories[i].color}-400 transition-all duration-500 ease-in-out">
+                    <i class='bx ${propertyCategories[i].icon} text-${propertyCategories[i].color}-300 text-3xl'></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-900">${propertyCategories[i].category}</h3>
+                    <p class="text-gray-500 text-sm">${propertyCategories[i].projects} Projects</p>
+                </div>
+            </div>
+        `;
+        }
+        browse_projects_by_category.innerHTML = content;
+
+
+        const projects = [
+            {
+                name: "Urban Square",
+                location: "Mumtaz City, Islamabad",
+                types: "Flats, Offices, Shops",
+                price: "PKR 50.11 Lakh",
+                image: "https://images.pexels.com/photos/2119714/pexels-photo-2119714.jpeg?auto=compress&cs=tinysrgb&w=600"
+            },
+            {
+                name: "Sania Heights",
+                location: "Saadi Town, Karachi",
+                types: "Flats",
+                price: "PKR 45.15 Lakh",
+                image: "https://images.unsplash.com/photo-1452626212852-811d58933cae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2UlMjB3JTNENjAwfGVufDB8fDB8fHww"
+            },
+            {
+                name: "ARCADIA",
+                location: "Islamabad Expressway, Islamabad",
+                types: "Flats",
+                price: "PKR 1.34 Crore",
+                image: "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI5fHx8ZW58MHx8fHx8"
+            },
+            {
+                name: "Regent One",
+                location: "Islamabad, Islamabad",
+                types: "Flats",
+                price: "PKR 1.73 Crore",
+                image: "https://images.unsplash.com/photo-1483719728008-b73ef3e9956b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8"
+            }
+        ];
+
+        // show discover_new_projects 'section'
+        const discover_new_projects_section = document.getElementById('discover_new_projects');
+        let discover_new_projects = '';
+        for (let i = 0; i < 4; i++) {
+            discover_new_projects += `
+                    <div id="slide${i}" class="flex items-center  roverflow-hidden h-[25rem] w-[25rem]  carousel-item relative">
+                    <div class="relative w-[350px] h-full rounded-lg overflow-hidden">
+                        <img src=${projects[i].image} alt="Property Image" class="w-full h-full object-cover rounded-lg">
+                        <div class="absolute inset-0 bg-black opacity-30"></div>
+                    </div>
+                
+                    <!-- Trending Badge -->
+                    <div class="absolute top-3 left-3 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                        <i class='bx bx-trending-up'></i>
+                        TRENDING
+                    </div>
+                
+                    <!-- Content -->
+                    <div class="absolute bottom-5 left-3 text-white">
+                        <h3 class="text-lg font-bold">${projects[i].name}</h3>
+                        <p class="text-sm flex items-center gap-1">
+                            <i class='bx bx-map text-green-400'></i> ${projects[i].location}
+                        </p>
+                        <p class="text-sm">${projects[i].types}</p>
+                
+                        <!-- Price Tag -->
+                        <div class="mt-2 bg-green-200 text-green-700 font-semibold px-3 py-1 rounded-full inline-block text-sm">
+                            ${projects[i].price}
+                        </div>
+                    </div>
+                </div>
+                `;
+        }
+        discover_new_projects_section.innerHTML = discover_new_projects;
+
+        const projectsData = [
+            {
+                city: "Islamabad",
+                projects: 284
+            },
+            {
+                city: "Lahore",
+                projects: 214
+            },
+            {
+                city: "Karachi",
+                projects: 183
+            },
+            {
+                city: "Rawalpindi",
+                projects: 76
+            },
+            {
+                city: "Karachi",
+                projects: 83
+            },
+            {
+                city: "Rawalpindi",
+                projects: 76
+            },
+            {
+                city: "Multan",
+                projects: 43
+            },
+            {
+                city: "Peshawar",
+                projects: 31
+            }
+        ];
+
+        // show browse_projects_by_city 'section'
+        const browse_projects_by_city_section = document.getElementById('browse_projects_by_city');
+        let browse_projects_by_city = ' ';
+        for (let i = 0; i < projectsData.length; i++) {
+            browse_projects_by_city += `
+                    <div  id="slide${i}" class="w-80 p-4  border border-gray-200 rounded-lg shadow-sm bg-gray-50 cursor-pointer carousel-item relative group overflow-hidden ">
+                        <div class="absolute inset-0 opacity-10 group-hover:opacity-90 bg-cover bg-center transition-all duration-500 ease-in-out" style="background-image: url('https://images.pexels.com/photos/2678301/pexels-photo-2678301.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+                            <div class="relative">
+                                <h3 class="text-lg font-semibold text-gray-900 group-hover:text-white">${projectsData[i].city}</h3>
+                                <p class="text-gray-600 text-xs group-hover:text-white">${projectsData[i].projects} Projects</p>
+                                <a href="#" class="mt-4 text-blue-500 text-sm font-medium flex items-center gap-1 mt-2">
+                                View Projects <span>➜</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        }
+        browse_projects_by_city_section.innerHTML = browse_projects_by_city;
+    </script>
+</body>
+
+</html>

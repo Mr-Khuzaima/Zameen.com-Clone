@@ -1,0 +1,151 @@
+
+.A9 {
+    background-color: #fafafa;
+    border: 1px solid #efefef;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+}
+
+@media (max-width: 1100px) {
+    .A9 {
+        padding: 2rem;
+    }
+}
+
+.A10 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    transition: max-width 0.25s ease-in;
+}
+
+@media (max-width: 1366px) {
+    .A10 {
+        max-width: 1100px;
+    }
+}
+
+.A11 {
+    color: #444;
+    font-size: 1.596rem;
+    font-weight: 700;
+    height: 3rem;
+    letter-spacing: normal;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.A12 {
+    display: grid;
+    grid-row-gap: 0.3rem;
+    grid-column-gap: 4.8rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1100px) {
+    .A12 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.A13 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.A13:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.A1 {
+    position: relative;
+}
+
+.A2.A3 {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.A3 {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.A3.A2 {
+    background-color: #f2f2f2;
+    opacity: 0.6;
+}
+
+.A4 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    transition: max-width 0.25s ease-in;
+    margin-top: 4rem;
+}
+
+@media (max-width: 1366px) {
+    .A4 {
+        max-width: 1100px;
+    }
+}
+
+.A5 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    transition: max-width 0.25s ease-in;
+    background-color: #fbfbfb;
+    border: 0.1rem solid #eaeaea;
+    padding: 1.5rem 2rem;
+}
+
+@media (max-width: 1366px) {
+    .A5 {
+        max-width: 1100px;
+    }
+}
+
+.A6 {
+    font-size: 2.394rem;
+    margin-bottom: 0;
+    color: #222;
+    font-weight: 700;
+}
+
+.A7 {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.A8 {
+    border: 0.1rem solid #eaeaea;
+    font-size: 1.4rem;
+    padding: 2rem;
+}
+
+.A8 p {
+    margin-bottom: 1rem;
+}
+
+.A8 a {
+    font-weight: 700;
+    color: #33a137;
+}
+
+.A8 b {
+    color: #33a137;
+}
+
+.A8 h3 {
+    font-size: 1.596rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,536 @@
+.search-container {
+
+    margin: 15px auto;
+    padding: 20px;
+    background: rgba(122, 114, 114, 0.9);
+    /* Semi-transparent white */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-image: url('baner.webp');
+    /* Reference the image directly */
+    background-size: cover;
+    /* Ensure the background image covers the entire container */
+    background-position: center;
+    /* Center the background image */
+    height: 500px;
+    top: -50px;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    /* Adds spacing between nested elements */
+}
+
+.search-title {
+    font-size: 24px;
+    color: #f5ebeb;
+    margin-bottom: 20px;
+
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.search-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.search-type {
+    background: rgba(39, 39, 39, 0.5);
+    /* Semi-transparent green */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100px;
+}
+
+.search-type.active {
+    background: #fafcfa;
+    color: #0e0d0d;
+}
+
+.projects-link {
+    color: #dfebdf;
+    background: rgba(39, 39, 39, 0.5);
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 60px;
+    height: 15px;
+    border-radius: 4px;
+}
+
+.search-form {
+
+    width: 600px;
+    padding: 20px;
+    background: rgba(39, 39, 39, 0.5);
+    /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.basic-options {
+    display: flex;
+
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.advanced-options {
+    display: flex;
+
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px; display: none;
+}
+
+.filter {
+
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background: #f8f6f6;
+}
+
+.filter label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+    text-align: left;
+    padding-left: 12px;
+}
+
+
+.filter select {
+    padding: 8px;
+    border: 1px solid #fcf9f9;
+
+}
+
+.filter1 {
+
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    background: #f8f6f6;
+}
+
+.filter1 label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+    text-align: left;
+    padding-left: 12px;
+}
+
+.filter1 input,
+.filter1 select {
+    padding: 8px;
+    border: 1px solid #fcf9f9;
+
+}
+
+.find-button {
+    width: 25%; background-color: #09a015; color: #dfebdf;
+}
+
+.fileter-input-pric {
+    display: flex;
+    flex-direction: row;
+}
+
+.fileter-input-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.fileter-areainput-min,.fileter-areainput-max,.fileter-input-min,
+.fileter-input-max {
+    width: 47%;
+}
+
+.filter-droptown {
+    display: none;
+    position: absolute;
+   background-color: #ccc; margin-top: 60px; width: 200px ; text-align: center;
+} 
+
+.filter-price {
+    position: relative;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background: #f8f6f6;
+    gap: 10px;
+}
+
+.filter-droptown-inner { 
+    
+    display: flex;   
+    flex-direction: column;  
+}
+
+.filter-droptown1 {
+    display: flex; 
+    flex-direction: row; gap: 7px;  
+    
+}
+
+.filter-droptown1-min {
+    width: 48%;
+    display: flex;
+    flex-direction: column;  
+}
+
+.filter-droptown1-max {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-droptown1-min div, .filter-droptown1-max div {
+    margin: 5px 0;
+  }
+
+  .filter-droptown1-min-down, .filter-droptown1-max-down {
+    
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+  }
+
+  .filter-droptown1-min-down div, .filter-droptown1-max-down div {
+    padding: 5px;
+    cursor: pointer;
+    text-align: center; color: #0e0d0d;
+  }
+
+  .filter-droptown1-min-down div:hover, .filter-droptown1-max-down div:hover {
+    background: #007bff;
+    color: white;
+  }
+
+
+.filter-droptown {
+    display: none;
+    position: absolute;
+   background-color: #ccc; margin-top: 60px; width: 200px ; text-align: center;
+} 
+
+.filter-price {
+    position: relative;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background: #f8f6f6;
+    gap: 10px;
+}
+
+.filter-droptown-inner { 
+    
+    display: flex;   
+    flex-direction: column;  
+}
+
+.filter-droptown1 {
+    display: flex; 
+    flex-direction: row; gap: 7px;  
+    
+}
+
+.filter-droptown1-min {
+    width: 48%;
+    display: flex;
+    flex-direction: column;  
+}
+
+.filter-droptown1-max {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-droptown1-min div, .filter-droptown1-max div {
+    margin: 5px 0;
+  }
+
+  .filter-droptown1-min-down, .filter-droptown1-max-down {
+    
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+  }
+
+  .filter-droptown1-min-down div, .filter-droptown1-max-down div {
+    padding: 5px;
+    cursor: pointer;
+    text-align: center; color: #0e0d0d;
+  }
+
+  .filter-droptown1-min-down div:hover, .filter-droptown1-max-down div:hover {
+    background: #007bff;
+    color: white;
+  }
+
+
+.filter-droptown-area {
+    display: none;
+    position: absolute;
+   background-color: #ccc; margin-top: 60px; width: 200px ; text-align: center;
+} 
+
+.filter-area {
+    position: relative;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background: #f8f6f6;
+    gap: 10px;
+}
+
+.filter-droptown-inner-area { 
+    
+    display: flex;   
+    flex-direction: column;  
+}
+
+.filter-droptown1-area {
+    display: flex; 
+    flex-direction: row; gap: 7px;  
+    
+}
+
+.filter-droptown1-min-area {
+    width: 48%;
+    display: flex;
+    flex-direction: column;  
+}
+
+.filter-droptown1-max-area {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-droptown1-min-area div, .filter-droptown1-max-area div {
+    margin: 5px 0;
+  }
+
+  .filter-droptown1-min-down-area, .filter-droptown1-max-down-area {
+    
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+  }
+
+  .filter-droptown1-min-down-area div, .filter-droptown1-max-down-area div {
+    padding: 5px;
+    cursor: pointer;
+    text-align: center; color: #0e0d0d;
+  }
+
+  .filter-droptown1-min-down-area div:hover, .filter-droptown1-max-down-area div:hover {
+    background: #007bff;
+    color: white;
+  }
+
+.toggle-options{
+    display: flex; gap: 10px;
+}
+.toggle-button{color: #ccc;}
+.toggle-options-links{
+    display: flex; gap: 10px;  color: rgb(81, 81, 248);
+}
+
+
+/* Show the dropdown content */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(154, 155, 154, 0.5);
+    display: none;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+
+.currency-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    display: none;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.currency-dropdown {
+    margin-top: 20px;
+}
+
+.dropdown-trigger {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-content {
+    margin-top: 10px;
+    height: 100px;
+    overflow-y: auto;
+    display: none;
+    
+}
+
+.currency-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.currency-option:hover {
+    background-color: #f1f1f1;
+}
+
+.save-button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
+}
+
+/* Show the dropdown content */
+.dropdown-trigger.active + .dropdown-content {
+    display: block;
+}
+
+/* Show the dropdown content */
+/* Overlay for the Area Dialog */
+.overlay-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(197, 16, 16, 0.5);
+    display: none;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+/* Area Dialog Styles */
+.area-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    display: none;
+}
+
+/* Header for the Area Dialog */
+.dialog-header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Close button in the Area Dialog */
+.close-button-area {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Area Dropdown Styles */
+.area-dropdown {
+    margin-top: 20px;
+}
+
+.dropdown-trigger-area {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-content-area {
+    margin-top: 10px;
+    height: 100px;
+    overflow-y: auto;
+    display: none;
+}
+
+/* Area Options */
+.area-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.area-option:hover {
+    background-color: #f1f1f1;
+}
+
+/* Save Button in the Area Dialog */
+.save-button-area {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.save-button-area:hover {
+    background-color: #0056b3;
+}
+
+
+/* Show the dropdown content when .dropdown-trigger-area is active */
+.dropdown-trigger-area.active + .dropdown-content-area {
+    display: block;
+}
+

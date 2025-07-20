@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link pages</title>
+    <link rel="stylesheet" href="../css/mainpage.css">
+    <link rel="stylesheet" href="../css/link.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/script.js"></script>
+</head>
+<body>
+<header>
+    <div class="frontm">
+        <div aria-label="Profile and settings navigation bar" class="navbar">
+            <div class="navbar-left">
+                <a href="/" title="Home" class="navbar-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path fill="#FFF"
+                            d="M29.3 10.4V5h-7.5L16 .8.1 12.3v8.2l2.2-2.2v12.9H12v-7.8h8v7.8h9.7V18.3l2.2 2.2v-8.3l-2.6-1.8z">
+                        </path>
+                    </svg>
+                </a>
+                <div class="navbar-links">
+                    <a href="" class="nav-link" title="Properties">Properties</a>
+                    <a href="map.html" title="Plot Finder" class="nav-link">Plot Finder</a>
+                    <a href="" title="Area Guides" class="nav-link">Area Guides</a>
+                    <div class="dropdownf">
+                        <a class="dropdown-triggerf">
+                            <span>Tools</span>
+                        </a>
+                        <div aria-haspopup="true" class="dropdown-contentf">
+                            <ul class="dropdown-listf">
+                                <li class="dropdown-list-itemf"><a href="HomeLoanCalculatorPage.html">Home Loan Calculator</a>
+                                </li>
+                                <li class="dropdown-list-itemf"><a href="areaUnitConverterPage.html">Area Unit Converter</a>
+                                </li>
+                                <li class="dropdown-list-itemf"><a href="linkpages.html">Land Record Pages</a></li>
+                                <li class="dropdown-list-itemf"><a href="ConstructionCostCalculatorPage.html">Construction
+                                        Cost Calculator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdownf">
+                        <a class="dropdown-triggerf">
+                            <span>More  </span>
+                        </a>
+                        <div aria-haspopup="true" class="dropdown-contentf">
+                            <ul class="dropdown-listf">
+                                <li class="dropdown-list-itemf"><a href="blog.html">Blog</a></li>
+                                <li class="dropdown-list-itemf"><a href="map.html">Maps</a></li>
+                                <li class="dropdown-list-itemf"><a href="forum.html">Forum</a></li>
+                                <li class="dropdown-list-itemf"><a href="propertyIndexPage.html">Index</a></li>
+                                <li class="dropdown-list-itemf"><a href="propertyTrendsPage.html">Trends</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <form>
+                    <div class="search-bar search-bar-input-wrap">
+                        <input value="" class="search-input" placeholder="Property ID">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="search-icon">
+                            <path
+                                d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0a4.5 4.5 0 1 1-.01-8.99A4.5 4.5 0 0 1 9.5 14z">
+                            </path>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                        </svg>
+                    </div>
+                </form>
+                <a href="addproperty.html" class="add-property-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="add-property-icon" viewBox="0 0 32 32">
+                        <path
+                            d="M16-.1a2.8 2.8 0 0 0-2.8 2.8v10.4H2.8c-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8h10.4v10.4c0 1.6 1.3 2.8 2.8 2.8s2.8-1.3 2.8-2.8V18.8h10.4c1.6 0 2.8-1.3 2.8-2.8s-1.3-2.8-2.8-2.8H18.8V2.8c0-1.6-1.2-2.9-2.8-2.9z">
+                        </path>
+                    </svg>
+                    <span class="add-property-text">Add Property</span>
+                </a>
+                
+                <span class="urdu-text">اردو</span>
+                <img src="../images/pakistaniflag.svg" alt="Pakistan Flag" class="flag-icon" />
+                <i class="fas fa-cog settings-icon"></i>
+                <div class="sign" onclick="showLoginl()">  <a href="javascript:void(0);">  <img src="../images/login_icon.svg" alt="logo" width="20" height="25"></a>
+                </div>
+
+            </div>
+        </div>
+        <div class="container3">
+            <!-- Logo Div -->
+            <div class="logoz">
+                <a><img src="../images/logo.png" alt="logo" width="60" height="25"></a>
+            </div>
+
+            <!-- Dropdown Container Div -->
+            <div class="dropdown-container3">
+                <div class="dropdown3">
+                    <!-- Button -->
+                    <div id="dropdownButton3" class="dropdown-button3">BUY <img src="../images/Gratersign.jpg" alt=" sign"
+                            width="12" height="12"></a> </div>
+                    <!-- Dropdown Content -->
+                    <div id="dropdownContent3" class="dropdown-content3">
+                        <a href="HomePage.html">HOME </a>
+                        <a href="NewProjectsPage.html">PLOTS</a>
+                        <a href="NewProjectsPage.html">COMMERCIAL</a>
+                    </div>
+                </div>
+            </div>
+            <div class="link3"> <a href="HomePage.html">| RENT </a>
+                <a href="agents.html">| AGENTS</a>
+                <a href="NewProjectsPage.html">| NEW PROJECTS</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div style="margin-top: 1%;"></div>
+<section class="relative w-full h-[350px] bg-cover bg-center flex items-center justify-center"
+        style="background-image: url('https://th.bing.com/th/id/R.48aa02661fa26cce2e0cb60b16dddf15?rik=xzizvohaS1J%2fsQ&pid=ImgRaw&r=0');">
+        <div class="text-center text-white absolute top-[30%]">
+            <h2 class="text-3xl font-bold">HS Builders</h2>
+            <p class="text-lg">Find exciting new real estate projects and investment opportunities</p>
+        </div>
+
+        <!-- Search Form Positioned Above Image -->
+        <div class="absolute bottom-[-90px] w-[80%] bg-white shadow-lg rounded-lg p-6 px-16">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-sm">
+                <div class="border-b">
+                    <h4 class="font-semibold">City</h4>
+                    <p class="text-green-500 cursor-pointer">All</p>
+                </div>
+                <div class="border-b">
+                    <h4 class="font-semibold">Property Type</h4>
+                    <p class="text-green-500 cursor-pointer">All</p>
+                </div>
+                <div class="border-b">
+                    <h4 class="font-semibold">Budget Range</h4>
+                    <p class="text-gray-500">0 - Any</p>
+                </div>
+                <div class="border-b">
+                    <h4 class="font-semibold">Area Range</h4>
+                    <p class="text-gray-500">0 - Any</p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button class="bg-green-500 text-white px-6 py-2 rounded-lg flex items-center gap-2">
+                        <i class='bx bx-search text-xl'></i> Search
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-6 text-sm">
+                <div class="border-b mt-6">
+                    <h4 class="font-semibold">Project Title</h4>
+                    <p class="text-gray-500">Select Projects</p>
+                </div>
+                <div class="border-b mt-6">
+                    <h4 class="font-semibold">Developer Title</h4>
+                    <p class="text-gray-500">Select Developers</p>
+                </div>
+                <div class="flex items-center justify-between p-4 bg-green-100 rounded-lg w-full md:w-auto">
+                    <div class="flex flex-col gap-2">
+                        <p class="text-gray-600 text-xs">Marketed by</p>
+                        <p class="text-green-500 font-bold">zameen.com</p>
+                    </div>
+                    <!-- Toggle Switch -->
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer">
+                        <div
+                            class="w-11 h-6 bg-gray-300 peer-focus:ring-2 peer-focus:ring-green-300 rounded-full peer dark:bg-gray-400 peer-checked:after:translate-x-full peer-checked:after:border-white peer-checked:bg-green-500 after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all">
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <section class="pt-40 px-8">
+      <h1 class="font-bold text-2xl">Browse Projects by Category</h1>
+      <div id="browse_projects_by_category"
+          class="mt-6 flex flex-row gap-4 overflow-auto scrollbar-custom carousel w-full">
+      </div>
+  </section>
+
+  <!-- discover new projects section -->
+  <section class="mt-12 px-8">
+      <h1 class="font-bold text-2xl mt-6">Discover new projects</h1>
+      <div id="discover_new_projects"
+          class="mt-6 mb-2 flex flex-row gap-2 overflow-auto scrollbar-custom carousel w-full"> </div>
+  </section>
+
+
+  <!-- browse properties by city -->
+  <section class="mt-12 px-8">
+      <h1 class="font-bold text-2xl mt-6">Browse properties by city</h1>
+
+      <div id="browse_projects_by_city"
+          class="mt-6 mb-2 flex flex-row gap-4 overflow-auto scrollbar-custom carousel w-full">
+      </div>
+
+  </section>
+
+<section> 
+
+<div class="A1" style="margin-top: 2%;">
+      <div class="A2 A3" aria-label="Loading overlay"></div>
+      <div class="A4">
+          <div class="A5"><h2 class="A6"></h2></div>
+          <div class="A7" aria-label="Area Guide">
+              <div>
+                  <div style="display: block">
+                      <div class="">
+                          <div class="A8">
+                              <h3>House for Sale in Quetta</h3>
+                              <div>
+                                  <p>
+                                      Situated at the foothills of mountains, Quetta is the
+                                      capital of Balochistan — the most deprived province of
+                                      Pakistan, which is now gradually becoming an economic
+                                      hub for trade and commerce activities.
+                                  </p>
+
+                                  <p>
+                                      <strong>What are the types of Houses for Sale in Quetta?</strong>
+                                  </p>
+
+                                  <p>
+                                      Previously, the city of Quetta lacked basic
+                                      infrastructural development, but this has recently
+                                      evolved by bringing in several profit-oriented
+                                      residential projects in its real estate market.
+                                  </p>
+
+                                  <table border="1" cellspacing="0">
+                                      <tbody>
+                                          <tr>
+                                              <td colspan="2">
+                                                  <strong>Types of Houses for Sale in Quetta</strong>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td><p>5 Marla</p></td>
+                                              <td><p>10 Marla</p></td>
+                                          </tr>
+                                          <tr>
+                                              <td><p>1 Kanal</p></td>
+                                              <td><p>2 Kanal</p></td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+
+                                  <p>
+                                      <strong>What are the prices of Houses for Sale in Quetta?</strong>
+                                  </p>
+
+                                  <table border="1" cellspacing="0">
+                                      <tbody>
+                                          <tr>
+                                              <td colspan="2">
+                                                  <strong>Sales Price Trend for Houses in Quetta</strong>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td><p>5 Marla</p></td>
+                                              <td>PKR 30 lakh — PKR 1 crore</td>
+                                          </tr>
+                                          <tr>
+                                              <td><p>10 Marla</p></td>
+                                              <td>PKR 60 lakh — PKR 2 crore</td>
+                                          </tr>
+                                          <tr>
+                                              <td><p>1 Kanal</p></td>
+                                              <td>PKR 2 crore — PKR 2.5 crore</td>
+                                          </tr>
+                                          <tr>
+                                              <td><p>2 Kanal</p></td>
+                                              <td>PKR 5 crore — PKR 14 crore</td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+
+                                  <p>
+                                      <strong>Why Invest in the Real Estate of Quetta?</strong>
+                                  </p>
+
+                                  <p>
+                                      The real estate market of Quetta is constantly
+                                      flourishing and expanding following the tight security
+                                      protocols introduced by the government.
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div> 
+</section>
+<section>
+  <div class="A9">
+      <div class="A10">
+          <h3 class="A11">Popular searches</h3>
+          <div class="A12">
+              <a href="/s/new-houses-for-sale-in-quetta/" title="New Houses For Sale in Quetta" class="A13">New Houses For Sale in Quetta</a>
+              <a href="/s/double-story-houses-for-sale-in-quetta/" title="Double Story Houses For Sale in Quetta" class="A13">Double Story Houses For Sale in Quetta</a>
+              <a href="/s/furnished-houses-for-sale-in-quetta/" title="Furnished Houses For Sale in Quetta" class="A13">Furnished Houses For Sale in Quetta</a>
+              <a href="/s/single-story-houses-for-sale-in-quetta/" title="Single Story Houses For Sale in Quetta" class="A13">Single Story Houses For Sale in Quetta</a>
+              <a href="/s/low-price-houses-for-sale-in-quetta/" title="Low Price Houses For Sale in Quetta" class="A13">Low Price Houses For Sale in Quetta</a>
+          </div>
+      </div>
+  </div>
+</section>
+<footer>
+      <div class="main-wrapper">
+        <div class="full-width">
+          </div>
+        </div>
+      </div>
+      <img style="width: 100%;" src="../images/playstore.png">
+      
+      <div class="partners-section">
+        <div class="full-width">
+          <div class="container-fluid" style="padding-left: 60px;">
+            <div class="content-block">
+              <div class="heading-text">Our Home Partners</div>
+              <div class="partner-list">
+                <span class="partner-logo-container">
+                  <img
+                    src="../images/upfooter.svg"
+                    alt="HBFC"
+                    class="partner-logo"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-container">
+        <div class="full-width">
+          <div class="container-fluid" style="padding-left: 70px;" >
+            <div class="footer-column">
+              <div class="column-title">Company</div>
+              <a href="about1.html" class="footer-link" aria-label="About us">About us</a>
+              <a href="contact.html" class="footer-link" aria-label="Contact us">Contact us</a>
+              <a href="job.html" class="footer-link" aria-label="Jobs">Jobs</a>
+              <a href="help.html" class="footer-link" aria-label="Help and support">Help &amp; Support</a>
+              <a href="advertise.html" class="footer-link" aria-label="Advertise on zameen">Advertise on Zameen</a>
+              <a href="terms.html" class="footer-link" aria-label="Terms">Terms of Use</a>
+            </div>
+            <div class="footer-column">
+              <div class="column-title">Connect</div>
+              <a href="blog.html" class="footer-link" aria-label="Blog">Blog</a>
+              <a href="news.html" class="footer-link" aria-label="News">News</a>
+              <a href="forum.html" class="footer-link" aria-label="Forum">Forum</a>
+              <a href="expo.html" class="footer-link" aria-label="Expo">Expo</a>
+              <a href="agents.html" class="footer-link" aria-label="Real estate agents">Real Estate Agents</a>
+              <a href="addproperty.html" class="footer-link" aria-label="Add property">Add Property</a>
+            </div>
+            <div class="footer-column">
+              <div class="column-title">Head Office</div>
+              <div class="footer-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icon-default">
+                  <path d="M25.6 4.8A12.1 12.1 0 0 0 6.4 19.5L16 32l9.6-12.6a12 12 0 0 0 0-14.6zm-9.6.7c3.5 0 6.3 2.8 6.3 6.3s-2.8 6.3-6.3 6.3-6.3-2.8-6.3-6.3 2.8-6.3 6.3-6.3z"/>
+                </svg>
+                <div>
+                  <div class="address-line">Pearl One, 94-B/I, MM Alam Road,</div>
+                  <div class="address-line">Gulberg III, Lahore, Pakistan</div>
+                </div>
+              </div>
+              <div class="footer-link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  class="icon-default"
+                >
+                  <path d="M13.3 10.3A7.6 7.6 0 0 1 11 10a.7.7 0 0 0-.7.1l-1 1.4a10.1 10.1 0 0 1-4.6-4.6L6 5.7A.7.7 0 0 0 6 5a7.4 7.4 0 0 1-.3-2.3A.7.7 0 0 0 5 2H2.8c-.4 0-.8.2-.8.7A11.4 11.4 0 0 0 13.3 14a.7.7 0 0 0 .7-.8V11a.7.7 0 0 0-.7-.6z"/>
+                </svg>
+                <div>
+                  <div class="address-line small-text text-bold">0800-ZAMEEN (92633)</div>
+                  <div class="address-line">Monday To Sunday 9AM To 6PM</div>
+                </div>
+              </div>
+              <a href="#" class="footer-link" aria-label="Email us">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icon-default">
+                  <path d="M2.3 5.5C1.1 5.5 0 6.5 0 7.8v16.4c0 1.3 1 2.3 2.3 2.3h27.4c1.3 0 2.3-1 2.3-2.3V7.8c0-1.3-1-2.3-2.3-2.3H2.3zM4 9.4c.2 0 .5.1.6.2l10.3 9.5c.6.6 1.6.6 2.2 0l10.3-9.5c.3-.3.8-.2 1.1.1.2.3.2.7 0 1l-5.8 5.4 5.8 5.2c.3.3.4.8.1 1.1-.3.3-.8.4-1.1.1l-.1-.1-5.9-5.3-3.3 3.1a3.21 3.21 0 0 1-4.3 0l-3.3-3.1-5.9 5.3c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l.1-.1L9.5 16l-5.8-5.4c-.3-.3-.4-.8-.1-1.1 0 0 .2-.1.4-.1z"/>
+                </svg>
+                <div class="address-line">Email Us</div>
+              </a>
+            </div>
+            <div class="footer-column">
+              <div class="social-wrapper">
+                <div class="column-title">Roshan Digital Account</div>
+                <a href="#" class="digital-account">
+                  <img
+                    src="../images/roshandigitalact.svg"
+                    class="digital-account-icon"
+                    alt="roshan"
+                  />
+                  <p class="digital-account-text">
+                    ROSHAN<br /><b>DIGITAL</b><br />ACCOUNT
+                  </p>
+                </a>
+                <div class="column-title">Get Connected</div>
+                <div class="social-icons">
+                  <div class="social-group">
+                    <div>
+                      <a href="fb.svg" title="Follow us on Facebook" aria-label="Follow us on facebook">
+                        <div class="social-icon facebook"></div>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="insta.svg" title="Follow us on Instagram" aria-label="Follow us on instagram">
+                        <div class="social-icon instagram"></div>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="yout.svg" title="Follow us on YouTube" aria-label="Follow us on youtube">
+                        <div class="social-icon youtube"></div>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="twitter.svg" title="Follow us on Twitter" aria-label="Follow us on twitter">
+                        <div class="social-icon twitter"></div>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="linkdin.svg" title="Follow us on LinkedIn" aria-label="Follow us on linkedin">
+                        <div class="social-icon linkedin"></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="copyright-text">
+              <div class="small-text" style="padding-left: 40px;">
+                © Copyright 2007 - 2025 Zameen.com. All Rights Reserved
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</footer>
+<script>
+  fetch('Navbar.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('navbar').innerHTML = data);
+
+
+  // show th brose projects by category sections
+  const browse_projects_by_category = document.getElementById('browse_projects_by_category');
+  let content = '';
+  for (let i = 0; i < 10; i++) {
+      content += `
+  <div id="slide${i}" class="border rounded-lg p-4 flex items-center gap-4 w-64 shadow-sm hover:shadow-md transition carousel-item relative  group hover:cursor-pointer hover:border-pink-400 transition-all duration-500 ease-in-out">
+      <div class="bg-red-50 p-3 rounded-lg border border-red-100 group-hover:border-pink-400 transition-all duration-500 ease-in-out">
+          <i class='bx bxs-building-house text-red-300 text-3xl'></i>
+      </div>
+      <div>
+          <h3 class="font-semibold text-gray-900">Flats</h3>
+          <p class="text-gray-500 text-sm">506 Projects</p>
+      </div>
+  </div>
+`;
+  }
+  browse_projects_by_category.innerHTML = content;
+
+
+
+  // show discover_new_projects 'section'
+  const discover_new_projects_section = document.getElementById('discover_new_projects');
+  let discover_new_projects = '';
+  for (let i = 0; i < 5; i++) {
+      discover_new_projects += `
+          <div id="slide${i}" class="max-w-sm rounded-lg overflow-hidden bg-transparent shadow-lg relative h-[25rem] w-[25rem] carousel-item relative">
+          <div class="relative h-full rounded-lg overflow-hidden">
+              <img src="https://images.pexels.com/photos/2119714/pexels-photo-2119714.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Property Image" class="w-full h-full object-cover rounded-lg">
+              <div class="absolute inset-0 bg-black opacity-30"></div>
+          </div>
+      
+          <!-- Trending Badge -->
+          <div class="absolute top-3 left-3 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+              <i class='bx bx-trending-up'></i>
+              TRENDING
+          </div>
+      
+          <!-- Content -->
+          <div class="absolute bottom-5 left-3 text-white">
+              <h3 class="text-lg font-bold">Oasis Park Residencia</h3>
+              <p class="text-sm flex items-center gap-1">
+                  <i class='bx bx-map text-green-400'></i> Karachi, Karachi
+              </p>
+              <p class="text-sm">Houses</p>
+      
+              <!-- Price Tag -->
+              <div class="mt-2 bg-green-200 text-green-700 font-semibold px-3 py-1 rounded-full inline-block text-sm">
+                  PKR 3 Crore
+              </div>
+          </div>
+      </div>
+      `;
+  }
+  discover_new_projects_section.innerHTML = discover_new_projects;
+
+
+  // show browse_projects_by_city 'section'
+  const browse_projects_by_city_section = document.getElementById('browse_projects_by_city');
+  let browse_projects_by_city = '';
+  for (let i = 0; i < 10; i++) {
+      browse_projects_by_city += `
+          <div  id="slide${i}" class="w-80 p-4 border rounded-lg shadow-sm bg-gray-50 relative carousel-item relative">
+              <div class="absolute inset-0 opacity-10 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/2678301/pexels-photo-2678301.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+                  <div class="relative">
+                      <h3 class="text-lg font-semibold text-gray-900">Islamabad</h3>
+                      <p class="text-gray-600 text-xs">284 Projects</p>
+                      <a href="#" class="mt-4 text-blue-500 text-sm font-medium flex items-center gap-1 mt-2">
+                      View Projects <span>➜</span>
+                      </a>
+              </div>
+          </div>
+      `;
+  }
+  browse_projects_by_city_section.innerHTML = browse_projects_by_city;
+
+
+
+</script>
+</body>
+</html>

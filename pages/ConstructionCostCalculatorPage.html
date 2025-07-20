@@ -1,0 +1,226 @@
+<!-- ✅ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- boxicons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <!-- tailwind -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- daisy ui -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <div class="relative bg-gradient-to-b from-green-100 to-white-200 py-10">
+    <div class="flex flex-col item-center text-center justify-center pt-20">
+      <h1 class="text-3xl font-bold text-gray-800 px-2">Construction Cost Calculator</h1>
+      <p class="text-gray-600 mt-2 px-8">
+        Use our Construction Cost Calculator to get a quick estimate of required
+        <span class="bg-blue-500 text-white px-1 rounded">building</span> materials along with their costs.
+      </p>
+    </div>
+
+    <div class="relative w-[90%] md:w-[80%] mx-auto mt-28 p-5 bg-white rounded-lg shadow-md flex justify-center ">
+      <div class="grid grid-cols-2 md:grid-cols-4 flex gap-4">
+        <div class="space-y-2">
+          <label class="text-gray-500 text-sm font-semibold">City</label>
+          <p class="text-green-600 font-semibold">Lahore</p>
+        </div>
+        <div class="md:border-l border-gray-400">
+          <label class="text-gray-500 text-sm font-semibold pl-3">Area Size</label>
+          <input type="text" placeholder="Enter Area Size"
+            class="border-none rounded-md px-3 py-2 w-full focus:border-none outline-none">
+        </div>
+        <div>
+          <label class="text-gray-500 bg-transparent text-sm font-semibold md:pl-2">Unit</label>
+          <select class="border-none w-full bg-transparent focus:outline-none">
+            <option>Marla</option>
+            <option>Square Feet</option>
+            <option>Square Yard</option>
+          </select>
+        </div>
+        <div class="col-span-2 md:col-span-1">
+          <button class="bg-green-600 text-white px-24 md:px-12 py-2 my-3 rounded-md hover:bg-green-700 transition">
+            Calculate Cost
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Calculations in Lahore -->
+  <div class="px-8">
+    <h1 class="font-bold text-2xl mt-12">Popular Calculations in Lahore</h1>
+    <div id="popular_calculations_in_lahore"
+      class="mt-6 mb-2 flex flex-row gap-4 overflow-auto scrollbar-custom carousel w-full">
+    </div>
+  </div>
+
+  <section class="mt-16  px-8">
+    <h1 class="font-bold text-2xl">Things to Keep In Mind While Constructing Your House</h1>
+    <p class="opacity-70 mt-6">Your house is often the hard earned fruit of your hard work over decades of your
+      life. It only makes sense to be absolutely sure about where, when and particularly how to build your house.
+      Following are some things you should keep in mind while constructing your house.</p>
+
+    <div id="construction_essentials" class="my-3 grid grid-cols-2 md:grid-cols-3 md:grid-cols-5 ">
+    </div>
+  </section>
+
+  <section class="p-8">
+    <div class="bg-white rounded-2xl flex items-center justify-between border-2 border-gray-200 pl-8">
+      <!-- Left Content -->
+      <div class="w-2/3 py-8">
+        <h2 class="text-3xl font-bold text-gray-900">Construction Cost Calculator</h2>
+        <p class="text-gray-600 mt-2">
+          Want to learn more about Zameen.com's Construction Cost Calculator and build your dream house?
+        </p>
+        <ul class="mt-8 space-y-2">
+          <li class="flex items-center text-gray-700">
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small_2x/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png"
+              alt="green-tick" class="w-8 h-15 mr-4">
+            Flexibility of Area Size and Units
+          </li>
+          <li class="flex items-center text-gray-700">
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small_2x/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png"
+              alt="green-tick" class="w-8 h-15 mr-4">
+            Separate Estimates for Grey Structure and Complete House
+          </li>
+          <li class="flex items-center text-gray-700">
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small_2x/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png"
+              alt="green-tick" class="w-8 h-15 mr-4">
+            Multiple Construction Modes
+          </li>
+          <li class="flex items-center text-gray-700">
+            <img
+              src="https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small_2x/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png"
+              alt="green-tick" class="w-8 h-15 mr-4">
+            Flexibility to Change the number of rooms
+          </li>
+        </ul>
+        <button
+          class="mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-800 flex items-center transition-all duration-500">
+          Read More <i class='bx bx-right-arrow-alt text-md'></i>
+        </button>
+      </div>
+      <!-- Right Image -->
+      <div class="w-full h-full  hidden lg:block">
+        <img src="https://content-cdn.zameen.com/House_Image_2x_319ebe6f08.png" alt="Construction Calculator Image"
+          class="w-full">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="my-4 px-8">
+    <h1 class="text-2xl font-semibold">About Construction Cost Calculator</h1>
+    <p class="mt-4 opacity-70 text-lg">
+      The first challenge one usually encounters when building a house is not knowing how much the unit will cost
+      to construct because there are several variables that might affect the cost such as the quality and type of
+      materials used, the number of floors, and whether or not the house will be built by you or a construction
+      company. Zameen has launched its new house construction cost calculator tool to provide its users with a
+      reliable way to estimate the construction costs of their houses. If you want to build your dream home, you
+      can quickly estimate the construction cost with our Construction Cost Calculator. This tool makes it simple
+      to estimate home building costs. Simply enter the city where you intend to build your home, choose the area
+      of the house in Marla or Kanals, and choose the quality of the materials you wish to use. You will get the
+      estimated construction costs including grey structure cost, contractor cost, finishing cost and price per
+      sq. feet. The price of the grey structure is determined by adding the cost of the basic framework, such as
+      pillars, walls, beams, cement, and steel structure while the finishing cost is calculated by taking into
+      account the finer details, which include tiles, bathroom fixtures, doors, and other components.
+    </p>
+  </section>
+
+  <div id="footer">
+  </div>
+
+
+  <script>
+
+    // fetch('Footer.html')
+    //   .then(response => response.text())
+    //   .then(data => document.getElementById('footer').innerHTML = data);
+
+
+    // fetch('Navbar.html')
+    //   .then(response => response.text())
+    //   .then(data => document.getElementById('navbar').innerHTML = data);
+
+
+    const construction_essentials_data = [
+      {
+        icon: "https://content-cdn.zameen.com/Labour_Quality_f15c5145c1.svg",
+        title: "Labour Quality",
+        description: "High quality & trained labor should be assigned."
+      },
+      {
+        icon: "https://content-cdn.zameen.com/Foundation_Quality_5e085fe05e.svg",
+        title: "Foundation Quality",
+        description: "No compromise on foundation quality."
+      },
+      {
+        icon: "https://content-cdn.zameen.com/Building_Material_e356cc65ce.svg",
+        title: "Building Material",
+        description: "Building material should be Premium Plus grade."
+      },
+      {
+        icon: "https://content-cdn.zameen.com/Manual_vs_Contractor_9183aa6f42.svg",
+        title: "Construction Mode",
+        description: "Sourcing material yourself or outsourcing everything to a contractor."
+      },
+      {
+        icon: "https://content-cdn.zameen.com/Cost_Calculator_7271657dff.svg",
+        title: "Cost Calculator",
+        description: "Get quick cost estimate using our calculator."
+      }
+    ];
+
+
+    const popular_calculations_in_lahore = document.getElementById('popular_calculations_in_lahore');
+    let content = '';
+    for (let i = 0; i < 10; i++) {
+      content += `
+                <div id="slide${i}" class="bg-white shadow-md flex flex-col cursor-pointer hover:shadow-gray-200 hover:shadow-lg border-gray-200 border-2  rounded-lg p-4 w-60 carousel-item transition-all duration-500 ease-in-out">
+                    <h2 class="text-lg font-bold text-gray-900">3 Marla Construction Cost</h2>
+                    <p class="text-gray-600 mt-1">Double Story</p>
+                    <p class="text-gray-600">1,215 sq. ft.</p>
+                    <a href="#" class="text-blue-600 mt-2 inline-block hover:underline">Details &rarr;</a>
+                </div>
+            `;
+    }
+    popular_calculations_in_lahore.innerHTML = content;
+
+
+
+    let construction_essentials_content = ' ';
+    for (let i = 0; i < 5; i++) {
+      construction_essentials_content += `
+            <div class="bg-white p-4 w-48 md:w-64 text-left flex flex-col cursor-default">
+                <div class="flex items-center justify-center bg-gray-100 rounded-lg w-20 h-20">
+                    <img src="${construction_essentials_data[i].icon}" alt="Labour Icon" class="w-20 h-20">
+                </div>
+                <h2 class="text-lg font-bold text-gray-900 mt-3">${construction_essentials_data[i].title}</h2>
+                <p class="text-gray-600 mt-1">${construction_essentials_data[i].description}</p>
+            </div>
+            `;
+    }
+    document.getElementById('construction_essentials').innerHTML = construction_essentials_content;
+
+  </script>
+
+
+</body>
+
+</html>

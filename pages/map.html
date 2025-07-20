@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Map Application</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+    /* Controls Container */
+.controls {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    z-index: 1000;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button.hidden {
+    display: none;
+}
+
+/* Input Fields */
+input[type="text"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Dropdown Select */
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+}
+
+/* Hide elements by default */
+.hidden {
+    display: none;
+}
+
+/* Map Styling */
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button id="selectCityButton">Select Your City</button>
+    <div id="citySelector" class="hidden">
+      <input type="text" id="cityInput" placeholder="Type to search cities..." />
+      <select id="cityDropdown" size="5"></select>
+      <button id="findSocietyButton" class="hidden">Find with Society</button>
+    </div>
+    <div id="societySelector" class="hidden">
+      <input type="text" id="societyInput" placeholder="Type to search societies..." />
+      <select id="societyDropdown" size="5"></select>
+    </div>
+    <button id="showOnMapButton" class="hidden">Show on Map</button>
+
+    <!-- New Buttons for Address and Latitude/Longitude -->
+    
+  </div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([30.3753, 69.3451], 5); // Centered on Pakistan
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // City and society data
+    const cityData = {
+      Karachi: {
+        coordinates: [24.8607, 67.0011],
+        societies: {
+          "DHA Karachi": [24.8138, 67.0214],
+          "Bahria Town Karachi": [25.0399, 67.1945],
+          "Gulshan-e-Iqbal": [24.9274, 67.1124]
+        }
+      },
+      Lahore: {
+        coordinates: [31.5497, 74.3436],
+        societies: {
+          "DHA Lahore": [31.4946, 74.3568],
+          "Bahria Town Lahore": [31.3925, 74.2450],
+          "Model Town Lahore": [31.4701, 74.3372],
+          "new town":[31.48992, 74.27850000000001]
+        }
+      },
+      Islamabad: {
+        coordinates: [33.6844, 73.0479],
+        societies: {
+          "DHA Islamabad": [33.6007, 73.0532],
+          "Bahria Town Islamabad": [33.5178, 73.1222],
+          "F-7 Islamabad": [33.7206, 73.0735]
+        }
+      }
+    };
+
+    // DOM elements
+    const selectCityButton = document.getElementById('selectCityButton');
+    const citySelector = document.getElementById('citySelector');
+    const cityInput = document.getElementById('cityInput');
+    const cityDropdown = document.getElementById('cityDropdown');
+    const findSocietyButton = document.getElementById('findSocietyButton');
+    const societySelector = document.getElementById('societySelector');
+    const societyInput = document.getElementById('societyInput');
+    const societyDropdown = document.getElementById('societyDropdown');
+    const showOnMapButton = document.getElementById('showOnMapButton');
+
+    // New DOM elements for address and lat/lng input
+    const findWithAddressButton = document.getElementById('findWithAddressButton');
+    const addressInputDiv = document.getElementById('addressInputDiv');
+    const addressInput = document.getElementById('addressInput');
+    const findAddressButton = document.getElementById('findAddressButton');
+
+    const findWithLatLngButton = document.getElementById('findWithLatLngButton');
+    const latLngInputDiv = document.getElementById('latLngInputDiv');
+    const latitudeInput = document.getElementById('latitudeInput');
+    const longitudeInput = document.getElementById('longitudeInput');
+    const findLatLngButton = document.getElementById('findLatLngButton');
+
+    // Populate city dropdown
+    function populateDropdown(input, dropdown, data) {
+      dropdown.innerHTML = '';
+      const filteredData = Object.keys(data).filter(key =>
+        key.toLowerCase().includes(input.toLowerCase())
+      );
+      filteredData.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item;
+        option.textContent = item;
+        dropdown.appendChild(option);
+      });
+    }
+
+    // Event: Show city selector
+    selectCityButton.addEventListener('click', () => {
+      hideAllSections();
+      citySelector.classList.remove('hidden');
+      populateDropdown('', cityDropdown, cityData);
+    });
+
+    // Event: Filter cities based on input
+    cityInput.addEventListener('input', () => {
+      populateDropdown(cityInput.value, cityDropdown, cityData);
+    });
+
+    // Event: Select a city
+    cityDropdown.addEventListener('change', () => {
+      cityInput.value = cityDropdown.value;
+      findSocietyButton.classList.remove('hidden');
+      societySelector.classList.add('hidden');
+      showOnMapButton.classList.remove('hidden');
+    });
+
+    // Event: Show society selector
+    findSocietyButton.addEventListener('click', () => {
+      societySelector.classList.remove('hidden');
+      const selectedCity = cityInput.value;
+      if (cityData[selectedCity]) {
+        populateDropdown('', societyDropdown, cityData[selectedCity].societies);
+      }
+    });
+
+    // Event: Filter societies based on input
+    societyInput.addEventListener('input', () => {
+      const selectedCity = cityInput.value;
+      if (cityData[selectedCity]) {
+        populateDropdown(societyInput.value, societyDropdown, cityData[selectedCity].societies);
+      }
+    });
+
+    // Event: Select a society
+    societyDropdown.addEventListener('change', () => {
+      societyInput.value = societyDropdown.value;
+    });
+
+    // Event: Show on map (City or Society)
+    showOnMapButton.addEventListener('click', () => {
+      const selectedCity = cityInput.value;
+      const selectedSociety = societyInput.value;
+      if (selectedSociety && cityData[selectedCity].societies[selectedSociety]) {
+        const coords = cityData[selectedCity].societies[selectedSociety];
+        map.setView(coords, 15);
+        L.marker(coords).addTo(map).bindPopup(`${selectedSociety}, ${selectedCity}`).openPopup();
+      } else if (selectedCity && cityData[selectedCity]) {
+        const coords = cityData[selectedCity].coordinates;
+        map.setView(coords, 10);
+        L.marker(coords).addTo(map).bindPopup(selectedCity).openPopup();
+      } else {
+        alert('Please select a valid city or society.');
+      }
+    });
+
+    // Event: Find with address
+    findWithAddressButton.addEventListener('click', () => {
+      hideAllSections();
+      addressInputDiv.classList.remove('hidden');
+    });
+
+    // Event: Find address and show on map
+    findAddressButton.addEventListener('click', () => {
+      const address = addressInput.value;
+      if (address) {
+        // Use geocoding API (e.g., Google Geocoding API or OpenStreetMap Nominatim)
+        const geocodeUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${address}`;
+        fetch(geocodeUrl)
+          .then(response => response.json())
+          .then(data => {
+            if (data && data.length > 0) {
+              const coords = [data[0].lat, data[0].lon];
+              map.setView(coords, 15);
+              L.marker(coords).addTo(map).bindPopup(address).openPopup();
+            } else {
+              alert('Address not found.');
+            }
+          })
+          .catch(error => alert('Error finding address.'));
+      }
+    });
+
+    // Event: Find with Latitude and Longitude
+    findWithLatLngButton.addEventListener('click', () => {
+      hideAllSections();
+      latLngInputDiv.classList.remove('hidden');
+    });
+
+    // Event: Find location by lat/lng
+    findLatLngButton.addEventListener('click', () => {
+      const lat = parseFloat(latitudeInput.value);
+      const lng = parseFloat(longitudeInput.value);
+      if (!isNaN(lat) && !isNaN(lng)) {
+        const coords = [lat, lng];
+        map.setView(coords, 15);
+        L.marker(coords).addTo(map).bindPopup(`Latitude: ${lat}, Longitude: ${lng}`).openPopup();
+      } else {
+        alert('Please enter valid latitude and longitude.');
+      }
+    });
+
+    // Helper function to hide all sections
+    function hideAllSections() {
+      document.querySelectorAll('.controls > div, .controls > button').forEach(element => {
+        element.classList.add('hidden');
+      });
+    }
+  </script>
+  <script>
+    const geoJsonData = {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {"category": "s1"},
+                    "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [74.2757, 31.4904],
+                                [74.2795, 31.4871],
+                                [74.2829, 31.4891],
+                                [74.2787, 31.4926],
+                                [74.2757, 31.4904]
+                            ]
+                        ]
+                    }
+                }
+            ]
+        };
+
+        // Function to style features based on category
+        function styleFeature(feature) {
+            let color = "gray"; // Default color
+            if (feature.properties.category === "s1") color = "blue";
+            else if (feature.properties.category === "s2") color = "green";
+
+            return {
+                color: "black",
+                weight: 2,
+                fillColor: color,
+                fillOpacity: 0.5
+            };
+        }
+
+        // Function to calculate polygon centroid
+        function getPolygonCentroid(coords) {
+            let latSum = 0, lngSum = 0, count = 0;
+            coords[0].forEach(coord => {
+                latSum += coord[1];
+                lngSum += coord[0];
+                count++;
+            });
+            return [latSum / count, lngSum / count];
+        }
+
+        // Add GeoJSON Data
+        L.geoJSON(geoJsonData, {
+            style: styleFeature,
+            onEachFeature: function (feature, layer) {
+                if (feature.geometry.type === "Polygon") {
+                    const centroid = getPolygonCentroid(feature.geometry.coordinates);
+                    console.log(centroid) ; console.log("jsakdhakd")
+                    L.marker(centroid, {
+                        icon: L.divIcon({
+                            className: 'custom-label',
+                            html: `<div style="color: black; font-weight: bold; background: white; padding: 5px 10px; border-radius: 5px;">Plot</div>`,
+                            iconSize: [50, 20]
+                        })
+                    }).addTo(map);
+                }
+            }
+        }).addTo(map);
+  </script>
+
+
+</body>
+</html>

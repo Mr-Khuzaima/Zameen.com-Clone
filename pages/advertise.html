@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="../css/mainpage.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Zameen - Build Your Business</title>
+  <style>
+    /* -------------------------
+       GLOBAL STYLES
+    ------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    a:hover {
+      color: #00a651;
+    }
+    h1, h2, h3, h4, h5 {
+      margin: 0;
+      color: #333;
+    }
+    p {
+      margin: 0;
+      color: #666;
+      line-height: 1.5;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    /* Container Section */
+    .section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* Buttons */
+    button {
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #00a651;
+    }
+    button:hover {
+      background-color: #008f45;
+    }
+
+    /* -------------------------
+       TOP NAVIGATION
+    ------------------------- */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+    }
+    .top-nav .left-menu {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #00a651;
+      margin-right: 30px;
+    }
+    .top-nav .left-menu a {
+      margin-right: 15px;
+      font-weight: 500;
+    }
+    .top-nav .right-menu a {
+      margin-left: 15px;
+      font-weight: 500;
+    }
+
+    /* -------------------------
+       MAIN NAVIGATION
+    ------------------------- */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .main-nav a {
+      margin-right: 20px;
+      font-weight: 500;
+    }
+
+    /* -------------------------
+       HERO SECTION
+    ------------------------- */
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .hero p {
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      color: #666;
+      line-height: 1.5;
+    }
+    .hero .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .hero button {
+      border: 2px solid #00a651;
+      background-color: #fff;
+      color: #00a651;
+      font-weight: bold;
+    }
+    .hero button:hover {
+      background-color: #00a651;
+      color: #fff;
+    }
+
+    /* -------------------------
+       FOR INDIVIDUALS SECTION
+    ------------------------- */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #00a651;
+      margin-bottom: 5px;
+    }
+    .discount {
+      font-size: 0.9rem;
+      color: #d9534f; /* A shade of red */
+      margin-bottom: 10px;
+    }
+    .card p {
+      margin-bottom: 15px;
+      color: #666;
+    }
+    .card button {
+      width: 100%;
+      border: none;
+    }
+
+    /* -------------------------
+       AGENCIES SECTION
+    ------------------------- */
+    .agencies .card {
+      padding: 25px;
+      text-align: left; 
+    }
+    .agencies .card h3 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .agencies .card .price {
+      text-align: center;
+      margin-bottom: 2px;
+    }
+    .agencies .card .billing-cycle {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .agencies .card h4 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .agencies .card ul {
+      list-style: none;
+      margin-bottom: 20px;
+      color: #666;
+      line-height: 1.6;
+      padding-left: 0;
+    }
+    .agencies .card ul li {
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .agencies .card ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #00a651;
+    }
+    .agencies .card .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .agencies .card .buttons button {
+      flex: 1;
+      padding: 8px;
+      font-size: 1rem;
+    }
+    .agencies .card .buttons .details-link {
+      flex: 1;
+      text-align: center;
+      color: #00a651;
+      font-weight: bold;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 8px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .agencies .card .buttons .details-link:hover {
+      background-color: #e9e9e9;
+    }
+    .featured {
+      border: 2px solid #00a651;
+      position: relative;
+    }
+    .featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background-color: #00a651;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 4px 6px;
+      border-radius: 3px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* -------------------------
+       AD-ONS SECTION
+    ------------------------- */
+    .ad-ons .ad-ons-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .ad-ons .ad-ons-tabs button {
+      background-color: #f9f9f9;
+      color: #333;
+      border: 1px solid #ddd;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .ad-ons .ad-ons-tabs button.active,
+    .ad-ons .ad-ons-tabs button:hover {
+      background-color: #00a651;
+      color: #fff;
+      border-color: #00a651;
+    }
+    .ad-ons-content {
+      display: flex;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 20px;
+      text-align: left;
+    }
+    .ad-ons-left {
+      flex: 1;
+      min-width: 200px;
+    }
+    .ad-ons-left ul {
+      list-style: none;
+    }
+    .ad-ons-left li {
+      padding: 10px;
+      margin-bottom: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .ad-ons-left li.active {
+      background-color: #00a651;
+      color: #fff;
+      border-color: #00a651;
+    }
+    .ad-ons-right {
+      flex: 2;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+    }
+    .ad-ons-right h3 {
+      margin-bottom: 15px;
+    }
+    .ad-ons-right p {
+      margin-bottom: 10px;
+    }
+    .ad-ons-right img {
+      display: block;
+      margin: 10px 0;
+    }
+
+    /* -------------------------
+       FAQ SECTION
+    ------------------------- */
+    .faq {
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      margin-bottom: 15px;
+    }
+    .faq-question {
+      display: block;
+      background-color: #f9f9f9;
+      padding: 10px 15px;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-weight: bold;
+      position: relative;
+    }
+    .faq-question:hover {
+      background-color: #eee;
+    }
+    /* Hide checkbox inputs */
+    .faq-item input {
+      display: none;
+    }
+    /* Answer hidden by default */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: #fff;
+    }
+    /* When the checkbox is checked, expand the answer */
+    .faq-item input:checked ~ .faq-answer {
+      max-height: 500px; /* enough height to show full text */
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-top: none;
+      border-radius: 0 0 5px 5px;
+      margin-top: -5px; /* to visually connect with question box */
+    }
+
+    /* -------------------------
+       CHAT BUBBLE
+    ------------------------- */
+    .chat-bubble {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #00a651;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      .top-nav, .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .top-nav .right-menu {
+        margin-top: 10px;
+      }
+      .agencies .card .buttons {
+        flex-direction: column;
+      }
+      .ad-ons-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="frontm">
+        <div aria-label="Profile and settings navigation bar" class="navbar">
+            <div class="navbar-left">
+                <a href="/" title="Home" class="navbar-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path fill="#FFF"
+                            d="M29.3 10.4V5h-7.5L16 .8.1 12.3v8.2l2.2-2.2v12.9H12v-7.8h8v7.8h9.7V18.3l2.2 2.2v-8.3l-2.6-1.8z">
+                        </path>
+                    </svg>
+                </a>
+                <div class="navbar-links">
+                    <a href="" class="nav-link" title="Properties">Properties</a>
+                    <a href="map.html" title="Plot Finder" class="nav-link">Plot Finder</a>
+                    <a href="" title="Area Guides" class="nav-link">Area Guides</a>
+                    <div class="dropdownf">
+                        <a class="dropdown-triggerf">
+                            <span>Tools</span>
+                        </a>
+                        <div aria-haspopup="true" class="dropdown-contentf">
+                            <ul class="dropdown-listf">
+                                <li class="dropdown-list-itemf"><a href="HomeLoanCalculatorPage.html">Home Loan Calculator</a>
+                                </li>
+                                <li class="dropdown-list-itemf"><a href="areaUnitConverterPage.html">Area Unit Converter</a>
+                                </li>
+                                <li class="dropdown-list-itemf"><a href="linkpages.html">Land Record Pages</a></li>
+                                <li class="dropdown-list-itemf"><a href="ConstructionCostCalculatorPage.html">Construction
+                                        Cost Calculator</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdownf">
+                        <a class="dropdown-triggerf">
+                            <span>More  </span>
+                        </a>
+                        <div aria-haspopup="true" class="dropdown-contentf">
+                            <ul class="dropdown-listf">
+                                <li class="dropdown-list-itemf"><a href="blog.html">Blog</a></li>
+                                <li class="dropdown-list-itemf"><a href="map.html">Maps</a></li>
+                                <li class="dropdown-list-itemf"><a href="forum.html">Forum</a></li>
+                                <li class="dropdown-list-itemf"><a href="propertyIndexPage.html">Index</a></li>
+                                <li class="dropdown-list-itemf"><a href="propertyTrendsPage.html">Trends</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <form>
+                    <div class="search-bar search-bar-input-wrap">
+                        <input value="" class="search-input" placeholder="Property ID">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            class="search-icon">
+                            <path
+                                d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0a4.5 4.5 0 1 1-.01-8.99A4.5 4.5 0 0 1 9.5 14z">
+                            </path>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                        </svg>
+                    </div>
+                </form>
+                <a href="addproperty.html" class="add-property-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="add-property-icon" viewBox="0 0 32 32">
+                        <path
+                            d="M16-.1a2.8 2.8 0 0 0-2.8 2.8v10.4H2.8c-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8h10.4v10.4c0 1.6 1.3 2.8 2.8 2.8s2.8-1.3 2.8-2.8V18.8h10.4c1.6 0 2.8-1.3 2.8-2.8s-1.3-2.8-2.8-2.8H18.8V2.8c0-1.6-1.2-2.9-2.8-2.9z">
+                        </path>
+                    </svg>
+                    <span class="add-property-text">Add Property</span>
+                </a>
+                
+                <span class="urdu-text">اردو</span>
+                <img src="../images/pakistaniflag.svg" alt="Pakistan Flag" class="flag-icon" />
+                <i class="fas fa-cog settings-icon"></i>
+                <div class="sign" onclick="showLoginl()">  <a href="javascript:void(0);">  <img src="../images/login_icon.svg" alt="logo" width="20" height="25"></a>
+                </div>
+  
+            </div>
+        </div>
+        <div class="container3">
+            <!-- Logo Div -->
+            <div class="logoz">
+                <a><img src="../images/logo.png" alt="logo" width="100" height="25"></a>
+            </div>
+  
+            <!-- Dropdown Container Div -->
+            <div class="dropdown-container3">
+                <div class="dropdown3">
+                    <!-- Button -->
+                    <div id="dropdownButton3" class="dropdown-button3">BUY <img src="../images/Gratersign.jpg" alt=" sign"
+                            width="12" height="12"></a> </div>
+                    <!-- Dropdown Content -->
+                    <div id="dropdownContent3" class="dropdown-content3">
+                        <a href="HomePage.html">HOME </a>
+                        <a href="NewProjectsPage.html">PLOTS</a>
+                        <a href="NewProjectsPage.html">COMMERCIAL</a>
+                    </div>
+                </div>
+            </div>
+            <div class="link3"> <a href="HomePage.html">| RENT </a>
+                <a href="agents.html">| AGENTS</a>
+                <a href="NewProjectsPage.html">| NEW PROJECTS</a>
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Let Zameen Build Your Business</h1>
+    <p>
+      Excel in the challenging real estate market in Pakistan with our dependable 
+      platform, expert services, and access to a broad audience of property seekers.
+    </p>
+    <div class="hero-buttons">
+      <button>For Individual</button>
+      <button>For Agency</button>
+      <button>For Developer</button>
+    </div>
+  </div>
+
+  <!-- For Individuals Section -->
+  <div class="section individuals">
+    <h2>For Individuals</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Listing Slot</h3>
+        <div class="price">PKR 3000</div>
+        <div class="discount">2% discount</div>
+        <p>Per 30 days</p>
+        <button>Buy</button>
+      </div>
+      <div class="card">
+        <h3>Hot Listing</h3>
+        <div class="price">PKR 7800</div>
+        <div class="discount">4% discount</div>
+        <p>Per 30 days</p>
+        <button>Buy</button>
+      </div>
+      <div class="card">
+        <h3>Refresh Credits</h3>
+        <div class="price">PKR 240</div>
+        <div class="discount">24% discount</div>
+        <p>Per 10 credits</p>
+        <button>Buy</button>
+      </div>
+      <div class="card">
+        <h3>Savvy Ads Credits</h3>
+        <div class="price">PKR 1000</div>
+        <div class="discount">25% discount</div>
+        <p>Per 10 credits</p>
+        <button>Buy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advertise for Agencies Section -->
+  <div class="section agencies">
+    <h2>Advertise for Agencies</h2>
+    <div class="card-container">
+      <!-- Starter Package -->
+      <div class="card">
+        <h3>Starter Package</h3>
+        <p class="price">Starting from PKR 14,000</p>
+        <p class="billing-cycle">(Per Year Billed Annually)</p>
+        <h4>What's included</h4>
+        <ul>
+          <li>Up to 100 Listings</li>
+          <li>Basic Hot Listings</li>
+          <li>50 Refresh Credits</li>
+          <li>24/7 Normal Support</li>
+        </ul>
+        <div class="buttons">
+          <button>Inquire Now</button>
+          <a href="#" class="details-link">View More Details</a>
+        </div>
+      </div>
+
+      <!-- Business Package -->
+      <div class="card">
+        <h3>Business Package</h3>
+        <p class="price">Starting from PKR 55,000</p>
+        <p class="billing-cycle">(Per Year Billed Annually)</p>
+        <h4>What's included</h4>
+        <ul>
+          <li>Up to 300 Listings</li>
+          <li>100 Hot Listings</li>
+          <li>300 Refresh Credits</li>
+          <li>Basic Agency Banner</li>
+          <li>24/7 Normal Support</li>
+        </ul>
+        <div class="buttons">
+          <button>Inquire Now</button>
+          <a href="#" class="details-link">View More Details</a>
+        </div>
+      </div>
+
+      <!-- Titanium Plus (Featured) -->
+      <div class="card featured">
+        <h3>Titanium Plus</h3>
+        <p class="price">PKR 333,000</p>
+        <p class="billing-cycle">(Per Year Billed Annually)</p>
+        <h4>What's included</h4>
+        <ul>
+          <li>500 Listings</li>
+          <li>80 Hot Listings</li>
+          <li>1080 Refresh Credits</li>
+          <li>Agency Banners</li>
+          <li>Featured Agency Banners</li>
+          <li>24/7 Priority Support</li>
+        </ul>
+        <div class="buttons">
+          <button>Inquire Now</button>
+          <a href="#" class="details-link">View More Details</a>
+        </div>
+      </div>
+
+      <!-- Titanium -->
+      <div class="card">
+        <h3>Titanium</h3>
+        <p class="price">PKR 200,000</p>
+        <p class="billing-cycle">(Per Year Billed Annually)</p>
+        <h4>What's included</h4>
+        <ul>
+          <li>400 Listings</li>
+          <li>70 Hot Listings</li>
+          <li>600 Refresh Credits</li>
+          <li>Titanium Badge</li>
+          <li>Premium Agency Banners</li>
+          <li>24/7 Priority Support</li>
+        </ul>
+        <div class="buttons">
+          <button>Inquire Now</button>
+          <a href="#" class="details-link">View More Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad-Ons Section -->
+  <div class="section ad-ons">
+    <h2>Ad-Ons</h2>
+    <!-- Tabs (Banner vs Email) -->
+    <div class="ad-ons-tabs">
+      <button class="active">Banner Advertising</button>
+      <button>Email Advertising</button>
+    </div>
+    <!-- Content -->
+    <div class="ad-ons-content">
+      <!-- Left List -->
+      <div class="ad-ons-left">
+        <ul>
+          <li class="active">Leaderboard</li>
+          <li>Site Wide Right Banner</li>
+          <li>Splash Banner</li>
+          <li>Middle Banner Search</li>
+          <li>Side Banner</li>
+          <li>Mini Banner Search</li>
+          <li>Wallpaper Takeover</li>
+        </ul>
+      </div>
+      <!-- Right Details -->
+      <div class="ad-ons-right">
+        <h3>Leaderboard</h3>
+        <p><strong>Placement:</strong> Top header of the site</p>
+        <p><strong>Available Spots:</strong> 2 spots</p>
+        <p><strong>Main Advantages:</strong> Excellent brand awareness and recall. 
+           Competitive coverage of the most prominent ad placement.</p>
+        <p><strong>Banner Size:</strong> 728 x 90 px</p>
+        <!-- Example image placeholder -->
+        <img src="https://via.placeholder.com/728x90.png?text=Leaderboard+728x90" 
+             alt="Leaderboard Ad Example">
+        <button>Inquire Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="section faq">
+    <h2>Frequently Asked Questions (FAQs)</h2>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq1" hidden>
+      <label for="faq1" class="faq-question">How can I advertise my property on Zameen.com?</label>
+      <div class="faq-answer">
+        <p>
+          You can advertise your property on Zameen.com by creating an account 
+          and selecting one of our listing packages. Simply fill out the property 
+          details, upload images, and submit your ad for approval.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq2" hidden>
+      <label for="faq2" class="faq-question">What types of properties can I advertise on Zameen.com?</label>
+      <div class="faq-answer">
+        <p>
+          Zameen.com supports advertising for residential, commercial, and other 
+          real estate properties. Whether it's a plot, house, apartment, or shop, 
+          you can list it on Zameen.com.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq3" hidden>
+      <label for="faq3" class="faq-question">How can I add images to my ads?</label>
+      <div class="faq-answer">
+        <p>
+          When creating your property listing, simply upload high-quality images 
+          in the designated fields. Make sure they accurately reflect the property 
+          and meet the file size requirements.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq4" hidden>
+      <label for="faq4" class="faq-question">How much does it cost to advertise on Zameen.com?</label>
+      <div class="faq-answer">
+        <p>
+          The cost depends on the package you choose. Please refer to our pricing 
+          details in the “For Individuals” or “Advertise for Agencies” section, or 
+          contact our support team for more information.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="faq5" hidden>
+      <label for="faq5" class="faq-question">How do I upgrade my existing plan?</label>
+      <div class="faq-answer">
+        <p>
+          To upgrade your plan, log in to your Zameen.com account, navigate to your 
+          plan settings, and select the upgrade option that suits your needs. 
+          You can also contact support for assistance.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Bubble -->
+  <div class="chat-bubble">
+    Chat
+  </div>
+  <footer>
+     
+    <div class="section-container">
+      <div class="full-width">
+        <div class="container-fluid" style="padding-left: 70px;" >
+          <div class="footer-column">
+            <div class="column-title">Company</div>
+            <a href="about1.html" class="footer-link" aria-label="About us">About us</a>
+            <a href="contact.html" class="footer-link" aria-label="Contact us">Contact us</a>
+            <a href="job.html" class="footer-link" aria-label="Jobs">Jobs</a>
+            <a href="help.html" class="footer-link" aria-label="Help and support">Help &amp; Support</a>
+            <a href="advertise.html" class="footer-link" aria-label="Advertise on zameen">Advertise on Zameen</a>
+            <a href="terms.html" class="footer-link" aria-label="Terms">Terms of Use</a>
+          </div>
+          <div class="footer-column">
+            <div class="column-title">Connect</div>
+            <a href="blog.html" class="footer-link" aria-label="Blog">Blog</a>
+            <a href="news.html" class="footer-link" aria-label="News">News</a>
+            <a href="forum.html" class="footer-link" aria-label="Forum">Forum</a>
+            <a href="expo.html" class="footer-link" aria-label="Expo">Expo</a>
+            <a href="agents.html" class="footer-link" aria-label="Real estate agents">Real Estate Agents</a>
+            <a href="addproperty.html" class="footer-link" aria-label="Add property">Add Property</a>
+          </div>
+          <div class="footer-column">
+            <div class="column-title">Head Office</div>
+            <div class="footer-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icon-default">
+                <path d="M25.6 4.8A12.1 12.1 0 0 0 6.4 19.5L16 32l9.6-12.6a12 12 0 0 0 0-14.6zm-9.6.7c3.5 0 6.3 2.8 6.3 6.3s-2.8 6.3-6.3 6.3-6.3-2.8-6.3-6.3 2.8-6.3 6.3-6.3z"/>
+              </svg>
+              <div>
+                <div class="address-line">Pearl One, 94-B/I, MM Alam Road,</div>
+                <div class="address-line">Gulberg III, Lahore, Pakistan</div>
+              </div>
+            </div>
+            <div class="footer-link">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                class="icon-default"
+              >
+                <path d="M13.3 10.3A7.6 7.6 0 0 1 11 10a.7.7 0 0 0-.7.1l-1 1.4a10.1 10.1 0 0 1-4.6-4.6L6 5.7A.7.7 0 0 0 6 5a7.4 7.4 0 0 1-.3-2.3A.7.7 0 0 0 5 2H2.8c-.4 0-.8.2-.8.7A11.4 11.4 0 0 0 13.3 14a.7.7 0 0 0 .7-.8V11a.7.7 0 0 0-.7-.6z"/>
+              </svg>
+              <div>
+                <div class="address-line small-text text-bold">0800-ZAMEEN (92633)</div>
+                <div class="address-line">Monday To Sunday 9AM To 6PM</div>
+              </div>
+            </div>
+            <a href="#" class="footer-link" aria-label="Email us">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="icon-default">
+                <path d="M2.3 5.5C1.1 5.5 0 6.5 0 7.8v16.4c0 1.3 1 2.3 2.3 2.3h27.4c1.3 0 2.3-1 2.3-2.3V7.8c0-1.3-1-2.3-2.3-2.3H2.3zM4 9.4c.2 0 .5.1.6.2l10.3 9.5c.6.6 1.6.6 2.2 0l10.3-9.5c.3-.3.8-.2 1.1.1.2.3.2.7 0 1l-5.8 5.4 5.8 5.2c.3.3.4.8.1 1.1-.3.3-.8.4-1.1.1l-.1-.1-5.9-5.3-3.3 3.1a3.21 3.21 0 0 1-4.3 0l-3.3-3.1-5.9 5.3c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l.1-.1L9.5 16l-5.8-5.4c-.3-.3-.4-.8-.1-1.1 0 0 .2-.1.4-.1z"/>
+              </svg>
+              <div class="address-line">Email Us</div>
+            </a>
+          </div>
+          <div class="footer-column">
+            <div class="social-wrapper">
+              <div class="column-title">Roshan Digital Account</div>
+              <a href="#" class="digital-account">
+                <img
+                  src="../images/roshandigitalact.svg"
+                  class="digital-account-icon"
+                  alt="roshan"
+                />
+                <p class="digital-account-text">
+                  ROSHAN<br /><b>DIGITAL</b><br />ACCOUNT
+                </p>
+              </a>
+              <div class="column-title">Get Connected</div>
+              <div class="social-icons">
+                <div class="social-group">
+                  <div>
+                    <a href="fb.svg" title="Follow us on Facebook" aria-label="Follow us on facebook">
+                      <div class="social-icon facebook"></div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="insta.svg" title="Follow us on Instagram" aria-label="Follow us on instagram">
+                      <div class="social-icon instagram"></div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="yout.svg" title="Follow us on YouTube" aria-label="Follow us on youtube">
+                      <div class="social-icon youtube"></div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="twitter.svg" title="Follow us on Twitter" aria-label="Follow us on twitter">
+                      <div class="social-icon twitter"></div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="linkdin.svg" title="Follow us on LinkedIn" aria-label="Follow us on linkedin">
+                      <div class="social-icon linkedin"></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright-text">
+            <div class="small-text" style="padding-left: 40px;">
+              © Copyright 2007 - 2025 Zameen.com. All Rights Reserved
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</footer>
+</body>
+</html>

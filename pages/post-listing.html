@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profolio - Post Listing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/post-listing.css">
+  <link rel="stylesheet" href="../css/myListingCSS.css">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar Toggle Button (Hamburger) -->
+    <div class="sidebar-toggle-container">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Sidebar -->
+    <nav id="profolio-sidebar" class="profolio-sidebar">
+      <!-- Sidebar Close Button (Top-right) -->
+      <div class="sidebar-close-container">
+        <button class="sidebar-close" id="sidebarClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Sidebar Header -->
+      <div class="sidebar-header">
+        <h3>
+          <i class="fas fa-home"></i> Profolio
+        </h3>
+        <a href="https://www.zameen.com" class="go-to-zameen">
+          <i class="fas fa-external-link-alt"></i> Go to zameen.com
+        </a>
+      </div>
+
+      <!-- Menu -->
+      <ul class="nav flex-column sidebar-menu">
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard.html" id="dashboard-link">
+            <i class="fas fa-tachometer-alt"></i>
+            <span class="menu-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myListings.html" id="listings-link">
+            <i class="fas fa-list"></i>
+            <span class="menu-text">My Listings</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="post-listing.html" id="post-listing-link">
+            <i class="fas fa-plus-circle"></i>
+            <span class="menu-text">Post Listing</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- User Profile -->
+      <div class="user-profile">
+        <div class="user-avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="user-info">
+          <span class="user-name">Muhammad Uzair Raja</span>
+          <a href="#" class="logout-link">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container-fluid px-4">
+        <div class="post-listing-header">
+          <h1>Post Listing</h1>
+          <div class="progress-container">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+        </div>
+
+        <form id="propertyForm" class="property-form">
+          <!-- Page 1: Purpose and Type -->
+          <div class="form-page active" id="page1">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h2 class="form-section-title">Purpose and Property Type</h2>
+              </div>
+              <div class="card-body">
+                <div class="form-section">
+                  <h3 class="form-subtitle">Select Purpose</h3>
+                  <div class="purpose-options">
+                    <label class="purpose-option active">
+                      <input type="radio" name="purpose" value="sell" checked>
+                      <div class="option-content">
+                        <i class="fas fa-tag"></i>
+                        <span>Sell</span>
+                      </div>
+                    </label>
+                    <label class="purpose-option">
+                      <input type="radio" name="purpose" value="rent">
+                      <div class="option-content">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Rent</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-section">
+                  <h3 class="form-subtitle">Select Property Type</h3>
+                  <div class="property-type-options">
+                    <label class="property-type-option active">
+                      <input type="radio" name="propertyType" value="home" checked>
+                      <div class="option-content">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                      </div>
+                    </label>
+                    <label class="property-type-option">
+                      <input type="radio" name="propertyType" value="plots">
+                      <div class="option-content">
+                        <i class="fas fa-vector-square"></i>
+                        <span>Plots</span>
+                      </div>
+                    </label>
+                    <label class="property-type-option">
+                      <input type="radio" name="propertyType" value="commercial">
+                      <div class="option-content">
+                        <i class="fas fa-building"></i>
+                        <span>Commercial</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-section property-subtype">
+                  <h3 class="form-subtitle">Property Subtype</h3>
+                  <div class="checkbox-options">
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="houseType" value="floor">
+                      <span>Floor</span>
+                    </label>
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="houseType" value="flat">
+                      <span>Flat</span>
+                    </label>
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="houseType" value="upperPortion">
+                      <span>Upper Portion</span>
+                    </label>
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="houseType" value="lowerPortion">
+                      <span>Lower Portion</span>
+                    </label>
+                    <label class="checkbox-option checked">
+                      <input type="checkbox" name="houseType" value="farmHouse" checked>
+                      <span>Farm House</span>
+                    </label>
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="houseType" value="penthouse">
+                      <span>Penthouse</span>
+                    </label>
+                    <label class="checkbox-option">
+                      <input type="checkbox" name="houseType" value="house">
+                      <span>House</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+            <div class="card-header">
+              <h2 class="form-section-title">Location Details</h2>
+            </div>
+            <div class="card-body">
+              <div class="form-section">
+                <h3 class="form-subtitle">City</h3>
+                <select class="form-select" name="city" id="citySelect" required>
+                  <option value="" selected disabled>Select City</option>
+                  <option value="karachi">Karachi</option>
+                  <option value="lahore">Lahore</option>
+                  <option value="islamabad">Islamabad</option>
+                </select>
+              </div>
+
+              <div class="form-section">
+                <h3 class="form-subtitle">Location</h3>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="locationInput" placeholder="Search Location (e.g. DHA Phase 5)" required>
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+                <div class="location-suggestions">
+                  <div class="suggestion-item" data-city="lahore">DHA</div>
+                  <div class="suggestion-item" data-city="lahore">Model Town</div>
+                  <div class="suggestion-item" data-city="lahore">Johar Town</div>
+                  <div class="suggestion-item" data-city="islamabad">Sector F-10</div>
+                  <div class="suggestion-item" data-city="islamabad">Sector G-11</div>
+                  <div class="suggestion-item" data-city="islamabad">Bahria Town</div>
+                  <div class="suggestion-item" data-city="karachi">Clifton</div>
+                  <div class="suggestion-item" data-city="karachi">Defence</div>
+                  <div class="suggestion-item" data-city="karachi">Gulshan-e-Iqbal</div>
+                </div>
+              </div>
+
+              <div class="form-section help-section">
+                <a href="#" class="help-link">
+                  <i class="fas fa-question-circle"></i> Set Location on Map
+                </a>
+              </div>
+            </div>
+          </div>
+
+            <div class="form-navigation">
+              <button type="button" class="btn btn-next" onclick="nextPage(1)">Next</button>
+            </div>
+          </div>
+
+          <!-- Page 2: Price and Area -->
+          <div class="form-page" id="page2">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h2 class="form-section-title">Price and Area Details</h2>
+              </div>
+              <div class="card-body">
+                <div class="form-section">
+                  <h3 class="form-subtitle">Area Size</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <input type="number" class="form-control" placeholder="Enter Area" min="0" required>
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" name="areaUnit" required>
+                        <option value="marla" selected>Marla</option>
+                        <option value="kanal">Kanal</option>
+                        <option value="squareFeet">Square Feet</option>
+                        <option value="squareYards">Square Yards</option>
+                        <option value="squareMeters">Square Meters</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-section">
+                  <h3 class="form-subtitle">Price</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <input type="number" class="form-control" placeholder="Enter Price" min="0" required>
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" name="currency" required>
+                        <option value="pkr" selected>PKR</option>
+                        <option value="usd">USD</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-section toggle-options">
+                  <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="installmentAvailable">
+                    <label class="form-check-label" for="installmentAvailable">
+                      Installment available
+                    </label>
+                    <div class="toggle-help">Enable if listing is available on installments</div>
+                  </div>
+                  <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="readyForPossession">
+                    <label class="form-check-label" for="readyForPossession">
+                      Ready for Possession
+                    </label>
+                    <div class="toggle-help">Enable if listing is ready for possession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <h2 class="form-section-title">Features and Amenities</h2>
+              </div>
+              <div class="card-body">
+                <div class="amenities-section">
+                  <h4>Bedrooms</h4>
+                  <div class="amenity-options">
+                    <button type="button" class="btn btn-amenity">Studio</button>
+                    <button type="button" class="btn btn-amenity">1</button>
+                    <button type="button" class="btn btn-amenity active">2</button>
+                    <button type="button" class="btn btn-amenity">3</button>
+                    <button type="button" class="btn btn-amenity">4</button>
+                    <button type="button" class="btn btn-amenity">5</button>
+                    <button type="button" class="btn btn-amenity">6</button>
+                    <button type="button" class="btn btn-amenity">7</button>
+                    <button type="button" class="btn btn-amenity">8</button>
+                    <button type="button" class="btn btn-amenity">9</button>
+                    <button type="button" class="btn btn-amenity">10</button>
+                    <button type="button" class="btn btn-amenity">10+</button>
+                  </div>
+                </div>
+
+                <div class="amenities-section">
+                  <h4>Bathrooms</h4>
+                  <div class="amenity-options">
+                    <button type="button" class="btn btn-amenity active">1</button>
+                    <button type="button" class="btn btn-amenity">2</button>
+                    <button type="button" class="btn btn-amenity">3</button>
+                    <button type="button" class="btn btn-amenity">4</button>
+                    <button type="button" class="btn btn-amenity">5</button>
+                    <button type="button" class="btn btn-amenity">6</button>
+                    <button type="button" class="btn btn-amenity">6+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-navigation">
+              <button type="button" class="btn btn-prev" onclick="prevPage(2)">Previous</button>
+              <button type="button" class="btn btn-next" onclick="nextPage(2)">Next</button>
+            </div>
+          </div>
+
+          <!-- Page 3: Ad Information -->
+          <div class="form-page" id="page3">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h2 class="form-section-title">Listing Information</h2>
+              </div>
+              <div class="card-body">
+                <div class="form-section">
+                  <h3 class="form-subtitle">Title</h3>
+                  <input type="text" class="form-control" placeholder="Enter property title e.g. Beautiful House in DHA Phase 5" required>
+                  <div class="form-text">Make your title descriptive to attract more buyers</div>
+                </div>
+
+                <div class="form-section">
+                  <h3 class="form-subtitle">Description</h3>
+                  <textarea class="form-control" rows="5" placeholder="Describe your property, its features, area it is in etc." required></textarea>
+                  <div class="form-text">Provide detailed information about your property</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <h2 class="form-section-title">Property Images and Videos</h2>
+              </div>
+              <div class="card-body">
+                <div class="form-section">
+                  <h4>Upload Images of your Property</h4>
+                  
+                  <div class="upload-options">
+                    <label class="upload-option active">
+                      <input type="radio" name="uploadMethod" value="upload" checked>
+                      <span>Upload Images</span>
+                    </label>
+                  </div>
+                  
+                  <div class="upload-instructions">
+                    <p>Max size 5MB, .jpg .png only (Minimum 5 images required)</p>
+                    <input type="file">
+                  </div>
+                </div>
+
+                <div class="quality-tip">
+                  <i class="fas fa-lightbulb"></i> Add at least 1 high-quality images to make your listing stand out
+                </div>
+
+                <div class="form-section">
+                  <h4>Add Videos of your Property</h4>
+                  <p>Add videos of your property from YouTube. Upload on YouTube and paste the link below.</p>
+                  <div class="video-input input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Paste YouTube link here">
+                    <button type="button" class="btn btn-primary">Add Video</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-navigation">
+              <button type="button" class="btn btn-prev" onclick="prevPage(3)">Previous</button>
+              <button type="button" class="btn btn-next" onclick="nextPage(3)">Next</button>
+            </div>
+          </div>
+
+          <!-- Page 4: Contact Information -->
+          <div class="form-page" id="page4">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h2 class="form-section-title">Contact Information</h2>
+              </div>
+              <div class="card-body">
+                <div class="form-section">
+                  <h3 class="form-subtitle">Email</h3>
+                  <input type="email" class="form-control" value="uraja6043@gmail.com" readonly>
+                </div>
+
+                <div class="form-section">
+                  <h3 class="form-subtitle">Mobile</h3>
+                  <div class="input-group">
+                    <span class="input-group-text">+92</span>
+                    <input type="tel" class="form-control" placeholder="Enter mobile number" required>
+                  </div>
+                </div>
+
+                <div class="form-section">
+                  <h3 class="form-subtitle">Platform Selection</h3>
+                  <div class="platform-options">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="zameenPlatform" checked>
+                      <label class="form-check-label" for="zameenPlatform">
+                        <i class="fas fa-check-circle"></i> zameen.com
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="marPataPlatform">
+                      <label class="form-check-label" for="marPataPlatform">
+                        <i class="fas fa-check-circle"></i> Mar Pata
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="humaniPataPlatform">
+                      <label class="form-check-label" for="humaniPataPlatform">
+                        <i class="fas fa-check-circle"></i> Humani Pata Hal
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-navigation">
+              <button type="button" class="btn btn-prev" onclick="prevPage(4)">Previous</button>
+              <button type="submit" class="btn btn-submit">Submit Listing</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/post-listing.js"></script>
+</body>
+</html>

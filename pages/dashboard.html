@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profolio - Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <!-- Add this in the <head> section of dashboard.html -->
+<link rel="stylesheet" href="css\myListingCSS.css">
+
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar Toggle Button (Hamburger) -->
+<div class="sidebar-toggle-container">
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fas fa-bars"></i>
+  </button>
+</div>
+
+<!-- Sidebar -->
+<nav id="profolio-sidebar" class="profolio-sidebar">
+  <!-- Sidebar Close Button (Top-right) -->
+  <div class="sidebar-close-container">
+    <button class="sidebar-close" id="sidebarClose">
+    </button>
+  </div>
+
+  <!-- Sidebar Header -->
+  <div class="sidebar-header">
+    <h3>
+      <i class="fas fa-home"></i> Profolio
+    </h3>
+    <a href="https://www.zameen.com" class="go-to-zameen">
+      <i class="fas fa-external-link-alt"></i> Go to zameen.com
+    </a>
+  </div>
+
+  <!-- Menu -->
+  <ul class="nav flex-column sidebar-menu">
+    <li class="nav-item">
+      <a class="nav-link" href="dashboard.html" id="dashboard-link">
+        <i class="fas fa-tachometer-alt"></i>
+        <span class="menu-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="myListings.html" id="listings-link">
+        <i class="fas fa-list"></i>
+        <span class="menu-text">My Listings</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="post-listing.html" id="post-listing-link">
+        <i class="fas fa-plus-circle"></i>
+        <span class="menu-text">Post Listing</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- User Profile -->
+  <div class="user-profile">
+    <div class="user-avatar">
+      <i class="fas fa-user-circle"></i>
+    </div>
+    <div class="user-info">
+      <span class="user-name">Muhammad Uzair Raja</span>
+      <a href="#" class="logout-link">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </a>
+    </div>
+  </div>
+</nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+          <h2>Listings</h2>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">For Sale</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">For Rent</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listings Section -->
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">View all Zameen Listings</h5>
+                <div class="listing-filters">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="listingFilter" id="forSale" checked>
+                    <label class="form-check-label" for="forSale">For Sale</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="listingFilter" id="forRent">
+                    <label class="form-check-label" for="forRent">For Rent</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Active</h5>
+                <div class="active-status">
+                  <span class="badge bg-danger">Super Hot</span>
+                  <span class="badge bg-warning">Hot</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quota and Credits Section -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5>Quota and Credits</h5>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Listing Quota (O)</th>
+                    <th>Refresh Credits (O)</th>
+                    <th>Hot Credits (O)</th>
+                    <th>Super Hot</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Available Quota</td>
+                    <td>Used</td>
+                    <td>Total</td>
+                    <td>Super Hot</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5>Analytics</h5>
+            <div class="analytics-filters">
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-sm btn-outline-secondary active">All</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">For Sale</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">For Rent</button>
+              </div>
+              <div class="btn-group ms-2" role="group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Last 30 Days</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="analytics-metric">
+                  <h6>Views</h6>
+                  <div class="metric-value">No Data</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="analytics-metric">
+                  <h6>Clicks</h6>
+                  <div class="metric-value">No Data</div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <div class="contact-methods">
+                  <span class="badge bg-light text-dark">Calls</span>
+                  <span class="badge bg-light text-dark">WhatsApp</span>
+                  <span class="badge bg-light text-dark">SMS</span>
+                  <span class="badge bg-light text-dark">Emails</span>
+                  <span class="badge bg-light text-dark">No Data</span>
+                  <span class="badge bg-light text-dark">No Data</span>
+                  <span class="badge bg-light text-dark">No Data</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- In-Depth Insights -->
+        <div class="card mb-4">
+          <div class="card-body insight-card">
+            <h5 class="card-title">View In-Depth Insights</h5>
+            <p class="card-text">See the number of views, clicks and leads that your listing has received.</p>
+          </div>
+        </div>
+
+        <!-- Recent Listings -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5>Your Recent Listings</h5>
+          </div>
+          <div class="card-body">
+            <div class="row" id="recentListings">
+
+              <!-- Recent Listing 1 -->
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card listing-card">
+                  <div class="listing-badge">Active</div>
+                  <div class="listing-hot-badge">HOT</div>
+                  <img src="https://media.zameen.com/thumbnails/274729552-400x300.jpeg" class="card-img-top" alt="Property Image">
+                  <div class="card-body">
+                    <h5 class="card-title">Beautiful House in DHA Phase 5</h5>
+                    <p class="card-text text-muted">
+                      <i class="fas fa-map-marker-alt"></i> DHA Phase 5, Lahore
+                    </p>
+                    <div class="listing-details">
+                      <div class="detail-item"><i class="fas fa-bed"></i> <span>5 Beds</span></div>
+                      <div class="detail-item"><i class="fas fa-bath"></i> <span>4 Baths</span></div>
+                      <div class="detail-item"><i class="fas fa-vector-square"></i> <span>10 Marla</span></div>
+                    </div>
+                    <div class="listing-price"><strong>PKR 1.2 Crore</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recent Listing 2 -->
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card listing-card">
+                  <div class="listing-badge">Active</div>
+                  <img src="https://media.zameen.com/thumbnails/274706349-400x300.jpeg" class="card-img-top" alt="Property Image">
+                  <div class="card-body">
+                    <h5 class="card-title">Commercial Plot in Bahria Town</h5>
+                    <p class="card-text text-muted">
+                      <i class="fas fa-map-marker-alt"></i> Bahria Town, Karachi
+                    </p>
+                    <div class="listing-details">
+                      <div class="detail-item"><i class="fas fa-vector-square"></i> <span>8 Marla</span></div>
+                      <div class="detail-item"><i class="fas fa-road"></i> <span>Corner Plot</span></div>
+                    </div>
+                    <div class="listing-price"><strong>PKR 85 Lakh</strong></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recent Listing 3 -->
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card listing-card">
+                  <div class="listing-badge inactive">Inactive</div>
+                  <img src="https://media.zameen.com/thumbnails/255018033-400x300.jpeg" class="card-img-top" alt="Property Image">
+                  <div class="card-body">
+                    <h5 class="card-title">Farm House on Raiwind Road</h5>
+                    <p class="card-text text-muted">
+                      <i class="fas fa-map-marker-alt"></i> Raiwind Road, Lahore
+                    </p>
+                    <div class="listing-details">
+                      <div class="detail-item"><i class="fas fa-bed"></i> <span>6 Beds</span></div>
+                      <div class="detail-item"><i class="fas fa-bath"></i> <span>5 Baths</span></div>
+                      <div class="detail-item"><i class="fas fa-vector-square"></i> <span>2 Kanal</span></div>
+                    </div>
+                    <div class="listing-price"><strong>PKR 3.5 Crore</strong></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer mt-auto py-3">
+          <div class="container-fluid">
+            <span class="text-muted">© 2025 – Powered by Zameen.com</span>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+      <div class="chat-header">
+        <span>Chat with us</span>
+        <button class="btn btn-sm btn-link minimize-chat"><i class="fas fa-minus"></i></button>
+      </div>
+      <div class="chat-body">
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+          <input type="text" placeholder="Type your message here">
+          <button class="btn btn-sm btn-primary"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

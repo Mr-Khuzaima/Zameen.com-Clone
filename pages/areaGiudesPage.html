@@ -1,0 +1,248 @@
+<!-- ✅ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- boxicons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- tailwind -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            /* Hide scrollbar */
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for Webkit browsers */
+        }
+
+        .scroll-content {
+            display: flex;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="relative bg-gradient-to-b from-green-200 to-white-200 py-10">
+        <div class="flex flex-col item-center text-center justify-center pt-20">
+            <h1 class="text-3xl font-bold text-gray-800 px-2">Explore Societies in Pakistan</h1>
+            <p class="text-gray-600 mt-2 px-4">
+                Zameen provides you with a vibe of what every day looks like in different housing societies of Pakistan
+            </p>
+        </div>
+        <div class="relative w-[90%] lg:w-[60%] mx-auto mt-28 p-5 bg-white rounded-lg shadow-md flex justify-between">
+            <div class="grid grid-cols-2 md:grid-cols-3 flex gap-4">
+                <div class="space-y-2">
+                    <label class="text-gray-500 text-sm font-semibold">City</label>
+                    <p class="text-green-600 font-semibold">Lahore</p>
+                </div>
+                <div class="border-l border-gray-300">
+                    <label class="text-gray-500 text-sm font-semibold pl-3">Society</label>
+                    <input type="text" placeholder="Search societies"
+                        class="border-none rounded-md px-3 py-2 w-full focus:border-none outline-none">
+                </div>
+                <div class="float-right justify-center item-center flex w-full col-span-2 md:col-span-1">
+                    <button
+                        class="bg-green-600 text-white px-20 md:px-14 py-2 text-center my-3 rounded-xl hover:bg-green-700 transition inline-flex items-center justify-center">
+                        <i class='bx bx-search-alt-2 pr-2 text-xl'></i>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section>
+        <div class="relative max-w-6xl mx-auto overflow-hidden">
+            <div class="scroll-container" id="scrollContainer">
+                <div class="scroll-content" id="locations">
+                    <!-- Dynamic Content Will Be Injected Here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="p-8 mt-12">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
+                Find the Perfect Place to live in!
+            </h2>
+            <p class="text-gray-500 mt-2">
+                Stop wondering how your life will be like in a housing society & make informed decisions with Zameen
+                Area Guides
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+                <!-- Card 1 -->
+                <div class="flex flex-col items-center text-center">
+                    <img src="https://content-cdn.zameen.com/society_maps_3ec1aa7cbe_05e8213b5d.svg"
+                        class="rounded-full shadow-md border border-gray-300 w-40 h40" alt="Map Icon">
+                    <h3 class="text-lg font-semibold mt-4">Take a look inside society maps</h3>
+                    <p class="text-gray-500 mt-2 text-sm">
+                        Conveniently browse through detailed maps of all the societies featuring master plans, road
+                        networks,
+                        and plots.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flex flex-col items-center text-center">
+                    <img src="https://content-cdn.zameen.com/local_amenities_da2b18c7a9_d044467df4.svg"
+                        class="rounded-full shadow-md border border-gray-300 w-40 h-40" alt="Amenities Icon">
+                    <h3 class="text-lg font-semibold mt-4">Best of Local Amenities</h3>
+                    <p class="text-gray-500 mt-2 text-sm">
+                        Discover top places including schools, hospitals, parks, grocery stores, and much more.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flex flex-col items-center text-center">
+                    <img src="https://content-cdn.zameen.com/plots_prices_0d3b9229ab_86b5889de8.svg"
+                        class="rounded-full shadow-md border border-gray-300 h-40 w-40" alt="Price Icon">
+                    <h3 class="text-lg font-semibold mt-4">Houses & Plot Prices</h3>
+                    <p class="text-gray-500 mt-2 text-sm ">
+                        Find listings of houses and plots for sale in your desired society, including commercial
+                        properties.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-8 mt-12">
+        <div class="max-w-6xl mx-auto">
+            <!-- Tabs Section -->
+            <h2 class="text-xl font-bold text-gray-800">Most Viewed Societies</h2>
+            <div class="flex space-x-6 border-b border-gray-300 mt-2 overflow-x-auto">
+                <button
+                    class="text-green-600 font-medium relative pb-2 border-b-4 rounded-b-md border-green-600">Lahore</button>
+                <button class="text-gray-600 hover:text-green-600">Karachi</button>
+                <button class="text-gray-600 hover:text-green-600">Islamabad</button>
+                <button class="text-gray-600 hover:text-green-600">Rawalpindi</button>
+                <button class="text-gray-600 hover:text-green-600">Faisalabad</button>
+                <button class="text-gray-600 hover:text-green-600">Peshawar</button>
+            </div>
+
+            <!-- Most Viewed Societies -->
+            <div class="flex justify-between md:items-center mt-6 flex-col md:flex-row">
+                <h3 class="text-lg font-semibold text-gray-800">Most viewed societies in Lahore</h3>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline text-sm">View Lahore Area Guide
+                    →</a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-3 text-sm">
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-xs text-green-600'></i> DHA Defence</a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600'></i> Park View City</a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600'></i> Lahore Smart City</a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600'></i> Marina Sports City</a>
+            </div>
+
+
+            <!-- Useful Links -->
+            <h3 class="text-lg font-semibold text-gray-800 mt-6">Useful Links</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-3 text-sm">
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600 text-xs'></i> Lahore Smart City</a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600 text-xs'></i> Park View City Lahore</a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600 text-xs'></i> Park View City </a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600 text-xs'></i> Al-Noor Orchard</a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600 text-xs'></i> LDA City Lahore</a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600 text-xs'></i> DHA Valley</a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600 text-xs'></i> Lake City Lahore</a>
+                <a href="#" class="text-gray-800 hover:text-green-600 hover:underline"><i
+                        class='bx bx-right-arrow-alt text-green-600 text-xs'></i> Gulberg Greens</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+
+    </div>
+
+
+    <script>
+
+        // fetch('Navbar.html')
+        //     .then(response => response.text())
+        //     .then(data => document.getElementById('navbar').innerHTML = data);
+
+
+        // fetch('Footer.html')
+        //     .then(response => response.text())
+        //     .then(data => document.getElementById('footer').innerHTML = data);
+
+
+        const locations = [
+            { name: "Valencia Housing Society", city: "Lahore", img: "https://content-cdn.zameen.com/DHA_Phase_3_8cb303a1f1.jpg" },
+            { name: "Model Town", city: "Lahore", img: "https://content-cdn.zameen.com/image_01_034427838e.jpg" },
+            { name: "DHA Defence", city: "Lahore", img: "https://content-cdn.zameen.com/2020_11_19_fc0757c558.jpg" },
+            { name: "Allama Iqbal Town", city: "Lahore", img: "https://content-cdn.zameen.com/8dc87184757602aec3d1982c19be7410_004cdbbd9b.jpg" },
+            { name: "Bahria Town", city: "Lahore", img: "https://content-cdn.zameen.com/Etihad_Town_Lahore_112820191142_242baba61a.jpg" },
+            { name: "Johar Town", city: "Lahore", img: "https://content-cdn.zameen.com/Al_Rehman_Garden_Phase_Zameen_e77422679a.jpg" },
+            { name: "Gulberg", city: "Lahore", img: "https://content-cdn.zameen.com/Wapda_Town_Entrance_3940980560.jpg" },
+            { name: "Wapda Town", city: "Lahore", img: "https://content-cdn.zameen.com/cover_image_12_27541f4006.jpg" }
+        ];
+
+        const container = document.getElementById("locations");
+
+        locations.forEach(location => {
+            const div = document.createElement("div");
+            div.className = "relative rounded-xl overflow-hidden shadow-lg min-w-[300px] mx-2";
+            div.innerHTML = `
+                <img src="${location.img}" class="w-full h-60 object-cover" alt="${location.name}">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-4 text-white">
+                    <h2 class="text-lg font-bold">${location.name}</h2>
+                    <p class="text-sm">${location.city}</p>
+                    <a href="#" class="mt-2 inline-block text-white font-medium hover:underline">Explore &gt;</a>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+
+        // Auto-scroll effect
+        let scrollAmount = 0;
+        function autoScroll() {
+            const scrollContainer = document.getElementById("scrollContainer");
+            scrollAmount += 320;
+            if (scrollAmount >= scrollContainer.scrollWidth / 2) {
+                scrollAmount = 0;
+            }
+            scrollContainer.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        }
+
+        setInterval(autoScroll, 3000); // Scroll every 3 seconds
+    </script>
+
+</body>
+
+</html>

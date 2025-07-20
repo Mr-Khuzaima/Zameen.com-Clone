@@ -1,0 +1,255 @@
+<!-- ✅ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- boxicons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <!-- tailwind -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- daisy ui -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <div class="">
+    <div class="text-center bg-gradient-to-r from-green-100 to-orange-100 py-3 pb-28">
+      <p class="text-gray-500 pl-2 text-left">Zameen > Home Loan Calculator</p>
+      <h2 class="text-3xl font-bold text-gray-900 mt-20">Home Loan Calculator</h2>
+      <p class="text-gray-600 mt-2">Explore your options in detail using our home loan calculator to get the best
+        loan package to achieve your dream home</p>
+    </div>
+
+    <!-- Calculator Section -->
+    <div class="bg-white shadow-lg rounded-2xl p-6 mx-auto mt-[-3rem] w-[90%] md:w-[90%]">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-xs md:text-md">
+        <!-- Property Price -->
+        <div class="">
+          <!-- Property Price Heading -->
+          <h3 class="text-gray-800 font-semibold">Property Price</h3>
+          <!-- Price Display -->
+          <div class="flex justify-between items-center mt-1 border-b border-gray-300 pb-3 space-y-3">
+            <p class="text-green-600 font-bold">PKR 1000000</p>
+            <p class="text-gray-500">10 Arab</p>
+          </div>
+
+          <!-- Slider -->
+          <input type="range" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-green-500">
+        </div>
+        <!-- Down Payment -->
+        <div class="">
+          <label class="block text-gray-900 font-semibold mb-1">Down Payment</label>
+          <div class="flex justify-between text-gray-600 border-b border-gray-300 pb-3 space-y-3">
+            <span>%37</span>
+            <span>14.80 Crore</span>
+          </div>
+          <input type="range"
+            class="w-full h-2 bg-gray-300  rounded-lg appearance-none cursor-pointer accent-green-500">
+        </div>
+
+        <!-- Loan Period -->
+        <div class="col-span-2 md:col-span-1">
+          <h3 class="text-gray-800 font-semibold">Loan Period</h3>
+          <div class="flex flex-row justify-between  border-b border-gray-300 pb-4  space-y-3">
+            <p class="text-green-600 font-bold">Years 10</p>
+            <p class="text-gray-500">120 Months</p>
+          </div>
+          <input type="range" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-green-500">
+        </div>
+        <div class="mt-6 w-full col-span-2 md:col-span-1">
+          <button
+            class="bg-green-700 text-white px-6 py-3 w-full rounded-lg hover:bg-green-600 trasition-all duration-500">
+            Calculate
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="p-8 mt-8">
+    <div class="w-full rounded-2xl overflow-hidden border-none outline-none">
+      <img src="https://zameen-strapi-staging.s3.eu-west-1.amazonaws.com/hbfc_0b2b0ffebc.jpg" alt="">
+    </div>
+  </section>
+
+  <section class="p-8">
+    <h1 class="text-3xl font-semibold">Banking Partners</h1>
+    <img src="https://content-cdn.zameen.com/HBFC_Logo_0ffc54ca4b.svg" alt=""
+      class="mt-4 bg-gray-100 px-8 py-2 rounded-lg">
+  </section>
+
+  <section class="p-8">
+    <h1 class="text-3xl font-semibold">About Home Loan Calculator</h1>
+    <p class="opacity-75 mt-4 text-sm">Everyone dreams of owning their own house at some point in their life.
+      However, this is not easily achievable given the fact that the process requires a lot of dedication,
+      consideration, and of course, money. Having said that, this does not mean that you should become
+      disheartened with the entire venture, and not give it a shot. The process of buying a house or property, in
+      general, can seem particularly threatening for first-timers. No matter where in the world you are, there are
+      some legal aspects attached to buying a piece of real estate that you need to look out for. To make the
+      whole endeavor easier for buyers, Zameen introduces Home Loan Calculator. Additionally, there are numerous
+      home/house financing options available in the market with almost every major bank trying to provide the best
+      means to address this pressing issue. Use this tool to evaluate the best house financing option there is.
+      Now if you are worried about how you can score a decent home loan in Pakistan, there’s no need to fret! You
+      can easily find a bank plan that suits your financing/payment needs. However, it is pertinent to mention
+      here that your eligibility for these various house financing options depends on several factors – ranging
+      from your salary to your nationality. Also, different banks have different eligibility standards when
+      approving home loan applications. Therefore, to figure out the best bank in Pakistan for the purpose, weigh
+      your options carefully with Zameen’s Home Loan Calculator. In addition, the sanctioned loan amount, as well
+      as the duration you have to repay it over, may vary from bank to bank. Your debt-to-equity ratio is also an
+      important factor, so make sure that you have a strong case to present when submitting your house loan
+      application.</p>
+  </section>
+
+
+  <section class="p-8">
+    <h2 class="text-2xl font-semibold mb-4">Frequently Asked Questions (FAQs)</h2>
+    <div class="join join-vertical w-full">
+      <div class="collapse collapse-arrow join-item border border-gray-200">
+        <input type="radio" name="faq" checked />
+        <div class="collapse-title text-lg font-medium">
+          What is KIBOR?
+        </div>
+        <div class="collapse-content">
+          <p>KIBOR stands for Karachi Interbank Offered Rate.</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border border-gray-200">
+        <input type="radio" name="faq" />
+        <div class="collapse-title text-lg font-medium">
+          How is the compound interest in home loans calculated?
+        </div>
+        <div class="collapse-content">
+          <p>Compound interest is calculated using the formula A = P(1 + r/n)^(nt).</p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border border-gray-200">
+        <input type="radio" name="faq" />
+        <div class="collapse-title text-lg font-medium">
+          What is the basic eligibility criteria for home loans?
+        </div>
+        <div class="collapse-content">
+          <p>Eligibility depends on income, credit score, and employment status.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-8">
+    <h1 class="text-2xl font-semibold mb-4">Useful Links</h1>
+    <div id="useful_links" class="grid grid-cols-2"></div>
+  </section>
+
+
+  <section class="flex justify-center items-center p-6">
+    <div class="flex items-center justify-between bg-gray-100 shadow-lg rounded-lg p-6 border border-gray-300 w-full ">
+
+      <!-- Center Content -->
+      <div class="text-center flex-1">
+        <h2 class="text-lg font-semibold">Roshan Digital Account</h2>
+        <p class="text-gray-600">Learn more about Roshan Digital Accounts and avail all the exclusive benefits!
+        </p>
+        <button class="bg-green-600 text-white px-4 py-2 mt-3 rounded-md hover:bg-green-700">
+          Learn More
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+
+  <script>
+
+    const useful_links = {
+      "Houses for Sale": [
+        "Houses for Sale in Lahore",
+        "Houses for Sale in Rawalpindi",
+        "Houses for Sale in Faisalabad",
+        "Houses for Sale in Gwadar",
+        "Houses for Sale in Islamabad",
+        "Houses for Sale in Multan",
+        "Houses for Sale in Hyderabad",
+        "Houses for Sale in Peshawar",
+        "Houses for Sale in Karachi",
+        "Houses for Sale in Sahiwal",
+        "Houses for Sale in Gujranwala",
+        "Houses for Sale in Quetta"
+      ],
+      "Plots for Sale": [
+        "Plots for Sale in Lahore",
+        "Plots for Sale in Rawalpindi",
+        "Plots for Sale in Faisalabad",
+        "Plots for Sale in Gwadar",
+        "Plots for Sale in Islamabad",
+        "Plots for Sale in Multan",
+        "Plots for Sale in Hyderabad",
+        "Plots for Sale in Peshawar",
+        "Plots for Sale in Karachi",
+        "Plots for Sale in Sahiwal",
+        "Plots for Sale in Gujranwala",
+        "Plots for Sale in Quetta"
+      ],
+      "Flats for Sale": [
+        "Flats for Sale in Lahore",
+        "Flats for Sale in Rawalpindi",
+        "Flats for Sale in Faisalabad",
+        "Flats for Sale in Gwadar",
+        "Flats for Sale in Islamabad",
+        "Flats for Sale in Multan",
+        "Flats for Sale in Hyderabad",
+        "Flats for Sale in Peshawar",
+        "Flats for Sale in Karachi",
+        "Flats for Sale in Sahiwal",
+        "Flats for Sale in Gujranwala",
+        "Flats for Sale in Quetta"
+      ]
+    };
+
+
+    // fetch('Navbar.html')
+    //   .then(response => response.text())
+    //   .then(data => document.getElementById('navbar').innerHTML = data);
+
+    // fetch('Footer.html')
+    //   .then(response => response.text())
+    //   .then(data => document.getElementById('footer').innerHTML = data);
+
+
+    let useful_links_text = '';
+
+    for (let category in useful_links) {
+      useful_links_text += `
+                <h1 class="col-span-3 text-xl font-semibold  pt-8 pb-4">${category}</h1>
+            `;
+
+      useful_links_text += `<div class="col-span-3 grid grid-cols-2 md:grid-cols-3 gap-4">`;
+
+      for (let link of useful_links[category]) {
+        useful_links_text += `
+                    <a href="#" class="text-gray-800 flex items-center space-x-1 hover:text-green-600">
+                        <i class='bx bx-right-arrow-alt text-green-600 text-xs' ></i>
+                        <span class="text-xs">${link}</span> 
+                    </a>
+                `;
+      }
+
+      useful_links_text += `</div>`; // Close links div
+    }
+
+    document.getElementById('useful_links').innerHTML = useful_links_text;
+  </script>
+
+
+</body>
+
+</html>

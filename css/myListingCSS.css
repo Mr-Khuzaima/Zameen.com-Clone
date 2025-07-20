@@ -1,0 +1,199 @@
+/* My Listings Page Styles */
+.listing-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.listing-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #28a745;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.listing-badge.inactive {
+  background-color: #6c757d;
+}
+
+.listing-badge.pending {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.listing-hot-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #dc3545;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.listing-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.listing-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.listing-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.listing-card .card-text {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.listing-card .card-text i {
+  margin-right: 0.5rem;
+  color: #6c757d;
+}
+
+.listing-details {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.detail-item i {
+  margin-right: 0.25rem;
+  color: #6c757d;
+}
+
+.listing-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+.listing-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.listing-actions .btn {
+  font-size: 0.8rem;
+}
+
+.listing-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #6c757d;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.stat-item i {
+  margin-right: 0.25rem;
+}
+
+/* Search and Filter Styles */
+#searchButton {
+  height: 38px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .listing-card .card-img-top {
+    height: 180px;
+  }
+  
+  .listing-details {
+    gap: 0.75rem;
+  }
+  
+  .listing-actions .btn {
+    flex: 1;
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .listing-card .card-img-top {
+    height: 160px;
+  }
+  
+  .listing-actions .btn {
+    min-width: 70px;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+/* Add to my-listings.css or post-listing.css */
+.no-image-placeholder {
+  height: 200px;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.no-image-placeholder i {
+  font-size: 3rem;
+}
+
+.recent-listing-card {
+  height: 100%;
+  transition: transform 0.2s;
+}
+
+.recent-listing-card:hover {
+  transform: translateY(-5px);
+}
+
+.recent-listing-card .card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
+
+.recent-listing-card .card-body {
+  padding: 1rem;
+}
+
+.recent-listing-card .card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+/* To display in the Dashboard */

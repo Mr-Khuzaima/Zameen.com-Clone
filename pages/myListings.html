@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profolio - My Listings</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/myListingCSS.css">
+  <link rel="stylesheet" href="../css/post-listing.css">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar Toggle Button (Hamburger) -->
+    <div class="sidebar-toggle-container">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Sidebar -->
+    <nav id="profolio-sidebar" class="profolio-sidebar">
+      <!-- Sidebar Close Button (Top-right) -->
+      <div class="sidebar-close-container">
+        <button class="sidebar-close" id="sidebarClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Sidebar Header -->
+      <div class="sidebar-header">
+        <h3>
+          <i class="fas fa-home"></i> Profolio
+        </h3>
+        <a href="https://www.zameen.com" class="go-to-zameen">
+          <i class="fas fa-external-link-alt"></i> Go to zameen.com
+        </a>
+      </div>
+
+      <!-- Menu -->
+      <ul class="nav flex-column sidebar-menu">
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard.html" id="dashboard-link">
+            <i class="fas fa-tachometer-alt"></i>
+            <span class="menu-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="myListings.html" id="listings-link">
+            <i class="fas fa-list"></i>
+            <span class="menu-text">My Listings</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="post-listing.html" id="post-listing-link">
+            <i class="fas fa-plus-circle"></i>
+            <span class="menu-text">Post Listing</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- User Profile -->
+      <div class="user-profile">
+        <div class="user-avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="user-info">
+          <span class="user-name">Muhammad Uzair Raja</span>
+          <a href="#" class="logout-link">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container-fluid px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">My Listings</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary active">All Listings</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Active</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Inactive</button>
+            </div>
+            <a href="post-listing.html" class="btn btn-sm btn-primary">
+              <i class="fas fa-plus"></i> Post New Listing
+            </a>
+          </div>
+        </div>
+
+        <!-- Search and Filter Section -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-3">
+                <label for="searchTitle" class="form-label">Search by Title</label>
+                <input type="text" class="form-control" id="searchTitle" placeholder="Property title...">
+              </div>
+              <div class="col-md-2">
+                <label for="propertyType" class="form-label">Property Type</label>
+                <select class="form-select" id="propertyType">
+                  <option value="">All Types</option>
+                  <option value="home">Home</option>
+                  <option value="plot">Plot</option>
+                  <option value="commercial">Commercial</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="purpose" class="form-label">Purpose</label>
+                <select class="form-select" id="purpose">
+                  <option value="">All</option>
+                  <option value="sale">For Sale</option>
+                  <option value="rent">For Rent</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="city" class="form-label">City</label>
+                <select class="form-select" id="city">
+                  <option value="">All Cities</option>
+                  <option value="karachi">Karachi</option>
+                  <option value="lahore">Lahore</option>
+                  <option value="islamabad">Islamabad</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status">
+                  <option value="">All Statuses</option>
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+                  <option value="pending">Pending</option>
+                </select>
+              </div>
+              <div class="col-md-1 d-flex align-items-end">
+                <button class="btn btn-primary w-100" id="searchButton">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Listings Grid -->
+        <div class="row">
+          <!-- Listing 1 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card listing-card">
+              <div class="listing-badge">Active</div>
+              <div class="listing-hot-badge">HOT</div>
+              <img src="https://media.zameen.com/thumbnails/274729552-400x300.jpeg" class="card-img-top" alt="Property Image">
+              <div class="card-body">
+                <h5 class="card-title">Beautiful House in DHA Phase 5</h5>
+                <p class="card-text text-muted">
+                  <i class="fas fa-map-marker-alt"></i> DHA Phase 5, Lahore
+                </p>
+                <div class="listing-details">
+                  <div class="detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>5 Beds</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-bath"></i>
+                    <span>4 Baths</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-vector-square"></i>
+                    <span>10 Marla</span>
+                  </div>
+                </div>
+                <div class="listing-price">
+                  <strong>PKR 1.2 Crore</strong>
+                </div>
+                <div class="listing-actions mt-3">
+                  <button class="btn btn-sm btn-outline-primary">
+                    <i class="fas fa-eye"></i> View
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-edit"></i> Edit
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger">
+                    <i class="fas fa-trash"></i> Delete
+                  </button>
+                </div>
+                <div class="listing-stats mt-3">
+                  <div class="stat-item">
+                    <i class="fas fa-eye"></i> 1,245 Views
+                  </div>
+                  <div class="stat-item">
+                    <i class="fas fa-phone"></i> 42 Calls
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listing 2 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card listing-card">
+              <div class="listing-badge">Active</div>
+              <img src="https://media.zameen.com/thumbnails/274706349-400x300.jpeg" class="card-img-top" alt="Property Image">
+              <div class="card-body">
+                <h5 class="card-title">Commercial Plot in Bahria Town</h5>
+                <p class="card-text text-muted">
+                  <i class="fas fa-map-marker-alt"></i> Bahria Town, Karachi
+                </p>
+                <div class="listing-details">
+                  <div class="detail-item">
+                    <i class="fas fa-vector-square"></i>
+                    <span>8 Marla</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-road"></i>
+                    <span>Corner Plot</span>
+                  </div>
+                </div>
+                <div class="listing-price">
+                  <strong>PKR 85 Lakh</strong>
+                </div>
+                <div class="listing-actions mt-3">
+                  <button class="btn btn-sm btn-outline-primary">
+                    <i class="fas fa-eye"></i> View
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-edit"></i> Edit
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger">
+                    <i class="fas fa-trash"></i> Delete
+                  </button>
+                </div>
+                <div class="listing-stats mt-3">
+                  <div class="stat-item">
+                    <i class="fas fa-eye"></i> 892 Views
+                  </div>
+                  <div class="stat-item">
+                    <i class="fas fa-phone"></i> 28 Calls
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listing 3 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card listing-card">
+              <div class="listing-badge inactive">Inactive</div>
+              <img src="https://media.zameen.com/thumbnails/255018033-400x300.jpeg" class="card-img-top" alt="Property Image">
+              <div class="card-body">
+                <h5 class="card-title">Farm House on Raiwind Road</h5>
+                <p class="card-text text-muted">
+                  <i class="fas fa-map-marker-alt"></i> Raiwind Road, Lahore
+                </p>
+                <div class="listing-details">
+                  <div class="detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>6 Beds</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-bath"></i>
+                    <span>5 Baths</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-vector-square"></i>
+                    <span>2 Kanal</span>
+                  </div>
+                </div>
+                <div class="listing-price">
+                  <strong>PKR 3.5 Crore</strong>
+                </div>
+                <div class="listing-actions mt-3">
+                  <button class="btn btn-sm btn-outline-primary">
+                    <i class="fas fa-eye"></i> View
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-edit"></i> Edit
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger">
+                    <i class="fas fa-trash"></i> Delete
+                  </button>
+                  <button class="btn btn-sm btn-success mt-2 w-100">
+                    <i class="fas fa-power-off"></i> Activate
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listing 4 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card listing-card">
+              <div class="listing-badge">Active</div>
+              <div class="listing-hot-badge">SUPER HOT</div>
+              <img src="https://media.zameen.com/thumbnails/255021181-400x300.jpeg" class="card-img-top" alt="Property Image">
+              <div class="card-body">
+                <h5 class="card-title">Luxury Apartment in Islamabad</h5>
+                <p class="card-text text-muted">
+                  <i class="fas fa-map-marker-alt"></i> F-7, Islamabad
+                </p>
+                <div class="listing-details">
+                  <div class="detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>3 Beds</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-bath"></i>
+                    <span>2 Baths</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-vector-square"></i>
+                    <span>2,500 sqft</span>
+                  </div>
+                </div>
+                <div class="listing-price">
+                  <strong>PKR 45 Lakh</strong>
+                </div>
+                <div class="listing-actions mt-3">
+                  <button class="btn btn-sm btn-outline-primary">
+                    <i class="fas fa-eye"></i> View
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-edit"></i> Edit
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger">
+                    <i class="fas fa-trash"></i> Delete
+                  </button>
+                </div>
+                <div class="listing-stats mt-3">
+                  <div class="stat-item">
+                    <i class="fas fa-eye"></i> 2,156 Views
+                  </div>
+                  <div class="stat-item">
+                    <i class="fas fa-phone"></i> 87 Calls
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listing 5 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card listing-card">
+              <div class="listing-badge pending">Pending Approval</div>
+              <img src="https://media.zameen.com/thumbnails/255023405-400x300.jpeg" class="card-img-top" alt="Property Image">
+              <div class="card-body">
+                <h5 class="card-title">Residential Plot in DHA Phase 8</h5>
+                <p class="card-text text-muted">
+                  <i class="fas fa-map-marker-alt"></i> DHA Phase 8, Karachi
+                </p>
+                <div class="listing-details">
+                  <div class="detail-item">
+                    <i class="fas fa-vector-square"></i>
+                    <span>10 Marla</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-road"></i>
+                    <span>Corner Plot</span>
+                  </div>
+                </div>
+                <div class="listing-price">
+                  <strong>PKR 1.8 Crore</strong>
+                </div>
+                <div class="listing-actions mt-3">
+                  <button class="btn btn-sm btn-outline-primary">
+                    <i class="fas fa-eye"></i> View
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-edit"></i> Edit
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger">
+                    <i class="fas fa-trash"></i> Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listing 6 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card listing-card">
+              <div class="listing-badge inactive">Inactive</div>
+              <img src="https://media.zameen.com/thumbnails/255037339-400x300.jpeg" class="card-img-top" alt="Property Image">
+              <div class="card-body">
+                <h5 class="card-title">Shop in Commercial Area</h5>
+                <p class="card-text text-muted">
+                  <i class="fas fa-map-marker-alt"></i> Gulberg, Lahore
+                </p>
+                <div class="listing-details">
+                  <div class="detail-item">
+                    <i class="fas fa-vector-square"></i>
+                    <span>1,200 sqft</span>
+                  </div>
+                </div>
+                <div class="listing-price">
+                  <strong>PKR 65 Lakh</strong>
+                </div>
+                <div class="listing-actions mt-3">
+                  <button class="btn btn-sm btn-outline-primary">
+                    <i class="fas fa-eye"></i> View
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-edit"></i> Edit
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger">
+                    <i class="fas fa-trash"></i> Delete
+                  </button>
+                  <button class="btn btn-sm btn-success mt-2 w-100">
+                    <i class="fas fa-power-off"></i> Activate
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Listings pagination">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/my-listing.js"></script>
+</body>
+</html>
